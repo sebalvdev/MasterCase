@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/unique.dart';
+
 class HomePage extends StatelessWidget {
    
   const HomePage({super.key});
@@ -10,8 +12,15 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
           title: const Text('Titulo'),
       ),
-      body: const Center(
-         child: Text('HomePage'),
+      body: const SingleChildScrollView(
+        child: Column(
+          children: [
+            Center(
+               child: Text('HomePage'),
+            ),
+            UniqueValue(),
+          ],
+        ),
       ),
     );
   }
