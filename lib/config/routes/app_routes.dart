@@ -15,7 +15,7 @@ class AppRoutes {
       case home:
         return _materialRoute(const HomePage());
       case login:
-        return _materialRoute(const LoginPage());
+        return _materialRoute(LoginPage());
       // case eventHome:
       //   if (settings.arguments is Map<String, dynamic>) {
       //     final args = settings.arguments as Map<String, dynamic>;
