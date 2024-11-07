@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "73659945988",
+    "project_id": "master-case-c2dcc",
+    "storage_bucket": "master-case-c2dcc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73659945988:android:6d38e1138493d605749151",
+        "android_client_info": {
+          "package_name": "com.example.master_case"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7ueamFG5ydmri0aSbEaJX4VU3uUEtVDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
