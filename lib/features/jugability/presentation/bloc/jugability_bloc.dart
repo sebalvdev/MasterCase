@@ -6,8 +6,13 @@ part 'jugability_state.dart';
 
 class JugabilityBloc extends Bloc<JugabilityEvent, JugabilityState> {
   JugabilityBloc() : super(JugabilityInitial()) {
-    on<JugabilityEvent>((event, emit) {
-      // TODO: implement event handler
+    on<LoadGameEvent>((event, emit) {
+      emit(JugabilityLoading());
+      try {
+        emit(JugabilityLoaded());
+      } catch (e) {
+        emit(JugabilityFailure());
+      }
     });
   }
 }

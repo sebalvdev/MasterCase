@@ -8,3 +8,9 @@ sealed class JugabilityState extends Equatable {
 }
 
 final class JugabilityInitial extends JugabilityState {}
+
+final class JugabilityLoading extends JugabilityState {}
+
+final class JugabilityLoaded extends JugabilityState {}
+
+final class JugabilityFailure extends JugabilityState {}
