@@ -8,7 +8,8 @@ import 'package:master_case/firebase_options.dart';
 
 import 'config/routes/app_routes.dart';
 import 'config/themes/default_theme.dart';
-import 'features/home/presentation/pages/home_page.dart';
+// import 'features/home/presentation/pages/home_page.dart';
+import 'features/menu/presentation/pages/menu_page.dart';
 import 'injection_container.dart' as dependencies;
 
 Future<void> main() async {
@@ -36,7 +37,11 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: AppRoutes.onGenerateRoutes,
       title: 'Master Case App',
       theme: defaultTheme(),
-      home: QRScannerPage(),
+
+      // home: QRScannerPage(),
+
+      // home: const HomePage(),
+      home: const MenuPage(),
     );
   }
 }
