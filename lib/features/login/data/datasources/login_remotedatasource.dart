@@ -21,7 +21,7 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
       // String boxId = sharedPreferences.getString(cacheBoxId)!;
       final deviceInfoPlugin = DeviceInfoPlugin();
       final deviceInfo = await deviceInfoPlugin.androidInfo;
-      final maxDevices = await setMaxDevices();
+      // final maxDevices = await setMaxDevices();
 
       final snapshot = await firebaseFirestore
           .collection(gamesTable)
@@ -35,13 +35,14 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
       for (var doc in snapshot.docs) {
         final docData = doc.data();
         if (docData['ci'] == data['ci'] ||
-            docData['phone_number'] == data['number'] ||
-            docData['device'] == deviceInfo.fingerprint) {
+            docData['phone_number'] == data['number']
+            //  || docData['device'] == deviceInfo.fingerprint
+            ) {
           return 'Datos ya registrados';
         }
       }
 
-      if (snapshot.size < maxDevices) {
+      // if (snapshot.size < maxDevices) {
         Map<String, dynamic> info = {
           'ci': data['ci'],
           'phone_number': data['number'],
@@ -57,37 +58,38 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
             .add(info);
 
         return 'success';
-      } else {
-        return 'devices_full';
-      }
+      // } else {
+      //   // ! Mensaje cuando los dispositivos estan llenos
+      //   return 'devices_full';
+      // }
     } catch (e) {
       print('Error en el registro de datos: $e');
       return '$e';
     }
   }
 
-  Future<int> setMaxDevices() async {
-    try {
-      final snapshot =
-          await firebaseFirestore.collection(gamesTable).doc(masterCase).get();
-      final data = snapshot.data();
-      final max = data?['max_devices'] ?? 3;
+  // Future<int> setMaxDevices() async {
+  //   try {
+  //     final snapshot =
+  //         await firebaseFirestore.collection(gamesTable).doc(masterCase).get();
+  //     final data = snapshot.data();
+  //     final max = data?['max_devices'] ?? 3;
 
-      sharedPreferences.setInt(cacheMaxDevices, max);
-      return max;
-    } catch (e) {
-      print('Error en obtener max: $e');
-      return 3;
-    }
-  }
+  //     sharedPreferences.setInt(cacheMaxDevices, max);
+  //     return max;
+  //   } catch (e) {
+  //     print('Error en obtener max: $e');
+  //     return 3;
+  //   }
+  // }
 
-  int getMaxDevices() {
-    try {
-      final max = sharedPreferences.getInt(cacheMaxDevices)!;
-      return max;
-    } catch (e) {
-      print('Error en obtener max devices: $e');
-      return 3;
-    }
-  }
+  // int getMaxDevices() {
+  //   try {
+  //     final max = sharedPreferences.getInt(cacheMaxDevices)!;
+  //     return max;
+  //   } catch (e) {
+  //     print('Error en obtener max devices: $e');
+  //     return 3;
+  //   }
+  // }
 }
