@@ -10,6 +10,7 @@ class AppRoutes {
   static const String welcome = '/welcome';
   static const String login = '/login';
   static const String qrScanner = '/qr_scanner';
+  static const String menu = '/menu';
 
   static Route onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
@@ -21,6 +22,8 @@ class AppRoutes {
         return _materialRoute(LoginPage());
       case qrScanner:
         return _materialRoute(const QRScannerPage());
+      case menu:
+        return _materialRoute(const MenuPage());
       // case eventHome:
       //   if (settings.arguments is Map<String, dynamic>) {
       //     final args = settings.arguments as Map<String, dynamic>;
