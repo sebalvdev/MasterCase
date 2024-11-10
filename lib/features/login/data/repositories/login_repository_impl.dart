@@ -22,8 +22,10 @@ class LoginRepositoryImpl extends LoginRepository{
       connection = await InternetConnection().hasInternetAccess;
       if (connection) {
         result = await remoteDataSource.loginDevice(data);
+        return Future.value((right(result)));
+      } else {
+        return Future.value((right('Debe tener conexion a internet')));
       }
-      return Future.value((right(result)));
     } on CacheFailure {
       return Future.value(left(CacheFailure()));
     } on UnknownFailure {

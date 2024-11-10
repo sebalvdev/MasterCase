@@ -16,12 +16,13 @@ import 'features/login/data/repositories/login_repository_impl.dart';
 import 'features/login/domain/repositories/login_repository.dart';
 import 'features/login/presentation/bloc/login_bloc.dart';
 import 'features/login/domain/usecases/verify_box.dart' as verify_box;
+import 'features/menu/presentation/bloc/menu_bloc.dart';
 import 'firebase_options.dart';
 
 final sl = GetIt.instance;
 
 Future<void> init() async {
-  //! Features - Login
+  //! Feature - Login
   // Bloc
   sl.registerFactory(() => LoginBloc(verifyDevice: sl()));
 
@@ -40,6 +41,7 @@ Future<void> init() async {
   sl.registerLazySingleton<LoginRemoteDataSource>(
       () => LoginRemoteDataSourceImpl());
 
+
   //! Features - ScannerQR
   // Bloc
   sl.registerFactory(() => ScannerQrBloc(validateQrCode: sl()));
@@ -56,6 +58,16 @@ Future<void> init() async {
   // Data Sources
   sl.registerLazySingleton<ScannerQrRemoteDataSource>(
       () => ScannerQrRemoteDataSourceImpl(firestore: sl()));
+
+  // ! Feature - Menu
+  // Bloc
+  sl.registerFactory(() => MenuBloc());
+
+  // Use Cases
+
+  // Repository
+
+  // Data Sources
 
   //! Core
   sl.registerLazySingleton<NetworkInfo>(
