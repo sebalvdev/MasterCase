@@ -33,11 +33,21 @@ class _QRScannerPageState extends State<QRScannerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Master Case App',
-              style: TextStyle(color: Colors.white)),
-          elevation: 1,
-          backgroundColor: Colors.blueAccent),
+        title: const Text('Master Case App',
+            style: TextStyle(color: Colors.white)),
+        elevation: 1,
+        backgroundColor: Colors.blueGrey,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      ),
       body: buildBody(context),
+      backgroundColor: Colors.transparent,
     );
   }
 
@@ -56,8 +66,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
               // Vuelve a la pantalla anterior si el QR es válido
               isScanEnabled = true; // Habilita el escaneo de nuevo
             } else {
-              isScanEnabled =
-                  true; // Habilita el escaneo de nuevo si no es válido
+              isScanEnabled = true; // Habilita el escaneo de nuevo si no es válido
             }
           });
         }
@@ -68,15 +77,12 @@ class _QRScannerPageState extends State<QRScannerPage> {
             isScanEnabled = true; // Rehabilitar el escaneo
           });
         }
-        return Stack(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 50),
-              child: Transform.rotate(
-                angle: 4.71,
-                child: SizedBox(
-                  width: 250,
-                  height: 250,
+        return SizedBox.expand(
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: Transform.rotate(
+                  angle: 4.71,
                   child: MobileScanner(
                     controller: cameraController,
                     onDetect: (capture) {
@@ -84,8 +90,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
                         isScanEnabled =
                             false; // Deshabilita el escaneo al detectar
                         var qrCaptured = capture.barcodes[0];
-                        if (state is ScannerQrInitial ||
-                            state is ScannerQrError) {
+                        if (state is ScannerQrInitial || state is ScannerQrError) {
                           BlocProvider.of<ScannerQrBloc>(context).add(
                             ValidateQRCodeEvent(
                                 outsideQRCode: qrCaptured.displayValue ?? ''),
@@ -101,7 +106,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
                             borderRadius: 10,
                             borderLength: 25,
                             borderWidth: 7.5,
-                            cutOutSize: MediaQuery.of(context).size.width * 0.2,
+                            cutOutSize: MediaQuery.of(context).size.width * 0.35
                           ),
                         ),
                       );
@@ -109,39 +114,41 @@ class _QRScannerPageState extends State<QRScannerPage> {
                   ),
                 ),
               ),
-            ),
-            Positioned(
-                bottom: 70,
-                child: Center(
-                    child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50),
-                  child: SizedBox(
-                      width: MediaQuery.of(context).size.width - 100,
-                      child: const Text(
-                        "Valida tu aplicacion de master case!",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                        textAlign: TextAlign.center,
-                      )),
-                ))),
-            if (state is ScannerQrLoading) ...[
-              // Capa semitransparente para opacar la interfaz
-              const Opacity(
-                opacity: 0.5, // Ajusta la opacidad según lo necesites
-                child: ModalBarrier(dismissible: false, color: Colors.black),
+              Positioned(
+                  bottom: 150,
+                  child: Center(
+                      child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 50),
+                    child: SizedBox(
+                        width: MediaQuery.of(context).size.width - 100,
+                        child: const Text(
+                          "Valida tu aplicacion de master case!",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                          textAlign: TextAlign.center,
+                        )),
+                  )
+                )
               ),
-              const Center(
-                  child: CircularProgressIndicator(
-                color: Colors.white,
-              )),
-            ],
-            if (state is ScannerQrError)
-              const Center(
-                child: Text(
-                  'Error al escanear el QR. Inténtalo de nuevo.',
-                  style: TextStyle(color: Colors.red, fontSize: 20),
+              if (state is ScannerQrLoading) ...[
+                // Capa semitransparente para opacar la interfaz
+                const Opacity(
+                  opacity: 0.5, // Ajusta la opacidad según lo necesites
+                  child: ModalBarrier(dismissible: false, color: Colors.black),
                 ),
-              ),
-          ],
+                const Center(
+                    child: CircularProgressIndicator(
+                  color: Colors.white,
+                )),
+              ],
+              if (state is ScannerQrError)
+                const Center(
+                  child: Text(
+                    'Error al escanear el QR. Inténtalo de nuevo.',
+                    style: TextStyle(color: Colors.red, fontSize: 20),
+                  ),
+                ),
+            ],
+          ),
         );
       }),
     );
