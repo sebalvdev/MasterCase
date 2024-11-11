@@ -8,21 +8,21 @@ Row cards(double imagewith) {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: SizedBox(
               width: imagewith,
-              child: Image.network('https://picsum.photos/250/250', fit: BoxFit.contain,),
+              child: Image.asset('assets/images/cocina.jpg', fit: BoxFit.contain,),
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: SizedBox(
               width: imagewith,
-              child: Image.network('https://picsum.photos/250/250', fit: BoxFit.contain,),
+              child: Image.asset('assets/images/cocina.jpg', fit: BoxFit.contain,),
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: SizedBox(
               width: imagewith,
-              child: Image.network('https://picsum.photos/250/250', fit: BoxFit.contain,),
+              child: Image.asset('assets/images/cocina.jpg', fit: BoxFit.contain,),
             ),
           ),
         ],

@@ -2,6 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:master_case/features/scanner_qr/data/datasources/scanner_qr_remote_datasource.dart';
+import 'package:master_case/features/scanner_qr/data/repositories/scanner_qr_repository_impl.dart';
+import 'package:master_case/features/scanner_qr/domain/repositories/scanner_qr_repository.dart';
+import 'package:master_case/features/scanner_qr/presentation/bloc/scanner_qr_bloc.dart';
+import 'package:master_case/features/scanner_qr/domain/usecases/validate_qr_code.dart' as validate_qr_code;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/network/network_info.dart';
@@ -40,6 +45,24 @@ Future<void> init() async {
       () => LoginLocalDataSourceImpl());
   sl.registerLazySingleton<LoginRemoteDataSource>(
       () => LoginRemoteDataSourceImpl());
+
+
+  //! Features - ScannerQR
+  // Bloc
+  sl.registerFactory(() => ScannerQrBloc(validateQrCode: sl()));
+
+  // Use Cases
+  sl.registerLazySingleton(() => validate_qr_code.ValidateQrCode(repository: sl()));
+
+  // Repository
+  sl.registerLazySingleton<ScannerQrRepository>(() => ScannerQrRepositoryImpl(
+        scannerQrRemoteDataSource: sl(),
+        networkInfo: sl(),
+      ));
+  
+  // Data Sources
+  sl.registerLazySingleton<ScannerQrRemoteDataSource>(
+      () => ScannerQrRemoteDataSourceImpl(firestore: sl()));
 
   // ! Feature - Menu
   // Bloc
