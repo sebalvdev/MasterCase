@@ -38,11 +38,15 @@ class JugabilityPage extends StatelessWidget {
   }
 
   Widget buildForm(BuildContext context) {
-    double imagewith = MediaQuery.of(context).size.width / 3 - 30;
+    double imageWith = MediaQuery.of(context).size.width / 3 - 30;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        cards(imagewith),
+        FlipCard(images: const [
+          'assets/images/cocina.jpg',
+          'assets/images/cocina.jpg',
+          'assets/images/cocina.jpg'
+        ], imageWith: imageWith),
         bottomInfo(context)
       ],
     );
