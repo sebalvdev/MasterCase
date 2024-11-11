@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:master_case/features/jugability/presentation/pages/jugability_page.dart';
+import 'package:master_case/features/welcome_screen/presentation/pages/welcome_page.dart';
 import 'package:master_case/firebase_options.dart';
 
 import 'config/routes/app_routes.dart';
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
       theme: defaultTheme(),
       // home: const WelcomePage(),
       // home: const MenuPage(),
-      home: const JugabilityPage(),
+      // tiene que mostrarse directamente la pagina de cocina si esta logueado
+      home: const WelcomePage(),
     );
   }
 }

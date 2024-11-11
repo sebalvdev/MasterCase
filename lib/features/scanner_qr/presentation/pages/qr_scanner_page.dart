@@ -20,14 +20,14 @@ class _QRScannerPageState extends State<QRScannerPage> {
   );
   bool isScanEnabled = true;
 
-  void _handleBarcode(BarcodeCapture barcodes) {
-    if (mounted) {
-      setState(() {
-        Barcode? _barcode = barcodes.barcodes.firstOrNull;
-        print(_barcode?.displayValue);
-      });
-    }
-  }
+  // void _handleBarcode(BarcodeCapture barcodes) {
+  //   if (mounted) {
+  //     setState(() {
+  //       Barcode? _barcode = barcodes.barcodes.firstOrNull;
+  //       print(_barcode?.displayValue);
+  //     });
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -61,12 +61,18 @@ class _QRScannerPageState extends State<QRScannerPage> {
             isScanEnabled = false; // Deshabilita el escaneo
             await scannedQrDialog(context, state.isQrCodeValidated);
             if (state.isQrCodeValidated) {
-              // Navigator.pop(context, true);
+              //Redirecciona hacia la pantalla de jugabilidad si el codigo qr
+              //es valido
 
-              // Vuelve a la pantalla anterior si el QR es válido
-              isScanEnabled = true; // Habilita el escaneo de nuevo
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                '/game',
+                (Route<dynamic> route) =>
+                    false, // Elimina todas las pantallas anteriores
+              );
+              isScanEnabled = false; // Habilita el escaneo de nuevo
             } else {
-              isScanEnabled = true; // Habilita el escaneo de nuevo si no es válido
+              isScanEnabled =
+                  true; // Habilita el escaneo de nuevo si no es válido
             }
           });
         }
@@ -90,7 +96,8 @@ class _QRScannerPageState extends State<QRScannerPage> {
                         isScanEnabled =
                             false; // Deshabilita el escaneo al detectar
                         var qrCaptured = capture.barcodes[0];
-                        if (state is ScannerQrInitial || state is ScannerQrError) {
+                        if (state is ScannerQrInitial ||
+                            state is ScannerQrError) {
                           BlocProvider.of<ScannerQrBloc>(context).add(
                             ValidateQRCodeEvent(
                                 outsideQRCode: qrCaptured.displayValue ?? ''),
@@ -102,12 +109,12 @@ class _QRScannerPageState extends State<QRScannerPage> {
                       return Container(
                         decoration: ShapeDecoration(
                           shape: QrScannerOverlayShape(
-                            borderColor: Colors.white,
-                            borderRadius: 10,
-                            borderLength: 25,
-                            borderWidth: 7.5,
-                            cutOutSize: MediaQuery.of(context).size.width * 0.35
-                          ),
+                              borderColor: Colors.white,
+                              borderRadius: 10,
+                              borderLength: 25,
+                              borderWidth: 7.5,
+                              cutOutSize:
+                                  MediaQuery.of(context).size.width * 0.35),
                         ),
                       );
                     },
@@ -126,9 +133,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
                           style: TextStyle(color: Colors.white, fontSize: 20),
                           textAlign: TextAlign.center,
                         )),
-                  )
-                )
-              ),
+                  ))),
               if (state is ScannerQrLoading) ...[
                 // Capa semitransparente para opacar la interfaz
                 const Opacity(
