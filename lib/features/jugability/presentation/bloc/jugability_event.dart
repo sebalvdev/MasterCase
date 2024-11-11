@@ -8,3 +8,9 @@ sealed class JugabilityEvent extends Equatable {
 }
 
 class LoadGameEvent extends JugabilityEvent {}
+
+class NextRound extends JugabilityEvent {
+  final String actualMonth;
+
+  const NextRound({required this.actualMonth});
+}

@@ -25,7 +25,7 @@ class AppRoutes {
       case qrScanner:
         return _materialRoute(const QRScannerPage());
       case menu:
-        return _materialRoute(const MenuPage());
+        return _materialRoute(MenuPage());
       case game:
         return _materialRoute(const JugabilityPage());
       // case eventHome:

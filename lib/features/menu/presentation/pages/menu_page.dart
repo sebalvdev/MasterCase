@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:master_case/config/routes/app_routes.dart';
+// import 'package:master_case/config/routes/app_routes.dart';
 
 import '../../../../core/constants/constants.dart';
 import '../../../../injection_container.dart';
 import '../bloc/menu_bloc.dart';
+import '../widgets/custom_dropdown_button.dart';
 import '../widgets/widgets.dart';
 
+// ignore: must_be_immutable
 class MenuPage extends StatelessWidget {
-  const MenuPage({super.key});
+  MenuPage({super.key});
+  String? durationControler;
+  String? playersController;
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +72,7 @@ class MenuPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10),
               child: CustomButton(
-                text: 'opciones',
+                text: 'Instrucciones',
                 function: () {},
                 width: 200,
                 height: 50,
@@ -110,7 +114,8 @@ class MenuPage extends StatelessWidget {
               child: CustomButton(
                 text: 'jugar',
                 function: () {
-                  Navigator.popAndPushNamed(context, AppRoutes.game);
+                  context.read<MenuBloc>().add(LoadMenuEvent());
+                  // Navigator.popAndPushNamed(context, AppRoutes.game);
                 },
                 width: 200,
                 height: 50,
@@ -119,17 +124,88 @@ class MenuPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(10),
-              child: CustomButton(
-                text: 'opciones',
-                function: () {},
+              // child: durationInput(200, 50),
+              child: CustomDropdownButton(
                 width: 200,
                 height: 50,
-                backColor: orange,
+                hintText: 'Duracion',
+                items: const ['Año completo', 'Medio año'],
+                color: orange,
+                dropdownColor: orange,
+                textColor: black,
+                fontSize: h2,
+                onChanged: (String? newValue) {
+                  durationControler = newValue;
+                },
               ),
             ),
+            // Padding(
+            //   padding: const EdgeInsets.all(10),
+            //   // child: durationInput(200, 50),
+            //   child: CustomDropdownButton(
+            //     width: 200,
+            //     height: 50,
+            //     hintText: 'Jugadores',
+            //     items: const ['Tres', 'Cuatro'],
+            //     color: orange,
+            //     dropdownColor: orange,
+            //     textColor: black,
+            //     fontSize: h2,
+            //     onChanged: (String? newValue) {
+            //       playersController = newValue;
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ],
+    );
+  }
+
+  Container durationInput(double width, double height) {
+    return Container(
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        color: orange,
+        borderRadius: BorderRadius.circular(30),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        child: DropdownButtonFormField<String>(
+          iconEnabledColor: black,
+          decoration: const InputDecoration(
+            hintText: null, // Eliminamos el hintText de aquí
+            border: InputBorder.none,
+          ),
+          hint: Center(
+            // Usamos Center para alinear el hint en el centro
+            child: Text(
+              "Duración",
+              style: TextStyle(color: black, fontSize: h2),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          value: durationControler,
+          dropdownColor: orange,
+          items: <String>['Año completo', 'Medio año'].map((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Center(
+                // También centramos las opciones del menú
+                child: Text(
+                  value,
+                  style: TextStyle(color: black, fontSize: h2),
+                ),
+              ),
+            );
+          }).toList(),
+          onChanged: (String? newValue) {
+            durationControler = newValue;
+          },
+          borderRadius: BorderRadius.circular(30),
+        ),
+      ),
     );
   }
 }

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../bloc/jugability_bloc.dart';
 
 class FlipCard extends StatefulWidget {
   final List<String> images;
   final double imageWith;
+  final String month;
 
-  const FlipCard({super.key, required this.images, required this.imageWith});
+  const FlipCard({super.key, required this.images, required this.imageWith, required this.month});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -32,6 +36,11 @@ class _FlipCardDemoState extends State<FlipCard> {
                 setState(() {
                   // Toggle the flip state on tap
                   isFlipped[index] = !isFlipped[index];
+
+                  // verify state of cards
+                  if (isFlipped.every((flipped) => flipped)) {
+                  BlocProvider.of<JugabilityBloc>(context).add((NextRound(actualMonth: widget.month)));
+                }
                 });
               },
               child: AnimatedSwitcher(
