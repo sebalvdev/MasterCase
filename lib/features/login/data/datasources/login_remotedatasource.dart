@@ -5,6 +5,7 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core/constants/constants.dart';
+import '../../../../core/utilities/utilities.dart';
 import '../../../../injection_container.dart';
 
 abstract class LoginRemoteDataSource {
@@ -12,6 +13,7 @@ abstract class LoginRemoteDataSource {
 }
 
 class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
+  Utilities utilities = Utilities();
   FirebaseFirestore firebaseFirestore = sl<FirebaseFirestore>();
   SharedPreferences sharedPreferences = sl<SharedPreferences>();
 
@@ -56,6 +58,8 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
             .doc(boxIdTest)
             .collection(users)
             .add(info);
+
+        utilities.setCacheData(deviceInfo.fingerprint);
 
         return 'success';
       // } else {
