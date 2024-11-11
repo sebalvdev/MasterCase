@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:master_case/features/scanner_qr/presentation/pages/qr_scanner_page.dart';
 
+import '../../features/extra_pages/presentation/credits_page.dart';
+import '../../features/extra_pages/presentation/pages/instructions_page.dart';
 import '../../features/home/presentation/pages/home_page.dart';
 import '../../features/jugability/presentation/pages/jugability_page.dart';
 import '../../features/login/presentation/pages/login_page.dart';
 import '../../features/menu/presentation/pages/menu_page.dart';
+import '../../features/scanner_qr/presentation/pages/qr_scanner_page.dart';
 
 class AppRoutes {
   static const String home = '/';
@@ -13,6 +15,8 @@ class AppRoutes {
   static const String qrScanner = '/qr_scanner';
   static const String menu = '/menu';
   static const String game = '/game';
+  static const String instruction = '/instruction';
+  static const String credits = '/credits';
 
   static Route onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
@@ -28,6 +32,10 @@ class AppRoutes {
         return _materialRoute(MenuPage());
       case game:
         return _materialRoute(const JugabilityPage());
+      case instruction:
+        return _materialRoute(const InstructionsPage());
+      case credits:
+        return _materialRoute(const CreditsPage());
       // case eventHome:
       //   if (settings.arguments is Map<String, dynamic>) {
       //     final args = settings.arguments as Map<String, dynamic>;
@@ -36,7 +44,7 @@ class AppRoutes {
       //   return _materialRoute(
       //       const EventHomePage(eventInfo: <String, dynamic>{}));
       // case qrScanner:
-        // return _materialRoute(const QRScannerPage());
+      // return _materialRoute(const QRScannerPage());
       default:
         return _materialRoute(const HomePage());
     }

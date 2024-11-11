@@ -10,7 +10,9 @@ Widget buttons(BuildContext context) {
         padding: const EdgeInsets.symmetric(horizontal: 80),
         child: SizedBox(child: Image.asset('assets/images/reverso.jpg')),
       ),
-      const SizedBox(height: 15,),
+      const SizedBox(
+        height: 15,
+      ),
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: ListTile(
@@ -29,7 +31,9 @@ Widget buttons(BuildContext context) {
             'Instrucciones',
             style: TextStyle(color: black, fontSize: h2),
           )),
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, AppRoutes.instruction);
+          },
         ),
       ),
       const SizedBox(
@@ -53,7 +57,9 @@ Widget buttons(BuildContext context) {
             'Creditos',
             style: TextStyle(color: black, fontSize: h2),
           )),
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, AppRoutes.credits);
+          },
         ),
       ),
       const SizedBox(
@@ -78,7 +84,8 @@ Widget buttons(BuildContext context) {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           onTap: () async {
-            Navigator.pushNamedAndRemoveUntil(context, AppRoutes.menu, (route) => false);
+            Navigator.pushNamedAndRemoveUntil(
+                context, AppRoutes.menu, (route) => false);
           },
         ),
       ),

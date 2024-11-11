@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:master_case/config/routes/app_routes.dart';
 
+import '../../../../config/routes/app_routes.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../injection_container.dart';
 import '../bloc/menu_bloc.dart';
@@ -73,7 +74,9 @@ class MenuPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: CustomButton(
                 text: 'Instrucciones',
-                function: () {},
+                function: () {
+                  Navigator.pushNamed(context, AppRoutes.instruction);
+                },
                 width: 200,
                 height: 50,
                 backColor: green,
@@ -83,7 +86,9 @@ class MenuPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: CustomButton(
                 text: 'creditos',
-                function: () {},
+                function: () {
+                  Navigator.pushNamed(context, AppRoutes.credits);
+                },
                 width: 200,
                 height: 50,
                 backColor: green,
