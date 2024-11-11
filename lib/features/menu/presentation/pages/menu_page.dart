@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:master_case/config/routes/app_routes.dart';
 
 import '../../../../core/constants/constants.dart';
 import '../../../../injection_container.dart';
@@ -109,7 +110,7 @@ class MenuPage extends StatelessWidget {
               child: CustomButton(
                 text: 'jugar',
                 function: () {
-                  context.read<MenuBloc>().add(LoadMenuEvent());
+                  Navigator.popAndPushNamed(context, AppRoutes.game);
                 },
                 width: 200,
                 height: 50,
