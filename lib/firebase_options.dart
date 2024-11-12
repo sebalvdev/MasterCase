@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyC7ueamFG5ydmri0aSbEaJX4VU3uUEtVDE',
-    appId: '1:73659945988:android:6d38e1138493d605749151',
+    appId: '1:73659945988:android:39d19f4b55f3cf42749151',
     messagingSenderId: '73659945988',
     projectId: 'master-case-c2dcc',
     storageBucket: 'master-case-c2dcc.firebasestorage.app',
@@ -63,11 +63,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAWTnONdf8u_Hffw83qv8MVXz7bO5jq_x0',
-    appId: '1:73659945988:ios:de031b54cdd555f8749151',
+    appId: '1:73659945988:ios:0ad2d08b46edac18749151',
     messagingSenderId: '73659945988',
     projectId: 'master-case-c2dcc',
     storageBucket: 'master-case-c2dcc.firebasestorage.app',
-    iosBundleId: 'com.example.masterCase',
+    iosBundleId: 'com.obvioservices.mastercase',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
