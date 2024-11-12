@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element, no_leading_underscores_for_local_identifiers, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:master_case/features/scanner_qr/presentation/bloc/scanner_qr_bloc.dart';

@@ -25,7 +25,7 @@ class QRScannerPageTest extends StatelessWidget {
             
             if (state is ScannerQrInitial) {
               BlocProvider.of<ScannerQrBloc>(context).add(
-                  ValidateQRCodeEvent(outsideQRCode: '123455')
+                  const ValidateQRCodeEvent(outsideQRCode: '123455')
               );
               return const Text('Scan something!');
             } 
