@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:master_case/features/extra_pages/presentation/test_page.dart';
 // import 'package:master_case/config/routes/app_routes.dart';
 
 import '../../../../config/routes/app_routes.dart';
@@ -17,7 +18,16 @@ class MenuPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: content());
+    return Scaffold(
+      body: content(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const TestPage(),
+            )),
+      ),
+    );
   }
 
   BlocProvider<MenuBloc> content() {
@@ -119,8 +129,8 @@ class MenuPage extends StatelessWidget {
               child: CustomButton(
                 text: 'jugar',
                 function: () {
-                  context.read<MenuBloc>().add(LoadMenuEvent());
-                  // Navigator.popAndPushNamed(context, AppRoutes.game);
+                  // context.read<MenuBloc>().add(LoadMenuEvent());
+                  Navigator.popAndPushNamed(context, AppRoutes.game);
                 },
                 width: 200,
                 height: 50,

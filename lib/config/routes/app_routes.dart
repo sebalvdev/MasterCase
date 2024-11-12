@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../features/extra_pages/presentation/credits_page.dart';
+import '../../features/extra_pages/presentation/pages/credits_page.dart';
 import '../../features/extra_pages/presentation/pages/instructions_page.dart';
 import '../../features/home/presentation/pages/home_page.dart';
 import '../../features/jugability/presentation/pages/jugability_page.dart';
