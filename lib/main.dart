@@ -4,6 +4,9 @@ import 'package:flutter/services.dart';
 
 import 'config/routes/app_routes.dart';
 import 'config/themes/default_theme.dart';
+
+import 'features/home/presentation/pages/home_page.dart';
+
 import 'features/welcome_screen/presentation/pages/welcome_page.dart';
 import 'firebase_options.dart';
 // import 'features/home/presentation/pages/home_page.dart';
