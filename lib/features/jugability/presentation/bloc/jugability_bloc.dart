@@ -38,7 +38,7 @@ class JugabilityBloc extends Bloc<JugabilityEvent, JugabilityState> {
 
     on<NextRound>((event, emit) async {
       emit(JugabilityLoading());
-      
+
       try {
         final result = await nextInfoRound.call(next_info_round.Params(month: event.actualMonth));
 

@@ -16,7 +16,9 @@ class JugabilityPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: LateralMenu(context: context,),
+      drawer: LateralMenu(
+        context: context,
+      ),
       backgroundColor: black,
       body: content(),
     );
@@ -36,8 +38,14 @@ class JugabilityPage extends StatelessWidget {
           if (state is JugabilityInitial) {
             context.read<JugabilityBloc>().add(LoadGameEvent());
           }
-          if(state is JugabilityFinish) {
-            Navigator.pushNamedAndRemoveUntil(context, AppRoutes.menu, (route) => false,);
+          if (state is JugabilityFinish) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              Navigator.pushNamedAndRemoveUntil(
+                context,
+                AppRoutes.menu,
+                (route) => false,
+              );
+            });
           }
           return const Center(
             child: Text('Error en la carga del menu'),
@@ -47,13 +55,15 @@ class JugabilityPage extends StatelessWidget {
     );
   }
 
-  Widget buildForm(BuildContext context, List<MealModel> meals, RoundInfo data) {
+  Widget buildForm(
+      BuildContext context, List<MealModel> meals, RoundInfo data) {
     double imageWith = MediaQuery.of(context).size.width / 3 - 30;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         FlipCard(images: meals, imageWidth: imageWith, month: data.month),
-        bottomInfo(context, data.calories.toString(), data.taxes.toString(), data.month)
+        bottomInfo(context, data.calories.toString(), data.taxes.toString(),
+            data.month)
       ],
     );
   }

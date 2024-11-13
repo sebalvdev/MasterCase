@@ -18,13 +18,18 @@ class JugabilityLocalDataSourceImpl implements JugabilityLocalDataSource {
   SharedPreferences sharedPreferences = sl<SharedPreferences>();
   @override
   Future<RoundInfo> getInfoRound() async {
-    final int calories = Random().nextInt(6) + 1;
-    final int taxes = Random().nextInt(6) + 1;
-    final String month = sharedPreferences.getString(cacheLastMonth)!;
-    final List<MealModel> meals = await getMeals(month);
+    try {
+      final int calories = Random().nextInt(6) + 1;
+      final int taxes = Random().nextInt(6) + 1;
+      final String month = sharedPreferences.getString(cacheLastMonth)!;
+      final List<MealModel> meals = await getMeals(month);
 
-    return RoundInfo(
-        calories: calories, taxes: taxes, month: month, meals: meals);
+      return RoundInfo(
+          calories: calories, taxes: taxes, month: month, meals: meals);
+    } catch (e) {
+      print("Error ene l getinfo: $e");
+      return RoundInfo(calories: 0, taxes: 0, month: 'month', meals: []);
+    }
   }
 
   Future<List<MealModel>> getMeals(String month) async {
@@ -69,23 +74,22 @@ class JugabilityLocalDataSourceImpl implements JugabilityLocalDataSource {
         'Diciembre'
       ];
 
-
       // Recuperar el mes actual desde el caché
-      final String? currentMonth =
-          sharedPreferences.getString('cacheLastMonth');
+      final String? currentMonth = sharedPreferences.getString(cacheLastMonth);
 
       if (currentMonth != null) {
         // Encontrar el índice del mes actual
         int currentIndex = months.indexOf(currentMonth);
+        int nextIndex = (currentIndex + 1);
 
-        if(currentIndex >= months.length){
+        if (nextIndex < months.length) {
+          String nextMonth = months[nextIndex];
+
+          // Guardar el siguiente mes en el caché
+          await sharedPreferences.setString(cacheLastMonth, nextMonth);
+        } else {
           return null;
         }
-        int nextIndex = (currentIndex + 1);
-        String nextMonth = months[nextIndex];
-
-        // Guardar el siguiente mes en el caché
-        await sharedPreferences.setString('cacheLastMonth', nextMonth);
       } else {
         print("No se encontró el mes en el caché.");
       }
