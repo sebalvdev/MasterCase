@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:master_case/features/scanner_qr/domain/usecases/validate_qr_code.dart' as validate_qr_code;
+
+import '../../domain/usecases/validate_qr_code.dart' as validate_qr_code;
 
 part 'scanner_qr_event.dart';
 part 'scanner_qr_state.dart';

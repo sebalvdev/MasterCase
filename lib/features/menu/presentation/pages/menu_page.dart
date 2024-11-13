@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:master_case/features/extra_pages/presentation/test_page.dart';
-// import 'package:master_case/config/routes/app_routes.dart';
+import 'package:master_case/features/extra_pages/presentation/pages/test_page.dart';
 
 import '../../../../config/routes/app_routes.dart';
 import '../../../../core/constants/constants.dart';
@@ -84,8 +83,15 @@ class MenuPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: CustomButton(
                 text: 'Instrucciones',
-                function: () {
+                function: () async {
                   Navigator.pushNamed(context, AppRoutes.instruction);
+                  // JugabilityLocalDataSource localDataSource = sl<JugabilityLocalDataSource>();
+                  // ignore: avoid_print
+                  // final test = await localDataSource.getInfoRound();
+                  // print(test.calories);
+                  // print(test.taxes);
+                  // print(test.month);
+                  // print(test.meals);
                 },
                 width: 200,
                 height: 50,

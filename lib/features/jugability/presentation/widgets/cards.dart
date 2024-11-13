@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../data/model/meal_model.dart';
 import '../bloc/jugability_bloc.dart';
 
 class FlipCard extends StatefulWidget {
-  final List<String> images;
+  final List<MealModel> images;
   final double imageWith;
   final String month;
 
@@ -73,7 +74,7 @@ class _FlipCardDemoState extends State<FlipCard> {
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: Image.asset(
-                            widget.images[index],
+                            widget.images[index].image,
                             fit: BoxFit.contain,
                           ),
                         ),

@@ -19,7 +19,7 @@ class JugabilityRepositoryImpl implements JugabilityRepository{
   @override
   Future<Either<Failure, RoundInfo>> getInfoRound() async {
     try {
-      RoundInfo result = RoundInfo(calories: 0, taxes: 0, month: 'month');
+      RoundInfo result = RoundInfo(calories: 0, taxes: 0, month: 'month', meals: []);
       connection = await InternetConnection().hasInternetAccess;
       // if (connection) {
       //   result = await remoteDataSource.getInfoRound();

@@ -76,7 +76,7 @@ Future<void> init() async {
 
   // ! Feature - Jugability
   // Bloc
-  sl.registerFactory(() => JugabilityBloc());
+  sl.registerFactory(() => JugabilityBloc(getInfoRound: sl()));
 
   // Use Cases
   sl.registerLazySingleton(() => get_info_round.GetInfoRound(repository: sl()));

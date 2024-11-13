@@ -1,0 +1,425 @@
+{
+    "months": [
+      {
+        "month": "Enero",
+        "meals": [
+          {
+            "name": "Comida1",
+            "image": "assets/images/meals/comida1.png",
+            "price": 10
+          },
+          {
+            "name": "Comida2",
+            "image": "assets/images/meals/comida2.png",
+            "price": 20
+          },
+          {
+            "name": "Comida3",
+            "image": "assets/images/meals/comida3.png",
+            "price": 30
+          },
+          {
+            "name": "Comida4",
+            "image": "assets/images/meals/comida4.png",
+            "price": 40
+          },
+          {
+            "name": "Comida5",
+            "image": "assets/images/meals/comida5.png",
+            "price": 50
+          },
+          {
+            "name": "Comida6",
+            "image": "assets/images/meals/comida6.png",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "month": "Febrero",
+        "meals": [
+          {
+            "name": "Comida1",
+            "image": "assets/images/meals/comida1.png",
+            "price": 10
+          },
+          {
+            "name": "Comida2",
+            "image": "assets/images/meals/comida2.png",
+            "price": 20
+          },
+          {
+            "name": "Comida3",
+            "image": "assets/images/meals/comida3.png",
+            "price": 30
+          },
+          {
+            "name": "Comida4",
+            "image": "assets/images/meals/comida4.png",
+            "price": 40
+          },
+          {
+            "name": "Comida5",
+            "image": "assets/images/meals/comida5.png",
+            "price": 50
+          },
+          {
+            "name": "Comida6",
+            "image": "assets/images/meals/comida6.png",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "month": "Marzo",
+        "meals": [
+          {
+            "name": "Comida1",
+            "image": "assets/images/meals/comida1.png",
+            "price": 10
+          },
+          {
+            "name": "Comida2",
+            "image": "assets/images/meals/comida2.png",
+            "price": 20
+          },
+          {
+            "name": "Comida3",
+            "image": "assets/images/meals/comida3.png",
+            "price": 30
+          },
+          {
+            "name": "Comida4",
+            "image": "assets/images/meals/comida4.png",
+            "price": 40
+          },
+          {
+            "name": "Comida5",
+            "image": "assets/images/meals/comida5.png",
+            "price": 50
+          },
+          {
+            "name": "Comida6",
+            "image": "assets/images/meals/comida6.png",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "month": "Abril",
+        "meals": [
+          {
+            "name": "Comida1",
+            "image": "assets/images/meals/comida1.png",
+            "price": 10
+          },
+          {
+            "name": "Comida2",
+            "image": "assets/images/meals/comida2.png",
+            "price": 20
+          },
+          {
+            "name": "Comida3",
+            "image": "assets/images/meals/comida3.png",
+            "price": 30
+          },
+          {
+            "name": "Comida4",
+            "image": "assets/images/meals/comida4.png",
+            "price": 40
+          },
+          {
+            "name": "Comida5",
+            "image": "assets/images/meals/comida5.png",
+            "price": 50
+          },
+          {
+            "name": "Comida6",
+            "image": "assets/images/meals/comida6.png",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "month": "Mayo",
+        "meals": [
+          {
+            "name": "Comida1",
+            "image": "assets/images/meals/comida1.png",
+            "price": 10
+          },
+          {
+            "name": "Comida2",
+            "image": "assets/images/meals/comida2.png",
+            "price": 20
+          },
+          {
+            "name": "Comida3",
+            "image": "assets/images/meals/comida3.png",
+            "price": 30
+          },
+          {
+            "name": "Comida4",
+            "image": "assets/images/meals/comida4.png",
+            "price": 40
+          },
+          {
+            "name": "Comida5",
+            "image": "assets/images/meals/comida5.png",
+            "price": 50
+          },
+          {
+            "name": "Comida6",
+            "image": "assets/images/meals/comida6.png",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "month": "Junio",
+        "meals": [
+          {
+            "name": "Comida1",
+            "image": "assets/images/meals/comida1.png",
+            "price": 10
+          },
+          {
+            "name": "Comida2",
+            "image": "assets/images/meals/comida2.png",
+            "price": 20
+          },
+          {
+            "name": "Comida3",
+            "image": "assets/images/meals/comida3.png",
+            "price": 30
+          },
+          {
+            "name": "Comida4",
+            "image": "assets/images/meals/comida4.png",
+            "price": 40
+          },
+          {
+            "name": "Comida5",
+            "image": "assets/images/meals/comida5.png",
+            "price": 50
+          },
+          {
+            "name": "Comida6",
+            "image": "assets/images/meals/comida6.png",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "month": "Junlio",
+        "meals": [
+          {
+            "name": "Comida1",
+            "image": "assets/images/meals/comida1.png",
+            "price": 10
+          },
+          {
+            "name": "Comida2",
+            "image": "assets/images/meals/comida2.png",
+            "price": 20
+          },
+          {
+            "name": "Comida3",
+            "image": "assets/images/meals/comida3.png",
+            "price": 30
+          },
+          {
+            "name": "Comida4",
+            "image": "assets/images/meals/comida4.png",
+            "price": 40
+          },
+          {
+            "name": "Comida5",
+            "image": "assets/images/meals/comida5.png",
+            "price": 50
+          },
+          {
+            "name": "Comida6",
+            "image": "assets/images/meals/comida6.png",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "month": "Agosto",
+        "meals": [
+          {
+            "name": "Comida1",
+            "image": "assets/images/meals/comida1.png",
+            "price": 10
+          },
+          {
+            "name": "Comida2",
+            "image": "assets/images/meals/comida2.png",
+            "price": 20
+          },
+          {
+            "name": "Comida3",
+            "image": "assets/images/meals/comida3.png",
+            "price": 30
+          },
+          {
+            "name": "Comida4",
+            "image": "assets/images/meals/comida4.png",
+            "price": 40
+          },
+          {
+            "name": "Comida5",
+            "image": "assets/images/meals/comida5.png",
+            "price": 50
+          },
+          {
+            "name": "Comida6",
+            "image": "assets/images/meals/comida6.png",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "month": "Septiembre",
+        "meals": [
+          {
+            "name": "Comida1",
+            "image": "assets/images/meals/comida1.png",
+            "price": 10
+          },
+          {
+            "name": "Comida2",
+            "image": "assets/images/meals/comida2.png",
+            "price": 20
+          },
+          {
+            "name": "Comida3",
+            "image": "assets/images/meals/comida3.png",
+            "price": 30
+          },
+          {
+            "name": "Comida4",
+            "image": "assets/images/meals/comida4.png",
+            "price": 40
+          },
+          {
+            "name": "Comida5",
+            "image": "assets/images/meals/comida5.png",
+            "price": 50
+          },
+          {
+            "name": "Comida6",
+            "image": "assets/images/meals/comida6.png",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "month": "Octubre",
+        "meals": [
+          {
+            "name": "Comida1",
+            "image": "assets/images/meals/comida1.png",
+            "price": 10
+          },
+          {
+            "name": "Comida2",
+            "image": "assets/images/meals/comida2.png",
+            "price": 20
+          },
+          {
+            "name": "Comida3",
+            "image": "assets/images/meals/comida3.png",
+            "price": 30
+          },
+          {
+            "name": "Comida4",
+            "image": "assets/images/meals/comida4.png",
+            "price": 40
+          },
+          {
+            "name": "Comida5",
+            "image": "assets/images/meals/comida5.png",
+            "price": 50
+          },
+          {
+            "name": "Comida6",
+            "image": "assets/images/meals/comida6.png",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "month": "Noviembre",
+        "meals": [
+          {
+            "name": "Comida1",
+            "image": "assets/images/meals/comida1.png",
+            "price": 10
+          },
+          {
+            "name": "Comida2",
+            "image": "assets/images/meals/comida2.png",
+            "price": 20
+          },
+          {
+            "name": "Comida3",
+            "image": "assets/images/meals/comida3.png",
+            "price": 30
+          },
+          {
+            "name": "Comida4",
+            "image": "assets/images/meals/comida4.png",
+            "price": 40
+          },
+          {
+            "name": "Comida5",
+            "image": "assets/images/meals/comida5.png",
+            "price": 50
+          },
+          {
+            "name": "Comida6",
+            "image": "assets/images/meals/comida6.png",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "month": "Diciembre",
+        "meals": [
+          {
+            "name": "Comida1",
+            "image": "assets/images/meals/comida1.png",
+            "price": 10
+          },
+          {
+            "name": "Comida2",
+            "image": "assets/images/meals/comida2.png",
+            "price": 20
+          },
+          {
+            "name": "Comida3",
+            "image": "assets/images/meals/comida3.png",
+            "price": 30
+          },
+          {
+            "name": "Comida4",
+            "image": "assets/images/meals/comida4.png",
+            "price": 40
+          },
+          {
+            "name": "Comida5",
+            "image": "assets/images/meals/comida5.png",
+            "price": 50
+          },
+          {
+            "name": "Comida6",
+            "image": "assets/images/meals/comida6.png",
+            "price": 60
+          }
+        ]
+      }
+    ]
+  }
+  
