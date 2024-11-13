@@ -8,7 +8,7 @@ class MealModel extends Meal {
   MealModel({
     required super.name,
     required super.image,
-    required super.price,
+    required super.value,
   });
 
   // Crear un objeto MealModel a partir de JSON
@@ -16,7 +16,7 @@ class MealModel extends Meal {
     return MealModel(
       name: json['name'] as String,
       image: json['image'] as String,
-      price: json['price'] as int,
+      value: json['value'] as int,
     );
   }
 
@@ -25,7 +25,7 @@ class MealModel extends Meal {
     return {
       'name': name,
       'image': image,
-      'price': price,
+      'value': value,
     };
   }
 }

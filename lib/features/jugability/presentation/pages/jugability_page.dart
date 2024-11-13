@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:master_case/core/constants/color_constants.dart';
 import 'package:master_case/features/jugability/data/model/meal_model.dart';
 
+import '../../../../config/routes/app_routes.dart';
 import '../../../../injection_container.dart';
 import '../../domain/entities/round_info.dart';
 import '../bloc/jugability_bloc.dart';
@@ -35,6 +36,9 @@ class JugabilityPage extends StatelessWidget {
           if (state is JugabilityInitial) {
             context.read<JugabilityBloc>().add(LoadGameEvent());
           }
+          if(state is JugabilityFinish) {
+            Navigator.pushNamedAndRemoveUntil(context, AppRoutes.menu, (route) => false,);
+          }
           return const Center(
             child: Text('Error en la carga del menu'),
           );
@@ -48,8 +52,7 @@ class JugabilityPage extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        FlipCard(images: meals,
-        imageWith: imageWith, month: data.month,),
+        FlipCard(images: meals, imageWidth: imageWith, month: data.month),
         bottomInfo(context, data.calories.toString(), data.taxes.toString(), data.month)
       ],
     );

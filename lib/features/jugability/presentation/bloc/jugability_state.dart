@@ -15,7 +15,7 @@ final class JugabilityLoaded extends JugabilityState {
   final RoundInfo roundInfo;
 
   const JugabilityLoaded({required this.roundInfo});
-
 }
+final class JugabilityFinish extends JugabilityState {}
 
 final class JugabilityFailure extends JugabilityState {}

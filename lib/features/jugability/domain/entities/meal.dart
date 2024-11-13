@@ -1,7 +1,7 @@
 class Meal {
   final String name;
   final String image;
-  final int price;
+  final int value;
 
-  Meal({required this.name, required this.image, required this.price});
+  Meal({required this.name, required this.image, required this.value});
 }

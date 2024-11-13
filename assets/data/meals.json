@@ -4,34 +4,19 @@
         "month": "Enero",
         "meals": [
           {
-            "name": "Comida1",
-            "image": "assets/images/meals/comida1.png",
-            "price": 10
+            "name": "Pollo Broast",
+            "image": "assets/images/meals/pollo.png",
+            "value": 80
           },
           {
-            "name": "Comida2",
-            "image": "assets/images/meals/comida2.png",
-            "price": 20
+            "name": "Gelatina de patas",
+            "image": "assets/images/meals/gelatina.png",
+            "value": 90
           },
           {
-            "name": "Comida3",
-            "image": "assets/images/meals/comida3.png",
-            "price": 30
-          },
-          {
-            "name": "Comida4",
-            "image": "assets/images/meals/comida4.png",
-            "price": 40
-          },
-          {
-            "name": "Comida5",
-            "image": "assets/images/meals/comida5.png",
-            "price": 50
-          },
-          {
-            "name": "Comida6",
-            "image": "assets/images/meals/comida6.png",
-            "price": 60
+            "name": "Salchipapa",
+            "image": "assets/images/meals/salchipapa.png",
+            "value": 70
           }
         ]
       },
@@ -39,34 +24,19 @@
         "month": "Febrero",
         "meals": [
           {
-            "name": "Comida1",
-            "image": "assets/images/meals/comida1.png",
-            "price": 10
+            "name": "Salchipapa",
+            "image": "assets/images/meals/salchipapa.png",
+            "value": 70
           },
           {
-            "name": "Comida2",
-            "image": "assets/images/meals/comida2.png",
-            "price": 20
+            "name": "Pique",
+            "image": "assets/images/meals/pique.png",
+            "value": 10
           },
           {
-            "name": "Comida3",
-            "image": "assets/images/meals/comida3.png",
-            "price": 30
-          },
-          {
-            "name": "Comida4",
-            "image": "assets/images/meals/comida4.png",
-            "price": 40
-          },
-          {
-            "name": "Comida5",
-            "image": "assets/images/meals/comida5.png",
-            "price": 50
-          },
-          {
-            "name": "Comida6",
-            "image": "assets/images/meals/comida6.png",
-            "price": 60
+            "name": "Sopa de mani",
+            "image": "assets/images/meals/sopa.png",
+            "value": 30
           }
         ]
       },
@@ -74,34 +44,14 @@
         "month": "Marzo",
         "meals": [
           {
-            "name": "Comida1",
-            "image": "assets/images/meals/comida1.png",
-            "price": 10
+            "name": "Gelatina de patas",
+            "image": "assets/images/meals/gelatina.png",
+            "value": 90
           },
           {
-            "name": "Comida2",
-            "image": "assets/images/meals/comida2.png",
-            "price": 20
-          },
-          {
-            "name": "Comida3",
-            "image": "assets/images/meals/comida3.png",
-            "price": 30
-          },
-          {
-            "name": "Comida4",
-            "image": "assets/images/meals/comida4.png",
-            "price": 40
-          },
-          {
-            "name": "Comida5",
-            "image": "assets/images/meals/comida5.png",
-            "price": 50
-          },
-          {
-            "name": "Comida6",
-            "image": "assets/images/meals/comida6.png",
-            "price": 60
+            "name": "Salchipapa",
+            "image": "assets/images/meals/salchipapa.png",
+            "value": 70
           }
         ]
       },
@@ -109,34 +59,19 @@
         "month": "Abril",
         "meals": [
           {
-            "name": "Comida1",
-            "image": "assets/images/meals/comida1.png",
-            "price": 10
+            "name": "Pollo Broast",
+            "image": "assets/images/meals/pollo.png",
+            "value": 80
           },
           {
-            "name": "Comida2",
-            "image": "assets/images/meals/comida2.png",
-            "price": 20
+            "name": "Gelatina de patas",
+            "image": "assets/images/meals/gelatina.png",
+            "value": 90
           },
           {
-            "name": "Comida3",
-            "image": "assets/images/meals/comida3.png",
-            "price": 30
-          },
-          {
-            "name": "Comida4",
-            "image": "assets/images/meals/comida4.png",
-            "price": 40
-          },
-          {
-            "name": "Comida5",
-            "image": "assets/images/meals/comida5.png",
-            "price": 50
-          },
-          {
-            "name": "Comida6",
-            "image": "assets/images/meals/comida6.png",
-            "price": 60
+            "name": "Salchipapa",
+            "image": "assets/images/meals/salchipapa.png",
+            "value": 70
           }
         ]
       },
@@ -144,34 +79,24 @@
         "month": "Mayo",
         "meals": [
           {
-            "name": "Comida1",
-            "image": "assets/images/meals/comida1.png",
-            "price": 10
+            "name": "Pollo Broast",
+            "image": "assets/images/meals/pollo.png",
+            "value": 80
           },
           {
-            "name": "Comida2",
-            "image": "assets/images/meals/comida2.png",
-            "price": 20
+            "name": "Gelatina de patas",
+            "image": "assets/images/meals/gelatina.png",
+            "value": 90
           },
           {
-            "name": "Comida3",
-            "image": "assets/images/meals/comida3.png",
-            "price": 30
+            "name": "Salchipapa",
+            "image": "assets/images/meals/salchipapa.png",
+            "value": 70
           },
           {
-            "name": "Comida4",
-            "image": "assets/images/meals/comida4.png",
-            "price": 40
-          },
-          {
-            "name": "Comida5",
-            "image": "assets/images/meals/comida5.png",
-            "price": 50
-          },
-          {
-            "name": "Comida6",
-            "image": "assets/images/meals/comida6.png",
-            "price": 60
+            "name": "Pique",
+            "image": "assets/images/meals/pique.png",
+            "value": 10
           }
         ]
       },
@@ -179,34 +104,29 @@
         "month": "Junio",
         "meals": [
           {
-            "name": "Comida1",
-            "image": "assets/images/meals/comida1.png",
-            "price": 10
+            "name": "Pollo Broast",
+            "image": "assets/images/meals/pollo.png",
+            "value": 80
           },
           {
-            "name": "Comida2",
-            "image": "assets/images/meals/comida2.png",
-            "price": 20
+            "name": "Gelatina de patas",
+            "image": "assets/images/meals/gelatina.png",
+            "value": 90
           },
           {
-            "name": "Comida3",
-            "image": "assets/images/meals/comida3.png",
-            "price": 30
+            "name": "Salchipapa",
+            "image": "assets/images/meals/salchipapa.png",
+            "value": 70
           },
           {
-            "name": "Comida4",
-            "image": "assets/images/meals/comida4.png",
-            "price": 40
+            "name": "Pique",
+            "image": "assets/images/meals/pique.png",
+            "value": 10
           },
           {
-            "name": "Comida5",
-            "image": "assets/images/meals/comida5.png",
-            "price": 50
-          },
-          {
-            "name": "Comida6",
-            "image": "assets/images/meals/comida6.png",
-            "price": 60
+            "name": "Sopa de mani",
+            "image": "assets/images/meals/sopa.png",
+            "value": 30
           }
         ]
       },
@@ -214,34 +134,14 @@
         "month": "Junlio",
         "meals": [
           {
-            "name": "Comida1",
-            "image": "assets/images/meals/comida1.png",
-            "price": 10
+            "name": "Pollo Broast",
+            "image": "assets/images/meals/pollo.png",
+            "value": 80
           },
           {
-            "name": "Comida2",
-            "image": "assets/images/meals/comida2.png",
-            "price": 20
-          },
-          {
-            "name": "Comida3",
-            "image": "assets/images/meals/comida3.png",
-            "price": 30
-          },
-          {
-            "name": "Comida4",
-            "image": "assets/images/meals/comida4.png",
-            "price": 40
-          },
-          {
-            "name": "Comida5",
-            "image": "assets/images/meals/comida5.png",
-            "price": 50
-          },
-          {
-            "name": "Comida6",
-            "image": "assets/images/meals/comida6.png",
-            "price": 60
+            "name": "Sopa de mani",
+            "image": "assets/images/meals/sopa.png",
+            "value": 30
           }
         ]
       },
@@ -249,34 +149,19 @@
         "month": "Agosto",
         "meals": [
           {
-            "name": "Comida1",
-            "image": "assets/images/meals/comida1.png",
-            "price": 10
+            "name": "Gelatina de patas",
+            "image": "assets/images/meals/gelatina.png",
+            "value": 90
           },
           {
-            "name": "Comida2",
-            "image": "assets/images/meals/comida2.png",
-            "price": 20
+            "name": "Salchipapa",
+            "image": "assets/images/meals/salchipapa.png",
+            "value": 70
           },
           {
-            "name": "Comida3",
-            "image": "assets/images/meals/comida3.png",
-            "price": 30
-          },
-          {
-            "name": "Comida4",
-            "image": "assets/images/meals/comida4.png",
-            "price": 40
-          },
-          {
-            "name": "Comida5",
-            "image": "assets/images/meals/comida5.png",
-            "price": 50
-          },
-          {
-            "name": "Comida6",
-            "image": "assets/images/meals/comida6.png",
-            "price": 60
+            "name": "Pique",
+            "image": "assets/images/meals/pique.png",
+            "value": 10
           }
         ]
       },
@@ -284,34 +169,29 @@
         "month": "Septiembre",
         "meals": [
           {
-            "name": "Comida1",
-            "image": "assets/images/meals/comida1.png",
-            "price": 10
+            "name": "Pollo Broast",
+            "image": "assets/images/meals/pollo.png",
+            "value": 80
           },
           {
-            "name": "Comida2",
-            "image": "assets/images/meals/comida2.png",
-            "price": 20
+            "name": "Gelatina de patas",
+            "image": "assets/images/meals/gelatina.png",
+            "value": 90
           },
           {
-            "name": "Comida3",
-            "image": "assets/images/meals/comida3.png",
-            "price": 30
+            "name": "Salchipapa",
+            "image": "assets/images/meals/salchipapa.png",
+            "value": 70
           },
           {
-            "name": "Comida4",
-            "image": "assets/images/meals/comida4.png",
-            "price": 40
+            "name": "Pique",
+            "image": "assets/images/meals/pique.png",
+            "value": 10
           },
           {
-            "name": "Comida5",
-            "image": "assets/images/meals/comida5.png",
-            "price": 50
-          },
-          {
-            "name": "Comida6",
-            "image": "assets/images/meals/comida6.png",
-            "price": 60
+            "name": "Sopa de mani",
+            "image": "assets/images/meals/sopa.png",
+            "value": 30
           }
         ]
       },
@@ -319,34 +199,24 @@
         "month": "Octubre",
         "meals": [
           {
-            "name": "Comida1",
-            "image": "assets/images/meals/comida1.png",
-            "price": 10
+            "name": "Pollo Broast",
+            "image": "assets/images/meals/pollo.png",
+            "value": 80
           },
           {
-            "name": "Comida2",
-            "image": "assets/images/meals/comida2.png",
-            "price": 20
+            "name": "Gelatina de patas",
+            "image": "assets/images/meals/gelatina.png",
+            "value": 90
           },
           {
-            "name": "Comida3",
-            "image": "assets/images/meals/comida3.png",
-            "price": 30
+            "name": "Salchipapa",
+            "image": "assets/images/meals/salchipapa.png",
+            "value": 70
           },
           {
-            "name": "Comida4",
-            "image": "assets/images/meals/comida4.png",
-            "price": 40
-          },
-          {
-            "name": "Comida5",
-            "image": "assets/images/meals/comida5.png",
-            "price": 50
-          },
-          {
-            "name": "Comida6",
-            "image": "assets/images/meals/comida6.png",
-            "price": 60
+            "name": "Pique",
+            "image": "assets/images/meals/pique.png",
+            "value": 10
           }
         ]
       },
@@ -354,34 +224,24 @@
         "month": "Noviembre",
         "meals": [
           {
-            "name": "Comida1",
-            "image": "assets/images/meals/comida1.png",
-            "price": 10
+            "name": "Pollo Broast",
+            "image": "assets/images/meals/pollo.png",
+            "value": 80
           },
           {
-            "name": "Comida2",
-            "image": "assets/images/meals/comida2.png",
-            "price": 20
+            "name": "Gelatina de patas",
+            "image": "assets/images/meals/gelatina.png",
+            "value": 90
           },
           {
-            "name": "Comida3",
-            "image": "assets/images/meals/comida3.png",
-            "price": 30
+            "name": "Pique",
+            "image": "assets/images/meals/pique.png",
+            "value": 10
           },
           {
-            "name": "Comida4",
-            "image": "assets/images/meals/comida4.png",
-            "price": 40
-          },
-          {
-            "name": "Comida5",
-            "image": "assets/images/meals/comida5.png",
-            "price": 50
-          },
-          {
-            "name": "Comida6",
-            "image": "assets/images/meals/comida6.png",
-            "price": 60
+            "name": "Sopa de mani",
+            "image": "assets/images/meals/sopa.png",
+            "value": 30
           }
         ]
       },
@@ -389,34 +249,64 @@
         "month": "Diciembre",
         "meals": [
           {
-            "name": "Comida1",
-            "image": "assets/images/meals/comida1.png",
-            "price": 10
+            "name": "Pollo Broast",
+            "image": "assets/images/meals/pollo.png",
+            "value": 80
           },
           {
-            "name": "Comida2",
-            "image": "assets/images/meals/comida2.png",
-            "price": 20
+            "name": "Sopa de mani",
+            "image": "assets/images/meals/sopa.png",
+            "value": 30
+          }
+        ]
+      },
+      {
+        "month": "Extra",
+        "meals": [
+          {
+            "name": "Pollo Broast",
+            "image": "assets/images/meals/pollo.png",
+            "value": 80
           },
           {
-            "name": "Comida3",
-            "image": "assets/images/meals/comida3.png",
-            "price": 30
+            "name": "Gelatina de patas",
+            "image": "assets/images/meals/gelatina.png",
+            "value": 90
           },
           {
-            "name": "Comida4",
-            "image": "assets/images/meals/comida4.png",
-            "price": 40
+            "name": "Salchipapa",
+            "image": "assets/images/meals/salchipapa.png",
+            "value": 70
           },
           {
-            "name": "Comida5",
-            "image": "assets/images/meals/comida5.png",
-            "price": 50
+            "name": "Pique",
+            "image": "assets/images/meals/pique.png",
+            "value": 10
           },
           {
-            "name": "Comida6",
-            "image": "assets/images/meals/comida6.png",
-            "price": 60
+            "name": "Silpancho",
+            "image": "assets/images/meals/silpancho.png",
+            "value": 20
+          },
+          {
+            "name": "Arroz con huevo",
+            "image": "assets/images/meals/arroz.png",
+            "value": 60
+          },
+          {
+            "name": "Relleno de papa",
+            "image": "assets/images/meals/relleno.png",
+            "value": 40
+          },
+          {
+            "name": "Sopa de mani",
+            "image": "assets/images/meals/sopa.png",
+            "value": 30
+          },
+          {
+            "name": "Salteña",
+            "image": "assets/images/meals/salteña.png",
+            "value": 50
           }
         ]
       }
