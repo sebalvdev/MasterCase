@@ -4,13 +4,9 @@ import 'package:flutter/services.dart';
 
 import 'config/routes/app_routes.dart';
 import 'config/themes/default_theme.dart';
-
-import 'features/home/presentation/pages/home_page.dart';
-
 import 'features/welcome_screen/presentation/pages/welcome_page.dart';
 import 'firebase_options.dart';
-// import 'features/home/presentation/pages/home_page.dart';
-// import 'features/menu/presentation/pages/menu_page.dart';
+
 import 'injection_container.dart' as dependencies;
 
 Future<void> main() async {
@@ -38,8 +34,6 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: AppRoutes.onGenerateRoutes,
       title: 'Master Case App',
       theme: defaultTheme(),
-      // home: const WelcomePage(),
-      // home: const MenuPage(),
       // tiene que mostrarse directamente la pagina de cocina si esta logueado
       home: const WelcomePage(),
     );

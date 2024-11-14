@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 class Utilities {
@@ -11,14 +13,17 @@ class Utilities {
       final response = await http.get(
         Uri.parse(apiUrl),
         headers: {
-          'X-Api-Key': 'YOUR_API_KEY', // Coloca aquí tu API Key
+          'X-Api-Key': 'FQ9x5e/6oldkpVD+QVmEbQ==tJyBX6gdDAniP5aG', // Coloca aquí tu API Key
         },
       );
 
       // Verifica el código de estado de la respuesta
       if (response.statusCode == 200) {
         // Devuelve el texto de la respuesta en caso de éxito
-        return response.body;
+
+        final Map<String, dynamic> jsonResponse = json.decode(response.body);
+        return jsonResponse['text'] ?? 'Texto no encontrado';
+        // return response.body;
       } else {
         // Devuelve un mensaje de error si la solicitud falla
         return 'Error: ${response.statusCode} - ${response.reasonPhrase}';
