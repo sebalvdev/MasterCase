@@ -20,7 +20,17 @@ class JugabilityPage extends StatelessWidget {
         context: context,
       ),
       backgroundColor: black,
-      body: content(),
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/fondo.png',
+              fit: BoxFit.cover,
+            ),
+          ),
+          content(),
+        ],
+      ),
     );
   }
 
@@ -42,7 +52,7 @@ class JugabilityPage extends StatelessWidget {
             WidgetsBinding.instance.addPostFrameCallback((_) {
               Navigator.pushNamedAndRemoveUntil(
                 context,
-                AppRoutes.menu,
+                AppRoutes.gameOver,
                 (route) => false,
               );
             });

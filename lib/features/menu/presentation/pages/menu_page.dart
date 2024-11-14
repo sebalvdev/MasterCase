@@ -18,7 +18,17 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: content(),
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/fondo.png',
+              fit: BoxFit.cover,
+            ),
+          ),
+          content(),
+        ],
+      ),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: () => Navigator.push(
       //       context,
@@ -64,7 +74,7 @@ class MenuPage extends StatelessWidget {
 
   Widget buildForm(BuildContext context) {
     // double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height / 4;
+    // double screenHeight = MediaQuery.of(context).size.height / 4;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -72,9 +82,9 @@ class MenuPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // ElevatedButton(onPressed: () {}, child: const Text('opciones'),),
-            SizedBox(
-              height: screenHeight,
-            ),
+            // SizedBox(
+            //   height: screenHeight,
+            // ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: CustomButton(
