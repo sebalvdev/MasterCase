@@ -11,7 +11,7 @@ class WelcomePage extends StatelessWidget {
           // Imagen de fondo
           Positioned.fill(
             child: Image.asset(
-              'assets/images/mosaico_elementos_cocina.jpg', // Asegúrate de tener esta imagen en tu carpeta de assets
+              'assets/images/cocina.jpg', // Asegúrate de tener esta imagen en tu carpeta de assets
               fit: BoxFit.cover,
             ),
           ),
