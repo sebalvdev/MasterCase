@@ -23,6 +23,7 @@ import 'features/login/domain/usecases/verify_box.dart' as verify_box;
 import 'features/menu/presentation/bloc/menu_bloc.dart';
 import 'features/jugability/domain/usecases/get_info_round.dart' as get_info_round;
 import 'features/jugability/domain/usecases/next_info_round.dart' as next_info_round;
+import 'features/name_players/presentation/bloc/names_bloc.dart';
 import 'firebase_options.dart';
 
 final sl = GetIt.instance;
@@ -68,6 +69,16 @@ Future<void> init() async {
   // ! Feature - Menu
   // Bloc
   sl.registerFactory(() => MenuBloc());
+
+  // Use Cases
+
+  // Repository
+
+  // Data Sources
+  
+  // ! Feature - GetNames
+  // Bloc
+  sl.registerFactory(() => NamesBloc());
 
   // Use Cases
 
