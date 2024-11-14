@@ -77,25 +77,37 @@ class JugabilityLocalDataSourceImpl implements JugabilityLocalDataSource {
       // Recuperar el mes actual desde el caché
       final String? currentMonth = sharedPreferences.getString(cacheLastMonth);
 
+      // Recuperar la duración desde el caché
+      final double? duration = sharedPreferences.getDouble(cacheDuration);
+
       if (currentMonth != null) {
         // Encontrar el índice del mes actual
         int currentIndex = months.indexOf(currentMonth);
-        int nextIndex = (currentIndex + 1);
 
-        if (nextIndex < months.length) {
-          String nextMonth = months[nextIndex];
+        // Determinar el límite máximo en función de la duración
+        int maxIndex = duration == 0.5
+            ? (months.length / 2).floor() - 1
+            : months.length - 1;
 
-          // Guardar el siguiente mes en el caché
-          await sharedPreferences.setString(cacheLastMonth, nextMonth);
-        } else {
+        // Verificar si se ha alcanzado el último mes permitido
+        if (currentIndex >= maxIndex) {
+          // Retornar null al final de la lista, según la duración
           return null;
         }
+
+        // Calcular el índice del próximo mes
+        int nextIndex = currentIndex + 1;
+        String nextMonth = months[nextIndex];
+
+        // Guardar el siguiente mes en el caché
+        await sharedPreferences.setString(cacheLastMonth, nextMonth);
       } else {
         print("No se encontró el mes en el caché.");
       }
     } catch (e) {
-      print('Error en nextmonth: $e');
+      print('Error en nextInfoRound: $e');
     }
+
     return getInfoRound();
   }
 }
