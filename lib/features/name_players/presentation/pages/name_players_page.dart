@@ -77,7 +77,7 @@ class NamePlayersPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10),
               child: CustomeInput(
-                controller: nameController1,
+                controller: nameController2,
                 hintText: 'Jugador 2',
                 fontSize: h2,
               ),
@@ -86,7 +86,7 @@ class NamePlayersPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: CustomeInput(
-                  controller: nameController1,
+                  controller: nameController3,
                   hintText: 'Jugador 3',
                   fontSize: h2,
                 ),
@@ -102,6 +102,18 @@ class NamePlayersPage extends StatelessWidget {
                 backColor: green,
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: CustomButton(
+                text: 'volver',
+                function: () => Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  AppRoutes.menu,
+                  (route) => false,
+                ),
+                backColor: red,
+              ),
+            ),
           ],
         ),
       ),
@@ -109,6 +121,34 @@ class NamePlayersPage extends StatelessWidget {
   }
 
   void controlNames(BuildContext context) {
-    context.read<NamesBloc>().add(const StartGameEvent(players: []));
+    final name1 = nameController1.text;
+    final name2 = nameController2.text;
+    final name3 = nameController3.text;
+
+    if (numberPlayers != 2) {
+      if (name1.isNotEmpty && name2.isNotEmpty && name3.isNotEmpty) {
+        context.read<NamesBloc>().add(StartGameEvent(players: [name1]));
+      } else {
+        _showSnackBar(context, "Debe llenar todos los campos.");
+      }
+    } else {
+      if (name1.isNotEmpty && name2.isNotEmpty) {
+        context.read<NamesBloc>().add(const StartGameEvent(players: []));
+      } else {
+        _showSnackBar(context, "Debe llenar todos los campos.");
+      }
+    }
+  }
+
+  void _showSnackBar(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).hideCurrentSnackBar();
+    final snackBar = SnackBar(
+      duration: const Duration(seconds: 2),
+      content: Text(message),
+      backgroundColor: Colors.red,
+      behavior: SnackBarBehavior.floating,
+    );
+
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }
