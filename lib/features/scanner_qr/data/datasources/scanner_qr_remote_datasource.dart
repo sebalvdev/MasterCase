@@ -24,10 +24,8 @@ class ScannerQrRemoteDataSourceImpl implements ScannerQrRemoteDataSource {
           .get();
 
       final maxDevicesNumber = gameRules.data()!['max_devices'];
-      print('Max Devices: $maxDevicesNumber');
 
       if (maxDevicesNumber == null) {
-        print('El campo max_devices es null');
         return false; // O maneja el caso de acuerdo a tu lógica
       } else {
         if (actualDevicesNumber >= maxDevicesNumber) {

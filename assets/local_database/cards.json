@@ -1,1 +1,22 @@
-[]
+[
+    {
+        "food_dish_name": "Pique",
+        "ingredients": "papa embutidos carne",
+        "food_dish_image": "assets/images/cocina.jpg" 
+    },
+    {
+        "food_dish_name": "Silpancho",
+        "ingredients": "papa huevo carne",
+        "food_dish_image": "assets/images/cocina.jpg" 
+    },
+    {
+        "food_dish_name": "Gelatina de pata",
+        "ingredients": "hueso carne",
+        "food_dish_image": "assets/images/cocina.jpg" 
+    },
+    {
+        "food_dish_name": "Pollo a la broaster",
+        "ingredients": "carne harina papa",
+        "food_dish_image": "assets/images/cocina.jpg" 
+    }
+]
