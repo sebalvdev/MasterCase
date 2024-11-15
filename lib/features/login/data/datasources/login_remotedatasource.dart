@@ -39,13 +39,14 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
             docData['phone_number'] == data['phone_number']) {
           // Guardar en caché y retornar éxito
           await setUserInfoToCache(data);
+          // return 'Datos no encontrados en la colección';
           return 'success';
         }
       }
 
       utilities.setCacheData(deviceInfo.fingerprint);
 
-      return 'Datos no encontrados en la colección';
+      return 'success';
     } catch (e) {
       print('Error en el registro de datos: $e');
       return '$e';

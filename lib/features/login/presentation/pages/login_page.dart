@@ -28,13 +28,15 @@ class LoginPage extends StatelessWidget {
           if (state is LoginLoading) return const Center(child: CircularProgressIndicator());
           if (state is LoginSuccess) {
             WidgetsBinding.instance.addPostFrameCallback((_) async {
-              await resultDialog(context, state.register, state.message);
+              // await resultDialog(context, state.register, state.message);
               if (state.register) {
                 // ignore: use_build_context_synchronously
-                Navigator.pushNamedAndRemoveUntil(context, '/qr_scanner', (route) => false,);
+                Navigator.pushNamed(context, '/qr_scanner');
                 // Navigator.pop(context,
                 //     true); // Vuelve a la pantalla anterior si el QR es válido
               } else {
+                // ignore: use_build_context_synchronously
+                _showSnackBar(context, state.message);
                 // state.register =
                 //     true; // Habilita el escaneo de nuevo si no es válido
               }
