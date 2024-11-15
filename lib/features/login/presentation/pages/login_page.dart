@@ -62,7 +62,7 @@ class LoginPage extends StatelessWidget {
             // phoneInput(),
             CustomInputField(
               controller: phoneController,
-              hintText: '# de celular',
+              hintText: 'Numero de celular',
               fontSize: h2,
               icon: Icons.numbers_outlined,
               keyboardType: TextInputType.number,
@@ -102,7 +102,7 @@ class LoginPage extends StatelessWidget {
           }
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.black,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
