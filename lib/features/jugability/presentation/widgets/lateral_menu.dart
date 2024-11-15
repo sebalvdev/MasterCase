@@ -15,20 +15,36 @@ class LateralMenu extends StatefulWidget {
 
 class _LateralMenuState extends State<LateralMenu> {
   Map<String, dynamic> userInfo = {};
-
   String selectedAvatar = "";
+
+  // Cargar todos los recursos necesarios, como la imagen, antes de construir el widget
+  Future<void> _loadResources() async {
+    await precacheImage(const AssetImage('assets/images/reverso.jpg'), context);
+    // Puedes cargar otros recursos aquí si es necesario
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      backgroundColor: white,
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          const SizedBox(height: 30),
-          buttons(context),
-        ],
-      ),
+    return FutureBuilder(
+      future: _loadResources(),
+      builder: (context, snapshot) {
+        // Muestra un indicador de carga mientras se esperan los recursos
+        if (snapshot.connectionState != ConnectionState.done) {
+          return const Center(child: CircularProgressIndicator());
+        }
+
+        // Construye el Drawer una vez que los recursos están cargados
+        return Drawer(
+          backgroundColor: white,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              const SizedBox(height: 30),
+              buttons(context),
+            ],
+          ),
+        );
+      },
     );
   }
 }
