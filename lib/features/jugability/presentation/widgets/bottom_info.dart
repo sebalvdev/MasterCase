@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'widgets.dart';
 
-SizedBox bottomInfo(BuildContext context, String month) {
-  const String calories = '6';
-  const String taxes = '5';
+SizedBox bottomInfo(BuildContext context, String calories, String taxes, String month) {
 
   List<Map<String, dynamic>> infoList = [
     {'title': 'Calorias', 'info': 'Esta ronda debes consumir la siguiente cantidad de calorias en ingredientes o platos cocinados: '},
@@ -44,9 +42,9 @@ SizedBox bottomInfo(BuildContext context, String month) {
                     borderRadius: BorderRadius.circular(15),
                   ),
                 ),
-                child: const Column(
+                child: Column(
                   children: [
-                    Text(
+                    const Text(
                       'Calorias',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
@@ -67,9 +65,9 @@ SizedBox bottomInfo(BuildContext context, String month) {
                     borderRadius: BorderRadius.circular(15),
                   ),
                 ),
-                child: const Column(
+                child: Column(
                   children: [
-                    Text(
+                    const Text(
                       'Impuestos',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),

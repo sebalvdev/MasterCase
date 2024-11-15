@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:master_case/core/constants/color_constants.dart';
+import 'package:master_case/features/jugability/data/model/meal_model.dart';
 
+import '../../../../config/routes/app_routes.dart';
 import '../../../../injection_container.dart';
+import '../../domain/entities/round_info.dart';
 import '../bloc/jugability_bloc.dart';
 import '../widgets/lateral_menu.dart';
 import '../widgets/widgets.dart';
@@ -13,9 +16,21 @@ class JugabilityPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: LateralMenu(context: context,),
+      drawer: LateralMenu(
+        context: context,
+      ),
       backgroundColor: black,
-      body: content(),
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/fondo.png',
+              fit: BoxFit.cover,
+            ),
+          ),
+          content(),
+        ],
+      ),
     );
   }
 
@@ -28,10 +43,19 @@ class JugabilityPage extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           }
           if (state is JugabilityLoaded) {
-            return buildForm(context, state.menu, state.month);
+            return buildForm(context, state.roundInfo.meals, state.roundInfo);
           }
           if (state is JugabilityInitial) {
             context.read<JugabilityBloc>().add(LoadGameEvent());
+          }
+          if (state is JugabilityFinish) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              Navigator.pushNamedAndRemoveUntil(
+                context,
+                AppRoutes.gameOver,
+                (route) => false,
+              );
+            });
           }
           return const Center(
             child: Text('Error en la carga del menu'),
@@ -41,19 +65,20 @@ class JugabilityPage extends StatelessWidget {
     );
   }
 
-  Widget buildForm(BuildContext context, List<String> menu, String month) {
+  Widget buildForm(
+      BuildContext context, List<MealModel> meals, RoundInfo data) {
     double imageWith = MediaQuery.of(context).size.width / 3 - 30;
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Stack(
       children: [
-        FlipCard(images: menu,
-        // FlipCard(images: const [
-        //   'assets/images/cocina.jpg',
-        //   'assets/images/cocina.jpg',
-        //   'assets/images/cocina.jpg'
-        // ],
-        imageWith: imageWith, month: month,),
-        bottomInfo(context, month)
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FlipCard(images: meals, imageWidth: imageWith, month: data.month),
+            bottomInfo(context, data.calories.toString(), data.taxes.toString(),
+                data.month)
+          ],
+        ),
+        names(),
       ],
     );
   }

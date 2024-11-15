@@ -12,10 +12,10 @@ final class JugabilityInitial extends JugabilityState {}
 final class JugabilityLoading extends JugabilityState {}
 
 final class JugabilityLoaded extends JugabilityState {
-  final List<String> menu;
-  final String month;
+  final RoundInfo roundInfo;
 
-  const JugabilityLoaded({required this.menu, required this.month});
+  const JugabilityLoaded({required this.roundInfo});
 }
+final class JugabilityFinish extends JugabilityState {}
 
 final class JugabilityFailure extends JugabilityState {}

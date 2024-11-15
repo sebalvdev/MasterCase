@@ -48,7 +48,7 @@ class WelcomePage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       // Navegar a la siguiente pantalla
-                      Navigator.of(context).pushNamed('/qr_scanner');
+                      Navigator.of(context).pushNamed('/login');
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,

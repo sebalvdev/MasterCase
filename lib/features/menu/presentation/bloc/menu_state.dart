@@ -15,4 +15,11 @@ final class MenuLoaded extends MenuState {}
 
 final class SecondMenuLoaded extends MenuState {}
 
+final class GetNames extends MenuState {
+  final double duration;
+  final int players;
+
+  const GetNames({required this.duration, required this.players});
+}
+
 final class MenuFailure extends MenuState {}
