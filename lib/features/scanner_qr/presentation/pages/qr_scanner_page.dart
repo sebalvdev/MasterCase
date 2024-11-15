@@ -1,4 +1,4 @@
-// ignore_for_file: unused_element, no_leading_underscores_for_local_identifiers, avoid_print
+// ignore_for_file: unused_element, no_leading_underscores_for_local_identifiers, avoid_print, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -52,7 +52,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
           BlocBuilder<ScannerQrBloc, ScannerQrState>(builder: (context, state) {
         if (state is OutsideQrCodeValidated) {
           WidgetsBinding.instance.addPostFrameCallback((_) async {
-            isScanEnabled = false; // Deshabilita el escaneo
+            isScanEnabled = false;
             await scannedQrDialog(context, state.isQrCodeValidated);
             if (state.isQrCodeValidated) {
               //Redirecciona hacia la pantalla de jugabilidad si el codigo qr
@@ -60,22 +60,18 @@ class _QRScannerPageState extends State<QRScannerPage> {
 
               final Utilities utilities = Utilities();
               utilities.setUserLogged();
-
               Navigator.of(context).pushNamedAndRemoveUntil(
-                '/game',
-                (Route<dynamic> route) =>
-                    false, // Elimina todas las pantallas anteriores
+                '/menu',
+                (Route<dynamic> route) => false,
               );
-              isScanEnabled = false; // Habilita el escaneo de nuevo
+              isScanEnabled = false;
             } else {
-              isScanEnabled =
-                  true; // Habilita el escaneo de nuevo si no es válido
+              isScanEnabled = true;
             }
           });
         }
 
         if (state is ScannerQrError) {
-          // Permitir reintentar el escaneo tras el error
           WidgetsBinding.instance.addPostFrameCallback((_) {
             isScanEnabled = true; // Rehabilitar el escaneo
           });
@@ -134,7 +130,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
               if (state is ScannerQrLoading) ...[
                 // Capa semitransparente para opacar la interfaz
                 const Opacity(
-                  opacity: 0.5, // Ajusta la opacidad según lo necesites
+                  opacity: 0.5,
                   child: ModalBarrier(dismissible: false, color: Colors.black),
                 ),
                 const Center(

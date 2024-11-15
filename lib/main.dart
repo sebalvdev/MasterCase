@@ -7,6 +7,7 @@ import 'package:master_case/features/menu/presentation/pages/menu_page.dart';
 import 'config/routes/app_routes.dart';
 import 'config/themes/default_theme.dart';
 import 'features/welcome_screen/presentation/pages/welcome_page.dart';
+// import 'features/menu/presentation/pages/menu_page.dart';
 import 'firebase_options.dart';
 
 import 'injection_container.dart' as dependencies;
@@ -17,6 +18,8 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
 
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.landscapeLeft,
@@ -42,6 +45,7 @@ class MyApp extends StatelessWidget {
       theme: defaultTheme(),
       // tiene que mostrarse directamente la pagina de cocina si esta logueado
       home: userLogged ? MenuPage() : const WelcomePage(),
+
     );
   }
 }

@@ -20,7 +20,17 @@ class JugabilityPage extends StatelessWidget {
         context: context,
       ),
       backgroundColor: black,
-      body: content(),
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/fondo.png',
+              fit: BoxFit.cover,
+            ),
+          ),
+          content(),
+        ],
+      ),
     );
   }
 
@@ -42,7 +52,7 @@ class JugabilityPage extends StatelessWidget {
             WidgetsBinding.instance.addPostFrameCallback((_) {
               Navigator.pushNamedAndRemoveUntil(
                 context,
-                AppRoutes.menu,
+                AppRoutes.gameOver,
                 (route) => false,
               );
             });
@@ -58,12 +68,17 @@ class JugabilityPage extends StatelessWidget {
   Widget buildForm(
       BuildContext context, List<MealModel> meals, RoundInfo data) {
     double imageWith = MediaQuery.of(context).size.width / 3 - 30;
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Stack(
       children: [
-        FlipCard(images: meals, imageWidth: imageWith, month: data.month),
-        bottomInfo(context, data.calories.toString(), data.taxes.toString(),
-            data.month)
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FlipCard(images: meals, imageWidth: imageWith, month: data.month),
+            bottomInfo(context, data.calories.toString(), data.taxes.toString(),
+                data.month)
+          ],
+        ),
+        names(),
       ],
     );
   }
