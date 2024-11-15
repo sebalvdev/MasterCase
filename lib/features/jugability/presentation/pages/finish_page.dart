@@ -22,7 +22,7 @@ class FinishPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('FinishPage', style: TextStyle(color: white),),
+                const Text('Juego Finalizado', style: TextStyle(color: white),),
                 const SizedBox(
                   height: 50,
                 ),
@@ -37,7 +37,8 @@ class FinishPage extends StatelessWidget {
                         function: () {
                           returnToMenu(context);
                         },
-                        backColor: green,
+                        backColor: Color(0xFFD4AD46),
+                        textColor: black,
                       ),
                     ),
                     Padding(
@@ -48,7 +49,8 @@ class FinishPage extends StatelessWidget {
                         function: () {
                           returnToMenu(context);
                         },
-                        backColor: red,
+                        backColor: black,
+                        textColor: white,
                       ),
                     ),
                   ],
