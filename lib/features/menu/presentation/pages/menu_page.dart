@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:master_case/features/extra_pages/presentation/pages/test_page.dart';
 
@@ -113,6 +114,17 @@ class MenuPage extends StatelessWidget {
                   Navigator.pushNamed(context, AppRoutes.credits);
                 },
                 backColor: green,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: CustomButton(
+                text: 'Salir',
+                function: () {
+                  // Navigator.pushNamed(context, AppRoutes.credits);
+                  SystemNavigator.pop();
+                },
+                backColor: red,
               ),
             ),
           ],

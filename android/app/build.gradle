@@ -7,10 +7,13 @@ plugins {
 }
 
 def keystoreProperties = new Properties()
-def keystorePropertiesFile = rootProject.file('key.properties')
+def keystorePropertiesFile = rootProject.file('app/key.properties') // Ruta específica
 if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+} else {
+    println "Error: key.properties no encontrado en ${keystorePropertiesFile.absolutePath}"
 }
+
 
 android {
     namespace = "com.obvioservices.mastercase"
@@ -39,9 +42,16 @@ android {
 
     signingConfigs {
         release {
+            // println "Keystore Properties:"
+            // println "keyAlias: ${keystoreProperties['keyAlias']}"
+            // println "keyPassword: ${keystoreProperties['keyPassword']}"
+            // println "storeFile: ${keystoreProperties['storeFile']}"
+            // println "storePassword: ${keystoreProperties['storePassword']}"
+
             keyAlias = keystoreProperties['keyAlias']
             keyPassword = keystoreProperties['keyPassword']
-            storeFile = keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            // storeFile = keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storeFile = keystoreProperties['storeFile'] ? file(rootProject.file(keystoreProperties['storeFile'])) : null
             storePassword = keystoreProperties['storePassword']
         }
     }

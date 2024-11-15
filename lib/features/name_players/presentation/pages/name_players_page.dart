@@ -137,13 +137,13 @@ class NamePlayersPage extends StatelessWidget {
 
     if (numberPlayers != 2) {
       if (name1.isNotEmpty && name2.isNotEmpty && name3.isNotEmpty) {
-        context.read<NamesBloc>().add(StartGameEvent(players: [name1]));
+        context.read<NamesBloc>().add(StartGameEvent(players: [name1, name2, name3]));
       } else {
         _showSnackBar(context, "Debe llenar todos los campos.");
       }
     } else {
       if (name1.isNotEmpty && name2.isNotEmpty) {
-        context.read<NamesBloc>().add(const StartGameEvent(players: []));
+        context.read<NamesBloc>().add(StartGameEvent(players: [name1, name2]));
       } else {
         _showSnackBar(context, "Debe llenar todos los campos.");
       }
