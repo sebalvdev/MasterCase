@@ -39,7 +39,6 @@ class ScannerQrRemoteDataSourceImpl implements ScannerQrRemoteDataSource {
           //si el numero de dispositivos es mayor o igual
           // al limite de dispositivos permitidos evalua si este dispositivo ya esta registrado
           if (await utilities.registeredDevice()) {
-            saveUserInfoInFirebase(userInfo!, boxID);
             return true;
           } else {
             return false;
@@ -134,7 +133,8 @@ class ScannerQrRemoteDataSourceImpl implements ScannerQrRemoteDataSource {
           .doc('emXYuSuveWscid36xb65')
           .collection('boxes')
           .doc(boxID)
-          .set(data, SetOptions(merge: true)); // Usa merge para evitar sobrescribir datos existentes.
+          .collection('users')
+          .add(data); // Usa merge para evitar sobrescribir datos existentes.
       print("Datos subidos correctamente a Firestore.");
     }
   }
