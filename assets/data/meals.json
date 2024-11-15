@@ -1,315 +1,344 @@
 {
-    "months": [
-      {
-        "month": "Enero",
-        "meals": [
-          {
-            "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.png",
-            "value": 80
-          },
-          {
-            "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.png",
-            "value": 90
-          },
-          {
-            "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.png",
-            "value": 70
-          }
-        ]
-      },
-      {
-        "month": "Febrero",
-        "meals": [
-          {
-            "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.png",
-            "value": 70
-          },
-          {
-            "name": "Pique",
-            "image": "assets/images/meals/pique.png",
-            "value": 10
-          },
-          {
-            "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.png",
-            "value": 30
-          }
-        ]
-      },
-      {
-        "month": "Marzo",
-        "meals": [
-          {
-            "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.png",
-            "value": 90
-          },
-          {
-            "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.png",
-            "value": 70
-          }
-        ]
-      },
-      {
-        "month": "Abril",
-        "meals": [
-          {
-            "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.png",
-            "value": 80
-          },
-          {
-            "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.png",
-            "value": 90
-          },
-          {
-            "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.png",
-            "value": 70
-          }
-        ]
-      },
-      {
-        "month": "Mayo",
-        "meals": [
-          {
-            "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.png",
-            "value": 80
-          },
-          {
-            "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.png",
-            "value": 90
-          },
-          {
-            "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.png",
-            "value": 70
-          },
-          {
-            "name": "Pique",
-            "image": "assets/images/meals/pique.png",
-            "value": 10
-          }
-        ]
-      },
-      {
-        "month": "Junio",
-        "meals": [
-          {
-            "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.png",
-            "value": 80
-          },
-          {
-            "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.png",
-            "value": 90
-          },
-          {
-            "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.png",
-            "value": 70
-          },
-          {
-            "name": "Pique",
-            "image": "assets/images/meals/pique.png",
-            "value": 10
-          },
-          {
-            "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.png",
-            "value": 30
-          }
-        ]
-      },
-      {
-        "month": "Julio",
-        "meals": [
-          {
-            "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.png",
-            "value": 80
-          },
-          {
-            "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.png",
-            "value": 30
-          }
-        ]
-      },
-      {
-        "month": "Agosto",
-        "meals": [
-          {
-            "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.png",
-            "value": 90
-          },
-          {
-            "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.png",
-            "value": 70
-          },
-          {
-            "name": "Pique",
-            "image": "assets/images/meals/pique.png",
-            "value": 10
-          }
-        ]
-      },
-      {
-        "month": "Septiembre",
-        "meals": [
-          {
-            "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.png",
-            "value": 80
-          },
-          {
-            "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.png",
-            "value": 90
-          },
-          {
-            "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.png",
-            "value": 70
-          },
-          {
-            "name": "Pique",
-            "image": "assets/images/meals/pique.png",
-            "value": 10
-          },
-          {
-            "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.png",
-            "value": 30
-          }
-        ]
-      },
-      {
-        "month": "Octubre",
-        "meals": [
-          {
-            "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.png",
-            "value": 80
-          },
-          {
-            "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.png",
-            "value": 90
-          },
-          {
-            "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.png",
-            "value": 70
-          },
-          {
-            "name": "Pique",
-            "image": "assets/images/meals/pique.png",
-            "value": 10
-          }
-        ]
-      },
-      {
-        "month": "Noviembre",
-        "meals": [
-          {
-            "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.png",
-            "value": 80
-          },
-          {
-            "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.png",
-            "value": 90
-          },
-          {
-            "name": "Pique",
-            "image": "assets/images/meals/pique.png",
-            "value": 10
-          },
-          {
-            "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.png",
-            "value": 30
-          }
-        ]
-      },
-      {
-        "month": "Diciembre",
-        "meals": [
-          {
-            "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.png",
-            "value": 80
-          },
-          {
-            "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.png",
-            "value": 30
-          }
-        ]
-      },
-      {
-        "month": "Extra",
-        "meals": [
-          {
-            "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.png",
-            "value": 80
-          },
-          {
-            "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.png",
-            "value": 90
-          },
-          {
-            "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.png",
-            "value": 70
-          },
-          {
-            "name": "Pique",
-            "image": "assets/images/meals/pique.png",
-            "value": 10
-          },
-          {
-            "name": "Silpancho",
-            "image": "assets/images/meals/silpancho.png",
-            "value": 20
-          },
-          {
-            "name": "Arroz con huevo",
-            "image": "assets/images/meals/arroz.png",
-            "value": 60
-          },
-          {
-            "name": "Relleno de papa",
-            "image": "assets/images/meals/relleno.png",
-            "value": 40
-          },
-          {
-            "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.png",
-            "value": 30
-          },
-          {
-            "name": "Salteña",
-            "image": "assets/images/meals/salteña.png",
-            "value": 50
-          }
-        ]
-      }
-    ]
-  }
-  
+  "months": [
+    {
+      "month": "Enero",
+      "meals": [
+        {
+          "name": "Pollo Broast",
+          "image": "assets/images/meals/pollo.png",
+          "value": 80
+        },
+        {
+          "name": "Gelatina de patas",
+          "image": "assets/images/meals/gelatina.png",
+          "value": 90
+        },
+        {
+          "name": "Salchipapa",
+          "image": "assets/images/meals/salchipapa.png",
+          "value": 70
+        }
+      ]
+    },
+    {
+      "month": "Febrero",
+      "meals": [
+        {
+          "name": "Salchipapa",
+          "image": "assets/images/meals/salchipapa.png",
+          "value": 70
+        },
+        {
+          "name": "Pique",
+          "image": "assets/images/meals/pique.png",
+          "value": 10
+        },
+        {
+          "name": "Silpancho",
+          "image": "assets/images/meals/silpancho.png",
+          "value": 20
+        },
+        {
+          "name": "Gelatina de patas",
+          "image": "assets/images/meals/gelatina.png",
+          "value": 90
+        }
+      ]
+    },
+    {
+      "month": "Marzo",
+      "meals": [
+        {
+          "name": "Pique",
+          "image": "assets/images/meals/pique.png",
+          "value": 10
+        },
+        {
+          "name": "Salteña",
+          "image": "assets/images/meals/salteña.png",
+          "value": 50
+        },
+        {
+          "name": "Arroz con huevo",
+          "image": "assets/images/meals/arroz.png",
+          "value": 60
+        }
+      ]
+    },
+    {
+      "month": "Abril",
+      "meals": [
+        {
+          "name": "Gelatina de patas",
+          "image": "assets/images/meals/gelatina.png",
+          "value": 90
+        },
+        {
+          "name": "Pollo Broast",
+          "image": "assets/images/meals/pollo.png",
+          "value": 80
+        },
+        {
+          "name": "Salchipapa",
+          "image": "assets/images/meals/salchipapa.png",
+          "value": 70
+        },
+        {
+          "name": "Sopa de mani",
+          "image": "assets/images/meals/sopa.png",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "month": "Mayo",
+      "meals": [
+        {
+          "name": "Pollo Broast",
+          "image": "assets/images/meals/pollo.png",
+          "value": 80
+        },
+        {
+          "name": "Gelatina de patas",
+          "image": "assets/images/meals/gelatina.png",
+          "value": 90
+        },
+        {
+          "name": "Salchipapa",
+          "image": "assets/images/meals/salchipapa.png",
+          "value": 70
+        },
+        {
+          "name": "Pique",
+          "image": "assets/images/meals/pique.png",
+          "value": 10
+        },
+        {
+          "name": "Sopa de mani",
+          "image": "assets/images/meals/sopa.png",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "month": "Junio",
+      "meals": [
+        {
+          "name": "Pollo Broast",
+          "image": "assets/images/meals/pollo.png",
+          "value": 80
+        },
+        {
+          "name": "Salchipapa",
+          "image": "assets/images/meals/salchipapa.png",
+          "value": 70
+        },
+        {
+          "name": "Pique",
+          "image": "assets/images/meals/pique.png",
+          "value": 10
+        },
+        {
+          "name": "Sopa de mani",
+          "image": "assets/images/meals/sopa.png",
+          "value": 30
+        },
+        {
+          "name": "Relleno de papa",
+          "image": "assets/images/meals/relleno.png",
+          "value": 40
+        }
+      ]
+    },
+    {
+      "month": "Julio",
+      "meals": [
+        {
+          "name": "Pollo Broast",
+          "image": "assets/images/meals/pollo.png",
+          "value": 80
+        },
+        {
+          "name": "Sopa de mani",
+          "image": "assets/images/meals/sopa.png",
+          "value": 30
+        },
+        {
+          "name": "Relleno de papa",
+          "image": "assets/images/meals/relleno.png",
+          "value": 40
+        }
+      ]
+    },
+    {
+      "month": "Agosto",
+      "meals": [
+        {
+          "name": "Pique",
+          "image": "assets/images/meals/pique.png",
+          "value": 10
+        },
+        {
+          "name": "Salteña",
+          "image": "assets/images/meals/salteña.png",
+          "value": 50
+        },
+        {
+          "name": "Relleno de papa",
+          "image": "assets/images/meals/relleno.png",
+          "value": 40
+        },
+        {
+          "name": "Sopa de mani",
+          "image": "assets/images/meals/sopa.png",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "month": "Septiembre",
+      "meals": [
+        {
+          "name": "Pollo Broast",
+          "image": "assets/images/meals/pollo.png",
+          "value": 80
+        },
+        {
+          "name": "Silpancho",
+          "image": "assets/images/meals/silpancho.png",
+          "value": 20
+        },
+        {
+          "name": "Pique",
+          "image": "assets/images/meals/pique.png",
+          "value": 10
+        },
+        {
+          "name": "Relleno de papa",
+          "image": "assets/images/meals/relleno.png",
+          "value": 40
+        },
+        {
+          "name": "Salteña",
+          "image": "assets/images/meals/salteña.png",
+          "value": 50
+        }
+      ]
+    },
+    {
+      "month": "Octubre",
+      "meals": [
+        {
+          "name": "Gelatina de patas",
+          "image": "assets/images/meals/gelatina.png",
+          "value": 90
+        },
+        {
+          "name": "Sopa de mani",
+          "image": "assets/images/meals/sopa.png",
+          "value": 30
+        },
+        {
+          "name": "Arroz con huevo",
+          "image": "assets/images/meals/arroz.png",
+          "value": 60
+        }
+      ]
+    },
+    {
+      "month": "Noviembre",
+      "meals": [
+        {
+          "name": "Arroz con huevo",
+          "image": "assets/images/meals/arroz.png",
+          "value": 60
+        },
+        {
+          "name": "Silpancho",
+          "image": "assets/images/meals/silpancho.png",
+          "value": 20
+        },
+        {
+          "name": "Pique",
+          "image": "assets/images/meals/pique.png",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "month": "Diciembre",
+      "meals": [
+        {
+          "name": "Gelatina de patas",
+          "image": "assets/images/meals/gelatina.png",
+          "value": 90
+        },
+        {
+          "name": "Pollo Broast",
+          "image": "assets/images/meals/pollo.png",
+          "value": 80
+        },
+        {
+          "name": "Silpancho",
+          "image": "assets/images/meals/silpancho.png",
+          "value": 20
+        },
+        {
+          "name": "Salteña",
+          "image": "assets/images/meals/salteña.png",
+          "value": 50
+        }
+      ]
+    },
+    {
+      "month": "Extra",
+      "meals": [
+        {
+          "name": "Pollo Broast",
+          "image": "assets/images/meals/pollo.png",
+          "value": 80
+        },
+        {
+          "name": "Gelatina de patas",
+          "image": "assets/images/meals/gelatina.png",
+          "value": 90
+        },
+        {
+          "name": "Salchipapa",
+          "image": "assets/images/meals/salchipapa.png",
+          "value": 70
+        },
+        {
+          "name": "Pique",
+          "image": "assets/images/meals/pique.png",
+          "value": 10
+        },
+        {
+          "name": "Silpancho",
+          "image": "assets/images/meals/silpancho.png",
+          "value": 20
+        },
+        {
+          "name": "Arroz con huevo",
+          "image": "assets/images/meals/arroz.png",
+          "value": 60
+        },
+        {
+          "name": "Relleno de papa",
+          "image": "assets/images/meals/relleno.png",
+          "value": 40
+        },
+        {
+          "name": "Sopa de mani",
+          "image": "assets/images/meals/sopa.png",
+          "value": 30
+        },
+        {
+          "name": "Salteña",
+          "image": "assets/images/meals/salteña.png",
+          "value": 50
+        }
+      ]
+    }
+  ]
+}
