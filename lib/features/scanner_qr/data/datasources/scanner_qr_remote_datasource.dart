@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:master_case/core/utilities/utilities.dart';
 
 abstract class ScannerQrRemoteDataSource {
   Future<bool> validateQRCode(String qrCode);
@@ -13,6 +14,7 @@ class ScannerQrRemoteDataSourceImpl implements ScannerQrRemoteDataSource {
 
   @override
   Future<bool> validateQRCode(String qrCode) async {
+    final Utilities utilities = Utilities();
     final boxID = await getBoxId(qrCode);
     print('Box ID: $boxID');
 
@@ -29,7 +31,13 @@ class ScannerQrRemoteDataSourceImpl implements ScannerQrRemoteDataSource {
         return false; // O maneja el caso de acuerdo a tu lógica
       } else {
         if (actualDevicesNumber >= maxDevicesNumber) {
-          return false;
+          //si el numero de dispositivos es mayor o igual 
+          // al limite de dispositivos permitidos evalua si este dispositivo ya esta registrado
+          if (await utilities.registeredDevice()) {
+            return true;
+          } else {
+            return false;
+          }
         } else {
           return true;
         }

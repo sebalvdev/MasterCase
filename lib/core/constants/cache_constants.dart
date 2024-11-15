@@ -7,3 +7,5 @@ const cachePlayers = 'CACHE_PLAYERS';
 
 const cacheUserRegistered = 'CACHE_USER_REGISTERED';
 const cacheFlagRegistered = 'CACHE_FLAG_REGISTERED';
+
+const cacheUserLogged = 'CACHE_USER_LOGGED';
