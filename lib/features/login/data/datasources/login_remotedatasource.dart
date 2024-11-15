@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/utilities/utilities.dart';
 import '../../../../injection_container.dart';
+import '../model/login_model.dart';
 
 abstract class LoginRemoteDataSource {
   Future<String> loginDevice(Map<String, dynamic> data);
@@ -29,43 +30,22 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
           .collection(gamesTable)
           .doc(masterCase)
           .collection(boxesColection)
-          // .doc(boxId)
-          .doc(boxIdTest)
-          .collection(users)
           .get();
 
+      // Verificar si los datos ya existen en algún documento
       for (var doc in snapshot.docs) {
         final docData = doc.data();
-        if (docData['ci'] == data['ci'] ||
-            docData['phone_number'] == data['number']
-            //  || docData['device'] == deviceInfo.fingerprint
-            ) {
-          return 'Datos ya registrados';
+        if (docData['ci'] == data['ci'] &&
+            docData['phone_number'] == data['phone_number']) {
+          // Guardar en caché y retornar éxito
+          await setUserInfoToCache(data);
+          return 'success';
         }
       }
 
-      // if (snapshot.size < maxDevices) {
-        Map<String, dynamic> info = {
-          'ci': data['ci'],
-          'phone_number': data['number'],
-          'device': deviceInfo.fingerprint
-        };
-        await firebaseFirestore
-            .collection(gamesTable)
-            .doc(masterCase)
-            .collection(boxesColection)
-            // .doc(boxId)
-            .doc(boxIdTest)
-            .collection(users)
-            .add(info);
+      utilities.setCacheData(deviceInfo.fingerprint);
 
-        utilities.setCacheData(deviceInfo.fingerprint);
-
-        return 'success';
-      // } else {
-      //   // ! Mensaje cuando los dispositivos estan llenos
-      //   return 'devices_full';
-      // }
+      return 'Datos no encontrados en la colección';
     } catch (e) {
       print('Error en el registro de datos: $e');
       return '$e';

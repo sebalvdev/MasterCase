@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../config/routes/app_routes.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../injection_container.dart';
 import '../bloc/login_bloc.dart';
@@ -32,7 +31,7 @@ class LoginPage extends StatelessWidget {
               await resultDialog(context, state.register, state.message);
               if (state.register) {
                 // ignore: use_build_context_synchronously
-                Navigator.popAndPushNamed(context, AppRoutes.menu);
+                Navigator.pushNamedAndRemoveUntil(context, '/qr_scanner', (route) => false,);
                 // Navigator.pop(context,
                 //     true); // Vuelve a la pantalla anterior si el QR es válido
               } else {
