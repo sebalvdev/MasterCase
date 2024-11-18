@@ -127,7 +127,7 @@ class MenuPage extends StatelessWidget {
                   // Navigator.pushNamed(context, AppRoutes.credits);
                   SystemNavigator.pop();
                 },
-                backColor: Color(0xFFD4AD46),
+                backColor: yellow,
               ),
             ),
           ],
@@ -149,7 +149,7 @@ class MenuPage extends StatelessWidget {
               function: () => context.read<MenuBloc>().add(LoadMenuEvent()),
               width: 100,
               height: 50,
-              backColor: Color(0xFFD4AD46),
+              backColor: yellow,
             ),
           ),
           Column(
@@ -162,8 +162,8 @@ class MenuPage extends StatelessWidget {
                   height: 50,
                   hintText: 'Duracion',
                   items: const ['Año completo', 'Medio año'],
-                  color: Color(0xFFD4AD46),
-                  dropdownColor: Color(0xFFD4AD46),
+                  color: yellow,
+                  dropdownColor: yellow,
                   textColor: black,
                   fontSize: h2,
                   onChanged: (String? newValue) {
@@ -178,8 +178,8 @@ class MenuPage extends StatelessWidget {
                   height: 50,
                   hintText: 'Jugadores',
                   items: const ['2', '3'],
-                  color: Color(0xFFD4AD46),
-                  dropdownColor: Color(0xFFD4AD46),
+                  color: yellow,
+                  dropdownColor: yellow,
                   textColor: black,
                   fontSize: h2,
                   onChanged: (String? newValue) {
@@ -194,7 +194,7 @@ class MenuPage extends StatelessWidget {
                   function: () => verifyValues(context),
                   width: 200,
                   height: 50,
-                  backColor: Color(0xFFD4AD46),
+                  backColor: yellow,
                 ),
               ),
             ],

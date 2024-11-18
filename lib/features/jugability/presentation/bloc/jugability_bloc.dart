@@ -55,5 +55,20 @@ class JugabilityBloc extends Bloc<JugabilityEvent, JugabilityState> {
         print('Error en el bloc: $e');
       }
     });
+
+    on<BetweenRounds>((event, emit) async {
+      emit(JugabilityLoading());
+      
+      try {
+        emit(JugabilityNewRound(actualMonth: event.actualMonth));
+        // final result = await getInfoRound.call(NoParams());
+
+        // result.fold((failure) => emit(JugabilityFailure()),
+        //     (result) => emit(JugabilityLoaded(roundInfo: result)));
+      } catch (e) {
+        // emit(JugabilityFailure());
+        print('Error en el bloc: $e');
+      }
+    });
   }
 }

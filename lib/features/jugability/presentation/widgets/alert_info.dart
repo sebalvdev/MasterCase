@@ -81,7 +81,7 @@ class _InfoElementDialogState extends State<AlertInfoDialog>
                     Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: orange,
+                    backgroundColor: yellow,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),

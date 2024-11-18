@@ -45,6 +45,15 @@ class JugabilityPage extends StatelessWidget {
           if (state is JugabilityLoaded) {
             return buildForm(context, state.roundInfo.meals, state.roundInfo);
           }
+          if (state is JugabilityNewRound) {
+            WidgetsBinding.instance.addPostFrameCallback((_) async {
+              await showAnimatedPopup(context, state.actualMonth);
+              context
+                  .read<JugabilityBloc>()
+                  .add(NextRound(actualMonth: state.actualMonth));
+            });
+          }
+
           if (state is JugabilityInitial) {
             context.read<JugabilityBloc>().add(LoadGameEvent());
           }
@@ -67,19 +76,41 @@ class JugabilityPage extends StatelessWidget {
 
   Widget buildForm(
       BuildContext context, List<MealModel> meals, RoundInfo data) {
-    double imageWith = MediaQuery.of(context).size.width / 3 - 30;
+    double imageWith = MediaQuery.of(context).size.width / 3 - 10;
     return Stack(
+      alignment: AlignmentDirectional.topCenter,
       children: [
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            FlipCard(images: meals, imageWidth: imageWith, month: data.month),
-            bottomInfo(context, data.calories.toString(), data.taxes.toString(),
-                data.month)
-          ],
-        ),
+        FlipCard(images: meals, imageWidth: imageWith, month: data.month),
+        bottomInfo(context, data.calories.toString(), data.taxes.toString(),
+            data.month),
         names(),
       ],
+    );
+  }
+
+  Widget betweenRounds(
+      BuildContext context, List<MealModel> meals, RoundInfo data) {
+    return Stack(
+      children: [
+        bottomInfo(context, data.calories.toString(), data.taxes.toString(),
+            data.month),
+        names(),
+      ],
+    );
+  }
+
+  /// Función para mostrar el popup animado
+  Future<void> showAnimatedPopup(
+      BuildContext context, String actualMonth) async {
+    await showDialog(
+      context: context,
+      barrierDismissible:
+          false, // Impide cerrar al hacer clic fuera del diálogo
+      builder: (BuildContext context) {
+        return AlertNewRound(
+          actualMonth: actualMonth,
+        );
+      },
     );
   }
 }

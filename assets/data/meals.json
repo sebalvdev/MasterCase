@@ -5,17 +5,17 @@
         "meals": [
           {
             "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.PNG",
+            "image": "assets/images/meals/pollo.png",
             "value": 80
           },
           {
             "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.PNG",
+            "image": "assets/images/meals/gelatina.png",
             "value": 90
           },
           {
             "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.PNG",
+            "image": "assets/images/meals/salchipapa.png",
             "value": 70
           }
         ]
@@ -25,22 +25,22 @@
         "meals": [
           {
             "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.PNG",
+            "image": "assets/images/meals/salchipapa.png",
             "value": 70
           },
           {
             "name": "Pique",
-            "image": "assets/images/meals/pique.PNG",
+            "image": "assets/images/meals/pique.png",
             "value": 10
           },
           {
             "name": "Silpancho",
-            "image": "assets/images/meals/silpancho.PNG",
+            "image": "assets/images/meals/silpancho.png",
             "value": 20
           },
           {
             "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.PNG",
+            "image": "assets/images/meals/gelatina.png",
             "value": 90
           }
         ]
@@ -50,17 +50,17 @@
         "meals": [
           {
             "name": "Pique",
-            "image": "assets/images/meals/pique.PNG",
+            "image": "assets/images/meals/pique.png",
             "value": 10
           },
           {
             "name": "Salteña",
-            "image": "assets/images/meals/salteña.PNG",
+            "image": "assets/images/meals/salteña.png",
             "value": 50
           },
           {
             "name": "Arroz con huevo",
-            "image": "assets/images/meals/arroz.PNG",
+            "image": "assets/images/meals/arroz.png",
             "value": 60
           }
         ]
@@ -70,22 +70,22 @@
         "meals": [
           {
             "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.PNG",
+            "image": "assets/images/meals/gelatina.png",
             "value": 90
           },
           {
             "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.PNG",
+            "image": "assets/images/meals/pollo.png",
             "value": 80
           },
           {
             "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.PNG",
+            "image": "assets/images/meals/salchipapa.png",
             "value": 70
           },
           {
             "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.PNG",
+            "image": "assets/images/meals/sopa.png",
             "value": 30
           }
         ]
@@ -95,27 +95,27 @@
         "meals": [
           {
             "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.PNG",
+            "image": "assets/images/meals/pollo.png",
             "value": 80
           },
           {
             "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.PNG",
+            "image": "assets/images/meals/gelatina.png",
             "value": 90
           },
           {
             "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.PNG",
+            "image": "assets/images/meals/salchipapa.png",
             "value": 70
           },
           {
             "name": "Pique",
-            "image": "assets/images/meals/pique.PNG",
+            "image": "assets/images/meals/pique.png",
             "value": 10
           },
           {
             "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.PNG",
+            "image": "assets/images/meals/sopa.png",
             "value": 30
           }
         ]
@@ -125,27 +125,27 @@
         "meals": [
           {
             "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.PNG",
+            "image": "assets/images/meals/pollo.png",
             "value": 80
           },
           {
             "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.PNG",
+            "image": "assets/images/meals/salchipapa.png",
             "value": 70
           },
           {
             "name": "Pique",
-            "image": "assets/images/meals/pique.PNG",
+            "image": "assets/images/meals/pique.png",
             "value": 10
           },
           {
             "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.PNG",
+            "image": "assets/images/meals/sopa.png",
             "value": 30
           },
           {
             "name": "Relleno de papa",
-            "image": "assets/images/meals/relleno.PNG",
+            "image": "assets/images/meals/relleno.png",
             "value": 40
           }
         ]
@@ -155,17 +155,17 @@
         "meals": [
           {
             "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.PNG",
+            "image": "assets/images/meals/pollo.png",
             "value": 80
           },
           {
             "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.PNG",
+            "image": "assets/images/meals/sopa.png",
             "value": 30
           },
           {
             "name": "Relleno de papa",
-            "image": "assets/images/meals/relleno.PNG",
+            "image": "assets/images/meals/relleno.png",
             "value": 40
           }
         ]
@@ -175,22 +175,22 @@
         "meals": [
           {
             "name": "Pique",
-            "image": "assets/images/meals/pique.PNG",
+            "image": "assets/images/meals/pique.png",
             "value": 10
           },
           {
             "name": "Salteña",
-            "image": "assets/images/meals/salteña.PNG",
+            "image": "assets/images/meals/salteña.png",
             "value": 50
           },
           {
             "name": "Relleno de papa",
-            "image": "assets/images/meals/relleno.PNG",
+            "image": "assets/images/meals/relleno.png",
             "value": 40
           },
           {
             "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.PNG",
+            "image": "assets/images/meals/sopa.png",
             "value": 30
           }
         ]
@@ -200,27 +200,27 @@
         "meals": [
           {
             "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.PNG",
+            "image": "assets/images/meals/pollo.png",
             "value": 80
           },
           {
             "name": "Silpancho",
-            "image": "assets/images/meals/silpancho.PNG",
+            "image": "assets/images/meals/silpancho.png",
             "value": 20
           },
           {
             "name": "Pique",
-            "image": "assets/images/meals/pique.PNG",
+            "image": "assets/images/meals/pique.png",
             "value": 10
           },
           {
             "name": "Relleno de papa",
-            "image": "assets/images/meals/relleno.PNG",
+            "image": "assets/images/meals/relleno.png",
             "value": 40
           },
           {
             "name": "Salteña",
-            "image": "assets/images/meals/salteña.PNG",
+            "image": "assets/images/meals/salteña.png",
             "value": 50
           }
         ]
@@ -230,17 +230,17 @@
         "meals": [
           {
             "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.PNG",
+            "image": "assets/images/meals/gelatina.png",
             "value": 90
           },
           {
             "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.PNG",
+            "image": "assets/images/meals/sopa.png",
             "value": 30
           },
           {
             "name": "Arroz con huevo",
-            "image": "assets/images/meals/arroz.PNG",
+            "image": "assets/images/meals/arroz.png",
             "value": 60
           }
         ]
@@ -250,17 +250,17 @@
         "meals": [
           {
             "name": "Arroz con huevo",
-            "image": "assets/images/meals/arroz.PNG",
+            "image": "assets/images/meals/arroz.png",
             "value": 60
           },
           {
             "name": "Silpancho",
-            "image": "assets/images/meals/silpancho.PNG",
+            "image": "assets/images/meals/silpancho.png",
             "value": 20
           },
           {
             "name": "Pique",
-            "image": "assets/images/meals/pique.PNG",
+            "image": "assets/images/meals/pique.png",
             "value": 10
           }
         ]
@@ -270,22 +270,22 @@
         "meals": [
           {
             "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.PNG",
+            "image": "assets/images/meals/gelatina.png",
             "value": 90
           },
           {
             "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.PNG",
+            "image": "assets/images/meals/pollo.png",
             "value": 80
           },
           {
             "name": "Silpancho",
-            "image": "assets/images/meals/silpancho.PNG",
+            "image": "assets/images/meals/silpancho.png",
             "value": 20
           },
           {
             "name": "Salteña",
-            "image": "assets/images/meals/salteña.PNG",
+            "image": "assets/images/meals/salteña.png",
             "value": 50
           }
         ]
@@ -295,47 +295,47 @@
         "meals": [
           {
             "name": "Pollo Broast",
-            "image": "assets/images/meals/pollo.PNG",
+            "image": "assets/images/meals/pollo.png",
             "value": 80
           },
           {
             "name": "Gelatina de patas",
-            "image": "assets/images/meals/gelatina.PNG",
+            "image": "assets/images/meals/gelatina.png",
             "value": 90
           },
           {
             "name": "Salchipapa",
-            "image": "assets/images/meals/salchipapa.PNG",
+            "image": "assets/images/meals/salchipapa.png",
             "value": 70
           },
           {
             "name": "Pique",
-            "image": "assets/images/meals/pique.PNG",
+            "image": "assets/images/meals/pique.png",
             "value": 10
           },
           {
             "name": "Silpancho",
-            "image": "assets/images/meals/silpancho.PNG",
+            "image": "assets/images/meals/silpancho.png",
             "value": 20
           },
           {
             "name": "Arroz con huevo",
-            "image": "assets/images/meals/arroz.PNG",
+            "image": "assets/images/meals/arroz.png",
             "value": 60
           },
           {
             "name": "Relleno de papa",
-            "image": "assets/images/meals/relleno.PNG",
+            "image": "assets/images/meals/relleno.png",
             "value": 40
           },
           {
             "name": "Sopa de mani",
-            "image": "assets/images/meals/sopa.PNG",
+            "image": "assets/images/meals/sopa.png",
             "value": 30
           },
           {
             "name": "Salteña",
-            "image": "assets/images/meals/salteña.PNG",
+            "image": "assets/images/meals/salteña.png",
             "value": 50
           }
         ]

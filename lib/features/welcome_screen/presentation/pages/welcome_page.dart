@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/constants/constants.dart';
+
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
@@ -55,7 +57,7 @@ class WelcomePage extends StatelessWidget {
                           Navigator.of(context).pushNamed('/login');
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFFD4AD46),
+                          backgroundColor: yellow,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),

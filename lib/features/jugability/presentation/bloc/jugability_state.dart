@@ -16,6 +16,13 @@ final class JugabilityLoaded extends JugabilityState {
 
   const JugabilityLoaded({required this.roundInfo});
 }
+
+final class JugabilityNewRound extends JugabilityState {
+  final String actualMonth;
+
+  const JugabilityNewRound({required this.actualMonth});
+}
+
 final class JugabilityFinish extends JugabilityState {}
 
 final class JugabilityFailure extends JugabilityState {}

@@ -14,3 +14,9 @@ class NextRound extends JugabilityEvent {
 
   const NextRound({required this.actualMonth});
 }
+
+class BetweenRounds extends JugabilityEvent {
+  final String actualMonth;
+
+  const BetweenRounds({required this.actualMonth});
+}

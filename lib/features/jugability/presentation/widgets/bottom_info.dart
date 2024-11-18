@@ -30,52 +30,52 @@ SizedBox bottomInfo(BuildContext context, String calories, String taxes, String 
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: ElevatedButton(
-                onPressed: () {
-                  _showDialog(context, infoList[0], calories);
-                },
-                style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(150, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    const Text(
-                      'Calorias',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Text(calories),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: ElevatedButton(
-                onPressed: () {
-                  _showDialog(context, infoList[1], taxes);
-                },
-                style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(150, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    const Text(
-                      'Impuestos',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Text(taxes),
-                  ],
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 10),
+            //   child: ElevatedButton(
+            //     onPressed: () {
+            //       _showDialog(context, infoList[0], calories);
+            //     },
+            //     style: ElevatedButton.styleFrom(
+            //       fixedSize: const Size(150, 50),
+            //       shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(15),
+            //       ),
+            //     ),
+            //     child: Column(
+            //       children: [
+            //         const Text(
+            //           'Calorias',
+            //           style: TextStyle(fontWeight: FontWeight.bold),
+            //         ),
+            //         Text(calories),
+            //       ],
+            //     ),
+            //   ),
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 10),
+            //   child: ElevatedButton(
+            //     onPressed: () {
+            //       _showDialog(context, infoList[1], taxes);
+            //     },
+            //     style: ElevatedButton.styleFrom(
+            //       fixedSize: const Size(150, 50),
+            //       shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(15),
+            //       ),
+            //     ),
+            //     child: Column(
+            //       children: [
+            //         const Text(
+            //           'Impuestos',
+            //           style: TextStyle(fontWeight: FontWeight.bold),
+            //         ),
+            //         Text(taxes),
+            //       ],
+            //     ),
+            //   ),
+            // ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: ElevatedButton(
