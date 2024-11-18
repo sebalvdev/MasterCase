@@ -23,7 +23,7 @@ class NamePlayersPage extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Image.asset(
-              'assets/images/fondo.png',
+              'assets/images/fondoAbstractoRotado.jpg',
               fit: BoxFit.cover,
             ),
           ),
@@ -105,23 +105,25 @@ class NamePlayersPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10),
               child: CustomButton(
-                text: 'jugar',
+                text: 'Jugar',
                 function: () {
                   controlNames(context);
                 },
-                backColor: green,
+                backColor: Color(0xFFD4AD46),
+                textColor: black,
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: CustomButton(
-                text: 'volver',
+                text: 'Volver',
                 function: () => Navigator.pushNamedAndRemoveUntil(
                   context,
                   AppRoutes.menu,
                   (route) => false,
                 ),
-                backColor: red,
+                backColor: black,
+                textColor: white,
               ),
             ),
           ],

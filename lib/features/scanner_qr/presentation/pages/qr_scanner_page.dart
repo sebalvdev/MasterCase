@@ -30,15 +30,14 @@ class _QRScannerPageState extends State<QRScannerPage> {
         title: const Text('Master Case App',
             style: TextStyle(color: Colors.white)),
         elevation: 1,
-        backgroundColor: Colors.blueGrey,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-        ],
+        // automaticallyImplyLeading: false,
+        backgroundColor: Color(0xFFD4AD46),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: buildBody(context),
       backgroundColor: Colors.transparent,

@@ -23,7 +23,7 @@ class MenuPage extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Image.asset(
-              'assets/images/fondo.png',
+              'assets/images/fondoAbstractoRotado.jpg',
               fit: BoxFit.cover,
             ),
           ),
@@ -89,42 +89,45 @@ class MenuPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10),
               child: CustomButton(
-                text: 'jugar',
+                text: 'JUGAR',
                 function: () {
                   context.read<MenuBloc>().add(LoadSecondMenuEvent());
                 },
-                backColor: green,
+                backColor: black,
+                textColor: white,
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: CustomButton(
-                text: 'Instrucciones',
+                text: 'INSTRUCCIONES',
                 function: () async {
                   Navigator.pushNamed(context, AppRoutes.instruction);
                 },
-                backColor: green,
+                backColor: black,
+                textColor: white,
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: CustomButton(
-                text: 'creditos',
+                text: 'CREDITOS',
                 function: () {
                   Navigator.pushNamed(context, AppRoutes.credits);
                 },
-                backColor: green,
+                backColor: black,
+                textColor: white,
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: CustomButton(
-                text: 'Salir',
+                text: 'SALIR',
                 function: () {
                   // Navigator.pushNamed(context, AppRoutes.credits);
                   SystemNavigator.pop();
                 },
-                backColor: red,
+                backColor: Color(0xFFD4AD46),
               ),
             ),
           ],
@@ -142,11 +145,11 @@ class MenuPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10),
             child: CustomButton(
-              text: 'volver',
+              text: 'Volver',
               function: () => context.read<MenuBloc>().add(LoadMenuEvent()),
               width: 100,
               height: 50,
-              backColor: orange,
+              backColor: Color(0xFFD4AD46),
             ),
           ),
           Column(
@@ -159,8 +162,8 @@ class MenuPage extends StatelessWidget {
                   height: 50,
                   hintText: 'Duracion',
                   items: const ['Año completo', 'Medio año'],
-                  color: orange,
-                  dropdownColor: orange,
+                  color: Color(0xFFD4AD46),
+                  dropdownColor: Color(0xFFD4AD46),
                   textColor: black,
                   fontSize: h2,
                   onChanged: (String? newValue) {
@@ -175,8 +178,8 @@ class MenuPage extends StatelessWidget {
                   height: 50,
                   hintText: 'Jugadores',
                   items: const ['2', '3'],
-                  color: orange,
-                  dropdownColor: orange,
+                  color: Color(0xFFD4AD46),
+                  dropdownColor: Color(0xFFD4AD46),
                   textColor: black,
                   fontSize: h2,
                   onChanged: (String? newValue) {
@@ -187,11 +190,11 @@ class MenuPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: CustomButton(
-                  text: 'jugar',
+                  text: 'Jugar',
                   function: () => verifyValues(context),
                   width: 200,
                   height: 50,
-                  backColor: orange,
+                  backColor: Color(0xFFD4AD46),
                 ),
               ),
             ],
