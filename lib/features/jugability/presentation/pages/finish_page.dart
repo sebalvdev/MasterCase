@@ -37,7 +37,7 @@ class FinishPage extends StatelessWidget {
                         function: () {
                           returnToMenu(context);
                         },
-                        backColor: Color(0xFFD4AD46),
+                        backColor: yellow,
                         textColor: black,
                       ),
                     ),

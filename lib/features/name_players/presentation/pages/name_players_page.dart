@@ -109,7 +109,7 @@ class NamePlayersPage extends StatelessWidget {
                 function: () {
                   controlNames(context);
                 },
-                backColor: Color(0xFFD4AD46),
+                backColor: yellow,
                 textColor: black,
               ),
             ),

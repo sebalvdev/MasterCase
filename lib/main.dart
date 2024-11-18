@@ -1,12 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:master_case/core/utilities/utilities.dart';
+// import 'package:master_case/core/utilities/utilities.dart';
 import 'package:master_case/features/menu/presentation/pages/menu_page.dart';
 
 import 'config/routes/app_routes.dart';
 import 'config/themes/default_theme.dart';
-import 'features/welcome_screen/presentation/pages/welcome_page.dart';
+// import 'features/welcome_screen/presentation/pages/welcome_page.dart';
 // import 'features/menu/presentation/pages/menu_page.dart';
 import 'firebase_options.dart';
 
@@ -35,8 +35,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    Utilities utilities = Utilities();
-    bool userLogged = utilities.isUserLogged();
+    // Utilities utilities = Utilities();
+    // bool userLogged = utilities.isUserLogged();
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -44,7 +44,8 @@ class MyApp extends StatelessWidget {
       title: 'Master Case App',
       theme: defaultTheme(),
       // tiene que mostrarse directamente la pagina de cocina si esta logueado
-      home: userLogged ? MenuPage() : const WelcomePage(),
+      // home: userLogged ? MenuPage() : const WelcomePage(),
+      home: MenuPage(),
 
     );
   }

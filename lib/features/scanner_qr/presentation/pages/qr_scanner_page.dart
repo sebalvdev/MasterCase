@@ -9,6 +9,8 @@ import 'package:master_case/features/scanner_qr/presentation/widgets/qr_scanner_
 import 'package:master_case/injection_container.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../../../core/constants/constants.dart';
+
 class QRScannerPage extends StatefulWidget {
   const QRScannerPage({super.key});
 
@@ -31,7 +33,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
             style: TextStyle(color: Colors.white)),
         elevation: 1,
         // automaticallyImplyLeading: false,
-        backgroundColor: Color(0xFFD4AD46),
+        backgroundColor: yellow,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
