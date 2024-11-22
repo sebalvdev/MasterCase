@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:master_case/core/constants/color_constants.dart';
+import 'package:master_case/core/utilities/utilities.dart';
 import 'package:master_case/features/jugability/data/model/meal_model.dart';
+import 'package:master_case/features/jugability/domain/entities/meal.dart';
 
 import '../../../../config/routes/app_routes.dart';
 import '../../../../injection_container.dart';
@@ -11,7 +13,10 @@ import '../widgets/lateral_menu.dart';
 import '../widgets/widgets.dart';
 
 class JugabilityPage extends StatelessWidget {
-  const JugabilityPage({super.key});
+
+  Utilities utilities = Utilities();
+
+  JugabilityPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +56,7 @@ class JugabilityPage extends StatelessWidget {
               context
                   .read<JugabilityBloc>()
                   .add(NextRound(actualMonth: state.actualMonth));
+              // utilities.resetCurrentRoundInfo();
             });
           }
 
@@ -66,6 +72,27 @@ class JugabilityPage extends StatelessWidget {
               );
             });
           }
+
+          if (state is RoundInfoAfterTimeExpiration) {
+
+            List<Meal> lastMealsUnflipped = utilities.getLastUnflippedMeals();
+            List<bool> currentCardsFlipped = utilities.getCurrentCardsState();
+            print('Last meals unflipped: $lastMealsUnflipped');
+            print('Current cards flipped: $currentCardsFlipped');
+            List<MealModel> meals = state.roundInfo.meals;
+            print('Nuevas comidas: $meals');
+
+            for (int i = 0; i < meals.length; i++) {
+              if (currentCardsFlipped[i]) {
+                meals[i] = MealModel(
+                  name: lastMealsUnflipped[i].name,
+                  image: lastMealsUnflipped[i].image,
+                  value: lastMealsUnflipped[i].value,
+                );
+              }
+            }
+            return buildForm(context, meals, state.roundInfo);            
+          }
           return const Center(
             child: Text('Error en la carga del menu'),
           );
@@ -74,8 +101,7 @@ class JugabilityPage extends StatelessWidget {
     );
   }
 
-  Widget buildForm(
-      BuildContext context, List<MealModel> meals, RoundInfo data) {
+  Widget buildForm(BuildContext context, List<MealModel> meals, RoundInfo data) {
     double imageWith = MediaQuery.of(context).size.width / 3 - 10;
     return Stack(
       alignment: AlignmentDirectional.topCenter,
@@ -88,12 +114,10 @@ class JugabilityPage extends StatelessWidget {
     );
   }
 
-  Widget betweenRounds(
-      BuildContext context, List<MealModel> meals, RoundInfo data) {
+  Widget betweenRounds(BuildContext context, List<MealModel> meals, RoundInfo data) {
     return Stack(
       children: [
-        bottomInfo(context, data.calories.toString(), data.taxes.toString(),
-            data.month),
+        bottomInfo(context, data.calories.toString(), data.taxes.toString(),data.month),
         names(),
       ],
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:master_case/core/utilities/utilities.dart';
 import '../../data/model/meal_model.dart';
 import '../bloc/jugability_bloc.dart';
 
@@ -23,6 +24,8 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
   late List<bool> isFlipped;
   late List<AnimationController> _controllers;
   late List<double> opacities;
+  
+  Utilities utilities = Utilities();
 
   @override
   void initState() {
@@ -79,11 +82,18 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
             child: GestureDetector(
               onTap: () {
                 setState(() {
+                  // print('index: $index');
+                  // print('${widget.images[index].name}');
                   isFlipped[index] = !isFlipped[index];
+                  // print('isFlipped: $isFlipped');
                   if (isFlipped[index]) {
                     _controllers[index].forward(from: 0.0);
+                    // print('Guardando info de la ronda');
+                    // print('Image: ${widget.images[index]}');
+                    utilities.saveCurrentRoundInfo(widget.images[index]);
+                    utilities.saveCardState(isFlipped);
                   } else {
-                    _controllers[index].reverse();
+                    _controllers[index].reverse();                    
                   }
                 });
               },

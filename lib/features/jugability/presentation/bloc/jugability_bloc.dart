@@ -3,6 +3,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:master_case/core/usecases/usecase.dart';
+import 'package:master_case/features/jugability/domain/entities/meal.dart';
 
 import '../../domain/entities/round_info.dart';
 import '../../domain/usecases/get_info_round.dart' as get_info_round;
@@ -43,8 +44,12 @@ class JugabilityBloc extends Bloc<JugabilityEvent, JugabilityState> {
         final result = await nextInfoRound.call(next_info_round.Params(month: event.actualMonth));
 
         result.fold((failure) => emit(JugabilityFailure()),
+
+            
             (result) {
               if(result != null) {
+                // print('Result: $result');
+                // print('Result: ${result.meals}');
                 emit(JugabilityLoaded(roundInfo: result));
               } else {
                 emit(JugabilityFinish());
@@ -69,6 +74,16 @@ class JugabilityBloc extends Bloc<JugabilityEvent, JugabilityState> {
         // emit(JugabilityFailure());
         print('Error en el bloc: $e');
       }
+    });
+
+    on<TimerExpiredEvent>((event, emit) async {
+      emit(JugabilityLoading());
+      final result = await getInfoRound.call(NoParams());
+      result.fold(
+        (failure) => emit(JugabilityFailure()),
+        (result) => emit(RoundInfoAfterTimeExpiration(roundInfo: result)),
+      );
+      print('Timer expired');
     });
   }
 }

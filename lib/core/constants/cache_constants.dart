@@ -10,3 +10,8 @@ const cacheUserInfo = 'CACHE_USER_INFO';
 const cacheFlagRegistered = 'CACHE_FLAG_REGISTERED';
 
 const cacheUserLogged = 'CACHE_USER_LOGGED';
+
+const cacheTimerExpired = 'CACHE_TIMER_EXPIRED';
+const cacheCurrentRoundMeal = 'CACHE_CURRENT_ROUND_MEAL';
+
+const cacheCurrentCardState = 'CACHE_CURRENT_CARD_STATE';
