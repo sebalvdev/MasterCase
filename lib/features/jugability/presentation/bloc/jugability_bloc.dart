@@ -24,12 +24,13 @@ class JugabilityBloc extends Bloc<JugabilityEvent, JugabilityState> {
   JugabilityBloc({required this.getInfoRound, required this.nextInfoRound}) : super(JugabilityInitial()) {
     on<LoadGameEvent>((event, emit) async {
       emit(JugabilityLoading());
-      
+      print('load game event');      
       try {
         final result = await getInfoRound.call(NoParams());
 
-        result.fold((failure) => emit(JugabilityFailure()),
-            (result) => emit(JugabilityLoaded(roundInfo: result)));
+        result.fold(
+          (failure) => emit(JugabilityFailure()),
+          (result) => emit(JugabilityLoaded(roundInfo: result)));
       } catch (e) {
         // emit(JugabilityFailure());
         print('Error en el bloc: $e');
@@ -40,6 +41,7 @@ class JugabilityBloc extends Bloc<JugabilityEvent, JugabilityState> {
     on<NextRound>((event, emit) async {
       emit(JugabilityLoading());
 
+      print('Next round event');
       try {
         final result = await nextInfoRound.call(next_info_round.Params(month: event.actualMonth));
 
@@ -62,6 +64,7 @@ class JugabilityBloc extends Bloc<JugabilityEvent, JugabilityState> {
     });
 
     on<BetweenRounds>((event, emit) async {
+      print('between rounds event');
       emit(JugabilityLoading());
       
       try {

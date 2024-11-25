@@ -3,6 +3,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:master_case/core/utilities/utilities.dart';
 import 'package:master_case/features/jugability/presentation/bloc/jugability_bloc.dart';
 
 class CardTimer extends StatefulWidget {
@@ -75,6 +76,9 @@ class _CardTimerState extends State<CardTimer> {
   }
 
   String _endTimerText() {
+    Utilities utilities = Utilities();
+    List<bool> currentCardsState = utilities.getCurrentCardsState();
+    print('currentCardsState: $currentCardsState');
     BlocProvider.of<JugabilityBloc>(context).add(const TimerExpiredEvent());
     return 'TIEMPO!';
   }

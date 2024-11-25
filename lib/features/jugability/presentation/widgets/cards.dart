@@ -33,6 +33,8 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
     isFlipped = List<bool>.filled(widget.images.length, false);
     opacities = List<double>.filled(widget.images.length, 0.0);
 
+    print('isFlipped estado inicial de cartas: $isFlipped');
+
     // Initialize an AnimationController for each card
     _controllers = List.generate(widget.images.length, (index) {
       return AnimationController(
@@ -82,15 +84,10 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
             child: GestureDetector(
               onTap: () {
                 setState(() {
-                  // print('index: $index');
-                  // print('${widget.images[index].name}');
                   isFlipped[index] = !isFlipped[index];
-                  // print('isFlipped: $isFlipped');
                   if (isFlipped[index]) {
                     _controllers[index].forward(from: 0.0);
-                    // print('Guardando info de la ronda');
-                    // print('Image: ${widget.images[index]}');
-                    utilities.saveCurrentRoundInfo(widget.images[index]);
+                    print('isFlipped: $isFlipped');
                     utilities.saveCardState(isFlipped);
                   } else {
                     _controllers[index].reverse();                    
