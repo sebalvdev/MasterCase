@@ -33,7 +33,7 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
     isFlipped = List<bool>.filled(widget.images.length, false);
     opacities = List<double>.filled(widget.images.length, 0.0);
 
-    print('isFlipped estado inicial de cartas: $isFlipped');
+    // print('isFlipped estado inicial de cartas: $isFlipped');
 
     // Initialize an AnimationController for each card
     _controllers = List.generate(widget.images.length, (index) {
@@ -87,7 +87,7 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
                   isFlipped[index] = !isFlipped[index];
                   if (isFlipped[index]) {
                     _controllers[index].forward(from: 0.0);
-                    print('isFlipped: $isFlipped');
+                    // print('isFlipped: $isFlipped');
                     utilities.saveCardState(isFlipped);
                   } else {
                     _controllers[index].reverse();                    

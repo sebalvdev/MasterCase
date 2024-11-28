@@ -73,8 +73,9 @@ class Utilities {
   List<bool> getCurrentCardsState() {
     // Recuperamos la cadena JSON
     String? intListString = sharedPreferences.getString(cacheCurrentCardState);
-    if (intListString == null)
+    if (intListString == null) {
       return []; // Retornamos lista vacía si no hay datos
+    }
 
     // Convertimos la cadena en una lista de enteros
     List<int> intList = intListString
