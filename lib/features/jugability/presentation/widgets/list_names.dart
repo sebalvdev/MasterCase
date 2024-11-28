@@ -12,7 +12,7 @@ Widget names() {
     children: [
       if (names.isNotEmpty)
         Positioned(
-          top: 10,
+          bottom: 10,
           left: 10,
           child: nameTile(names[0]),
         ),

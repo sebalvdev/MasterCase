@@ -38,7 +38,7 @@ class AppRoutes {
         final int numberPlayers = int.parse(settings.arguments as String);
         return _materialRoute(NamePlayersPage(numberPlayers: numberPlayers,));
       case game:
-        return _materialRoute(const JugabilityPage());
+        return _materialRoute(JugabilityPage());
       case instruction:
         return _materialRoute(const InstructionsPage());
       case credits:
