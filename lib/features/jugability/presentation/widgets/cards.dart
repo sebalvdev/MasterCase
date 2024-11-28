@@ -32,7 +32,7 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
     super.initState();
     isFlipped = List<bool>.filled(widget.images.length, false);
     opacities = List<double>.filled(widget.images.length, 0.0);
-
+    utilities.saveCardState(isFlipped);
     // print('isFlipped estado inicial de cartas: $isFlipped');
 
     // Initialize an AnimationController for each card

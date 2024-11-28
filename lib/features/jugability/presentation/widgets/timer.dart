@@ -41,11 +41,25 @@ class _CardTimerState extends State<CardTimer> {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (remainingSeconds <= 0) {
         timer.cancel(); // Reproducir la alarma cuando el tiempo llegue a 0
+        _onTimerComplete();
       } else {
         setState(() {
           remainingSeconds--;
         });
       }
+    });
+  }
+
+  void _onTimerComplete() {
+    Utilities utilities = Utilities();
+    List<bool> currentCardsState = utilities.getCurrentCardsState();
+    print('currentCardsState: $currentCardsState');
+    BlocProvider.of<JugabilityBloc>(context).add(const TimerExpiredEvent());
+
+    //reiniciamos el temporizador
+    setState(() {
+      remainingSeconds = widget.startSeconds;
+      _startCountdown();
     });
   }
 
@@ -76,10 +90,10 @@ class _CardTimerState extends State<CardTimer> {
   }
 
   String _endTimerText() {
-    Utilities utilities = Utilities();
-    List<bool> currentCardsState = utilities.getCurrentCardsState();
-    print('currentCardsState: $currentCardsState');
-    BlocProvider.of<JugabilityBloc>(context).add(const TimerExpiredEvent());
+    // Utilities utilities = Utilities();
+    // List<bool> currentCardsState = utilities.getCurrentCardsState();
+    // print('currentCardsState: $currentCardsState');
+    // BlocProvider.of<JugabilityBloc>(context).add(const TimerExpiredEvent());
     return 'TIEMPO!';
   }
 }
