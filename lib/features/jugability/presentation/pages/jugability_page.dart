@@ -48,6 +48,7 @@ class JugabilityPage extends StatelessWidget {
           if (state is JugabilityNewRound) {
             WidgetsBinding.instance.addPostFrameCallback((_) async {
               await showAnimatedPopup(context, state.actualMonth);
+              // ignore: use_build_context_synchronously
               context
                   .read<JugabilityBloc>()
                   .add(NextRound(actualMonth: state.actualMonth));
