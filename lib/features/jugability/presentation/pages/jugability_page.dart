@@ -28,13 +28,19 @@ class JugabilityPage extends StatelessWidget {
       backgroundColor: black,
       body: Stack(
         children: [
+          // Contenido en la parte inferior
           Positioned.fill(
             child: Image.asset(
-              'assets/images/fondo.png',
+              'assets/images/primeraOpcionFondoWelcome.png',
               fit: BoxFit.cover,
             ),
           ),
-          content(),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            color: Colors.black.withOpacity(0.6),
+            child: content(),
+          ),
         ],
       ),
     );

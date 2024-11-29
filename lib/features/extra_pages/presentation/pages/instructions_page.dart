@@ -32,7 +32,7 @@ class InstructionsPage extends StatelessWidget {
                     const Text(
                       'APRENDE A JUGAR',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 227, 236, 68),
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                       ),
@@ -125,7 +125,7 @@ class InstructionsPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         child: const Icon(
           Icons.arrow_back,
-          color: white,
+          color: Color.fromARGB(255, 227, 236, 68),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
