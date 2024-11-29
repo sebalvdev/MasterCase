@@ -17,6 +17,7 @@ class FlipCard extends StatefulWidget {
   });
 
   @override
+  // ignore: library_private_types_in_public_api
   _FlipCardDemoState createState() => _FlipCardDemoState();
 }
 
@@ -110,7 +111,7 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
                               padding: const EdgeInsets.symmetric(horizontal: 10),
                               child: Image.asset(
                                 'assets/images/reverso.jpg',
-                                fit: BoxFit.contain,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           )
@@ -122,7 +123,7 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
                               padding: const EdgeInsets.symmetric(horizontal: 10),
                               child: Image.asset(
                                 widget.images[index].image,
-                                fit: BoxFit.contain,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
