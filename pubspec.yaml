@@ -75,6 +75,7 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/images/help/
     - assets/images/meals/
     - assets/data/
     - assets/icon/
