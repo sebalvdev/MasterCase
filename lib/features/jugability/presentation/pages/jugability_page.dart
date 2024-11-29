@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:master_case/core/constants/color_constants.dart';
-import 'package:master_case/features/jugability/data/model/meal_model.dart';
 
 import '../../../../config/routes/app_routes.dart';
+import '../../../../core/constants/color_constants.dart';
+import '../../../../core/utilities/utilities.dart';
 import '../../../../injection_container.dart';
+import '../../data/model/meal_model.dart';
+import '../../data/model/round_info_model.dart';
 import '../../domain/entities/round_info.dart';
 import '../bloc/jugability_bloc.dart';
 import '../widgets/lateral_menu.dart';
 import '../widgets/widgets.dart';
 
+// ignore: must_be_immutable
 class JugabilityPage extends StatelessWidget {
-  const JugabilityPage({super.key});
+
+  Utilities utilities = Utilities();
+
+  JugabilityPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,22 +46,33 @@ class JugabilityPage extends StatelessWidget {
       child: BlocBuilder<JugabilityBloc, JugabilityState>(
         builder: (context, state) {
           if (state is JugabilityLoading) {
+            // print('loading state');
             return const Center(child: CircularProgressIndicator());
           }
           if (state is JugabilityLoaded) {
+            // print('1');
+            // print('JugabilityLoaded state');
+            utilities.saveCurrentRoundInfoInCache(state.roundInfo);
             return buildForm(context, state.roundInfo.meals, state.roundInfo);
           }
           if (state is JugabilityNewRound) {
+            // print('2');
+            // print('JugabilityNewRound state');
+            // print('New Round Info Month: ${state.actualMonth}');
             WidgetsBinding.instance.addPostFrameCallback((_) async {
               await showAnimatedPopup(context, state.actualMonth);
               // ignore: use_build_context_synchronously
-              context
-                  .read<JugabilityBloc>()
-                  .add(NextRound(actualMonth: state.actualMonth));
+              context.read<JugabilityBloc>().add(NextRound(actualMonth: state.actualMonth));
             });
           }
 
           if (state is JugabilityInitial) {
+            // print('0');
+            List<bool> cardState = [false, false, false];
+            List<bool> currentCardState = utilities.getCurrentCardsState();
+            if (currentCardState.isEmpty) {
+              utilities.saveCardState(cardState);
+            }
             context.read<JugabilityBloc>().add(LoadGameEvent());
           }
           if (state is JugabilityFinish) {
@@ -67,6 +84,35 @@ class JugabilityPage extends StatelessWidget {
               );
             });
           }
+
+          if (state is RoundInfoAfterTimeExpiration) {
+            // print('actual estado: ${utilities.getCurrentCardsState()}');
+            RoundInfoModel currentRoundInfo = utilities.getCurrentRoundInfoFromCache();
+            List<bool> lastCardsState = utilities.getCurrentCardsState();
+            List<MealModel> meals = currentRoundInfo.meals;
+            List<MealModel> newMeals = state.roundInfo.meals;
+            List<MealModel> mergeOfMeals = utilities.mergeMeals(lastCardsState, meals, newMeals);
+            String lastMonth = currentRoundInfo.month;
+            // print('RoundInfoAfterTimeExpiration state');
+            // print('mes que me aparece en el cache despues de que el timer expiro: ${currentRoundInfo.month}');
+            // print('estado de las cartas que me aparece en el cache despues de que el timer expiro: $lastCardsState');
+            // print('comidas que me aparece en el cache despues de que el timer expiro: ${currentRoundInfo.meals[0].name} , ${currentRoundInfo.meals[1].name} , ${currentRoundInfo.meals[2].name}');
+            // print('nuevas comidas solicitadas debido a la expiracion del timer: ${newMeals[0].name} , ${newMeals[1].name} , ${newMeals[2].name}');
+            
+            RoundInfoModel newRoundInfo = RoundInfoModel(
+              calories: state.roundInfo.calories,
+              taxes: state.roundInfo.taxes,
+              month: lastMonth,
+              meals: mergeOfMeals,
+            );
+
+            utilities.setLastMonth(lastMonth);
+
+            utilities.saveCurrentRoundInfoInCache(newRoundInfo);
+
+            return buildForm(context, mergeOfMeals, newRoundInfo);            
+          }
+          // print('fuera de los estados');
           return const Center(
             child: Text('Error en la carga del menu'),
           );
@@ -75,8 +121,8 @@ class JugabilityPage extends StatelessWidget {
     );
   }
 
-  Widget buildForm(
-      BuildContext context, List<MealModel> meals, RoundInfo data) {
+  Widget buildForm(BuildContext context, List<MealModel> meals, RoundInfo data) {
+    // print('interfaz construida con el mes de: ${data.month}');
     double imageWith = MediaQuery.of(context).size.width / 3 - 10;
     return Stack(
       alignment: AlignmentDirectional.topCenter,
@@ -89,12 +135,10 @@ class JugabilityPage extends StatelessWidget {
     );
   }
 
-  Widget betweenRounds(
-      BuildContext context, List<MealModel> meals, RoundInfo data) {
+  Widget betweenRounds(BuildContext context, List<MealModel> meals, RoundInfo data) {
     return Stack(
       children: [
-        bottomInfo(context, data.calories.toString(), data.taxes.toString(),
-            data.month),
+        bottomInfo(context, data.calories.toString(), data.taxes.toString(),data.month),
         names(),
       ],
     );

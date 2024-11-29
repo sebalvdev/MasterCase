@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:master_case/core/utilities/utilities.dart';
 import '../../data/model/meal_model.dart';
 import '../bloc/jugability_bloc.dart';
 
@@ -24,12 +25,16 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
   late List<bool> isFlipped;
   late List<AnimationController> _controllers;
   late List<double> opacities;
+  
+  Utilities utilities = Utilities();
 
   @override
   void initState() {
     super.initState();
     isFlipped = List<bool>.filled(widget.images.length, false);
     opacities = List<double>.filled(widget.images.length, 0.0);
+    utilities.saveCardState(isFlipped);
+    // print('isFlipped estado inicial de cartas: $isFlipped');
 
     // Initialize an AnimationController for each card
     _controllers = List.generate(widget.images.length, (index) {
@@ -83,8 +88,10 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
                   isFlipped[index] = !isFlipped[index];
                   if (isFlipped[index]) {
                     _controllers[index].forward(from: 0.0);
+                    // print('isFlipped: $isFlipped');
+                    utilities.saveCardState(isFlipped);
                   } else {
-                    _controllers[index].reverse();
+                    _controllers[index].reverse();                    
                   }
                 });
               },
@@ -104,7 +111,7 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
                               padding: const EdgeInsets.symmetric(horizontal: 10),
                               child: Image.asset(
                                 'assets/images/reverso.jpg',
-                                fit: BoxFit.contain,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           )
@@ -116,7 +123,7 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
                               padding: const EdgeInsets.symmetric(horizontal: 10),
                               child: Image.asset(
                                 widget.images[index].image,
-                                fit: BoxFit.contain,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
