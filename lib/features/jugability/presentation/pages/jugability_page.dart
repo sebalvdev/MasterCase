@@ -12,6 +12,7 @@ import '../bloc/jugability_bloc.dart';
 import '../widgets/lateral_menu.dart';
 import '../widgets/widgets.dart';
 
+// ignore: must_be_immutable
 class JugabilityPage extends StatelessWidget {
 
   Utilities utilities = Utilities();
@@ -60,6 +61,7 @@ class JugabilityPage extends StatelessWidget {
             // print('New Round Info Month: ${state.actualMonth}');
             WidgetsBinding.instance.addPostFrameCallback((_) async {
               await showAnimatedPopup(context, state.actualMonth);
+              // ignore: use_build_context_synchronously
               context.read<JugabilityBloc>().add(NextRound(actualMonth: state.actualMonth));
             });
           }
