@@ -110,7 +110,7 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
                             child: Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 10),
                               child: Image.asset(
-                                'assets/images/reverso.jpg',
+                                'assets/images/reverso.png',
                                 fit: BoxFit.cover,
                               ),
                             ),

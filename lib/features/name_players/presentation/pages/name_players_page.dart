@@ -43,7 +43,7 @@ class NamePlayersPage extends StatelessWidget {
           }
 
           if (state is NamesLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator(color: white,));
           }
 
           if (state is NamesLoaded) {
@@ -56,7 +56,7 @@ class NamePlayersPage extends StatelessWidget {
             });
           }
 
-          return const Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator(color: white,));
           // return const Center(
           //   child: Text('Error en la carga del nombres'),
           // );

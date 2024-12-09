@@ -25,7 +25,7 @@ class LoginPage extends StatelessWidget {
       create: (_) => sl<LoginBloc>(),
       child: BlocBuilder<LoginBloc, LoginState>(
         builder: (context, state) {
-          if (state is LoginLoading) return const Center(child: CircularProgressIndicator());
+          if (state is LoginLoading) return const Center(child: CircularProgressIndicator(color: white,));
           if (state is LoginSuccess) {
             WidgetsBinding.instance.addPostFrameCallback((_) async {
               // await resultDialog(context, state.register, state.message);

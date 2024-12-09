@@ -19,7 +19,7 @@ class _LateralMenuState extends State<LateralMenu> {
 
   // Cargar todos los recursos necesarios, como la imagen, antes de construir el widget
   Future<void> _loadResources() async {
-    await precacheImage(const AssetImage('assets/images/reverso.jpg'), context);
+    await precacheImage(const AssetImage('assets/images/reverso.png'), context);
     // Puedes cargar otros recursos aquí si es necesario
   }
 
@@ -30,7 +30,7 @@ class _LateralMenuState extends State<LateralMenu> {
       builder: (context, snapshot) {
         // Muestra un indicador de carga mientras se esperan los recursos
         if (snapshot.connectionState != ConnectionState.done) {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator(color: white,));
         }
 
         // Construye el Drawer una vez que los recursos están cargados

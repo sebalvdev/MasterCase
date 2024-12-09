@@ -49,7 +49,7 @@ class MenuPage extends StatelessWidget {
             context.read<MenuBloc>().add(LoadMenuEvent());
           }
           if (state is MenuLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator(color: white,));
           }
           if (state is MenuLoaded) {
             return buildForm(context);
@@ -64,7 +64,7 @@ class MenuPage extends StatelessWidget {
             });
           }
 
-          return const Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator(color: white,));
           // return const Center(
           //   child: Text('Error en la carga del menu'),
           // );

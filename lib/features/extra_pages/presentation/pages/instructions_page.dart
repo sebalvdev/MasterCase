@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constants/constants.dart';
 
 class InstructionsPage extends StatelessWidget {
   const InstructionsPage({super.key});

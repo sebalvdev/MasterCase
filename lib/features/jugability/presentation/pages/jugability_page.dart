@@ -53,7 +53,7 @@ class JugabilityPage extends StatelessWidget {
         builder: (context, state) {
           if (state is JugabilityLoading) {
             // print('loading state');
-            return const Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator(color: white,));
           }
           if (state is JugabilityLoaded) {
             // print('1');
