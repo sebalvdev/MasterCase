@@ -12,16 +12,17 @@ class FinishPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned.fill(
-            child: Image.asset(
-              'assets/images/primeraOpcionFondoWelcome.png',
-              fit: BoxFit.cover,
-            ),
-          ),
+          // Positioned.fill(
+          //   child: Image.asset(
+          //     'assets/images/primeraOpcionFondoWelcome.png',
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            color: Colors.black.withOpacity(0.6),
+            // color: Colors.black.withOpacity(0.6),
+            color: white,
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

@@ -86,9 +86,13 @@ class _QRScannerPageState extends State<QRScannerPage> {
                   child: MobileScanner(
                     controller: cameraController,
                     onDetect: (capture) {
-                      if (isScanEnabled) {
-                        isScanEnabled =
-                            false; // Deshabilita el escaneo al detectar
+                      if (!isScanEnabled) return;
+
+                      setState(() {
+                        isScanEnabled = false;
+                      });
+
+                      try {
                         var qrCaptured = capture.barcodes[0];
                         if (state is ScannerQrInitial ||
                             state is ScannerQrError) {
@@ -97,6 +101,8 @@ class _QRScannerPageState extends State<QRScannerPage> {
                                 outsideQRCode: qrCaptured.displayValue ?? ''),
                           );
                         }
+                      } catch (e) {
+                        print('Error al detectar QR: $e');
                       }
                     },
                     overlayBuilder: (context, constraints) {
@@ -115,19 +121,19 @@ class _QRScannerPageState extends State<QRScannerPage> {
                   ),
                 ),
               ),
-              Positioned(
-                  bottom: 150,
-                  child: Center(
-                      child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 50),
-                    child: SizedBox(
-                        width: MediaQuery.of(context).size.width - 100,
-                        child: const Text(
-                          "Valida tu aplicacion de master case!",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                          textAlign: TextAlign.center,
-                        )),
-                  ))),
+              // Positioned(
+              //     bottom: 150,
+              //     child: Center(
+              //         child: Padding(
+              //       padding: const EdgeInsets.symmetric(horizontal: 50),
+              //       child: SizedBox(
+              //           width: MediaQuery.of(context).size.width - 100,
+              //           child: const Text(
+              //             "Valida tu aplicacion de master case!",
+              //             style: TextStyle(color: Colors.white, fontSize: 20),
+              //             textAlign: TextAlign.center,
+              //           )),
+              //     ))),
               if (state is ScannerQrLoading) ...[
                 // Capa semitransparente para opacar la interfaz
                 const Opacity(

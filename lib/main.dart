@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
       theme: defaultTheme(),
       // tiene que mostrarse directamente la pagina de cocina si esta logueado
       home: userLogged ? MenuPage() : const WelcomePage(),
-      // home: const FinishPage(),
+      // home: MenuPage(),
       // home: JugabilityPage(),
 
     );
