@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../config/routes/app_routes.dart';
@@ -20,6 +21,10 @@ class JugabilityPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
     return Scaffold(
       drawer: LateralMenu(
         context: context,
@@ -137,7 +142,7 @@ class JugabilityPage extends StatelessWidget {
   Widget buildForm(
       BuildContext context, List<MealModel> meals, RoundInfo data) {
     // print('interfaz construida con el mes de: ${data.month}');
-    double imageWith = MediaQuery.of(context).size.width / 3 - 10;
+    double imageWith = MediaQuery.of(context).size.width / 3 - 40;
     return Stack(
       alignment: AlignmentDirectional.topCenter,
       children: [

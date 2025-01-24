@@ -3,13 +3,25 @@ import 'package:master_case/features/jugability/presentation/widgets/timer.dart'
 
 import 'widgets.dart';
 
-SizedBox bottomInfo(BuildContext context, String calories, String taxes, String month) {
-
+SizedBox bottomInfo(
+    BuildContext context, String calories, String taxes, String month) {
   List<Map<String, dynamic>> infoList = [
-    {'title': 'Calorias', 'info': 'Esta ronda debes consumir la siguiente cantidad de calorias en ingredientes o platos cocinados: '},
-    {'title': 'Impuestos', 'info': 'Esta ronda debes pagar la siguiente cantidad de dinero por impuestos: '},
-    {'title': 'Mes', 'info': 'El mes actual que representa el progreso del juego, actualmente estas en el siguiente mes: '},
-    ];
+    {
+      'title': 'Calorias',
+      'info':
+          'Esta ronda debes consumir la siguiente cantidad de calorias en ingredientes o platos cocinados: '
+    },
+    {
+      'title': 'Impuestos',
+      'info':
+          'Esta ronda debes pagar la siguiente cantidad de dinero por impuestos: '
+    },
+    {
+      'title': 'Mes',
+      'info':
+          'El mes actual que representa el progreso del juego, actualmente estas en el siguiente mes: '
+    },
+  ];
 
   return SizedBox(
     width: MediaQuery.of(context).size.width - 50,
@@ -122,7 +134,8 @@ SizedBox bottomInfo(BuildContext context, String calories, String taxes, String 
   );
 }
 
-void _showDialog(BuildContext context, Map<String, dynamic> infoList, String value) {
+void _showDialog(
+    BuildContext context, Map<String, dynamic> infoList, String value) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -138,20 +151,24 @@ void _showDialog(BuildContext context, Map<String, dynamic> infoList, String val
 }
 
 Widget _buildTimer() {
-    return Container(
-      padding: const EdgeInsets.all(1),
-      // decoration: BoxDecoration(
-      //   border: Border.all(color: Colors.black),
-      //   borderRadius: BorderRadius.circular(4),
-      // ),
-      child: const FittedBox(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            CardTimer(
-                startSeconds: 10, fontSize: 25, textColor: Colors.black),
-          ],
-        ),
+  return Container(
+    padding: const EdgeInsets.all(1),
+    // decoration: BoxDecoration(
+    //   border: Border.all(color: Colors.black),
+    //   borderRadius: BorderRadius.circular(4),
+    // ),
+    child: const FittedBox(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          CardTimer(
+            // startSeconds: 10,
+            startSeconds: 600,
+            fontSize: 25,
+            textColor: Colors.black,
+          ),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}

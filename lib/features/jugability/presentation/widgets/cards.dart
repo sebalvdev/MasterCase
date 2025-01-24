@@ -25,7 +25,7 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
   late List<bool> isFlipped;
   late List<AnimationController> _controllers;
   late List<double> opacities;
-  
+
   Utilities utilities = Utilities();
 
   @override
@@ -88,10 +88,9 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
                   isFlipped[index] = !isFlipped[index];
                   if (isFlipped[index]) {
                     _controllers[index].forward(from: 0.0);
-                    // print('isFlipped: $isFlipped');
                     utilities.saveCardState(isFlipped);
                   } else {
-                    _controllers[index].reverse();                    
+                    _controllers[index].reverse();
                   }
                 });
               },
@@ -102,31 +101,40 @@ class _FlipCardDemoState extends State<FlipCard> with TickerProviderStateMixin {
                   return Transform(
                     transform: Matrix4.rotationY(rotationValue * 3.1416),
                     alignment: Alignment.center,
-                    child: rotationValue >= 0.5
-                        ? SizedBox(
-                            key: ValueKey('back_$index'),
-                            width: widget.imageWidth,
-                            height: widget.imageWidth,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 10),
-                              child: Image.asset(
-                                'assets/images/reverso.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          )
-                        : SizedBox(
-                            key: ValueKey('front_$index'),
-                            width: widget.imageWidth,
-                            height: widget.imageWidth,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 10),
-                              child: Image.asset(
-                                widget.images[index].image,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Container(
+                        decoration: BoxDecoration(boxShadow: [
+                          BoxShadow(
+                            // Color de la sombra
+                            color: Colors.black.withOpacity(0.13),
+                            spreadRadius: 5, // Radio de expansión
+                            blurRadius: 5, // Difusión
+                            // Desplazamiento de la sombra
+                            offset: const Offset(4, 3),
                           ),
+                        ], borderRadius: BorderRadius.circular(20)),
+                        child: rotationValue >= 0.5
+                            ? SizedBox(
+                                key: ValueKey('back_$index'),
+                                // width: widget.imageWidth,
+                                height: widget.imageWidth,
+                                child: Image.asset(
+                                  'assets/images/reverso.png',
+                                  fit: BoxFit.cover,
+                                ),
+                              )
+                            : SizedBox(
+                                key: ValueKey('front_$index'),
+                                // width: widget.imageWidth,
+                                height: widget.imageWidth,
+                                child: Image.asset(
+                                  widget.images[index].image,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                      ),
+                    ),
                   );
                 },
               ),
