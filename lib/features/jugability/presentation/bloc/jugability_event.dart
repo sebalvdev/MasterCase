@@ -14,3 +14,18 @@ class NextRound extends JugabilityEvent {
 
   const NextRound({required this.actualMonth});
 }
+
+class BetweenRounds extends JugabilityEvent {
+  final String actualMonth;
+
+  const BetweenRounds({required this.actualMonth});
+}
+
+class TimerExpiredEvent extends JugabilityEvent {
+  // final List<Meal> currentMeals;
+
+  const TimerExpiredEvent();
+
+  // @override
+  // List<Object> get props => [currentMeals];
+}

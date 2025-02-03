@@ -9,6 +9,8 @@ import 'package:master_case/features/scanner_qr/presentation/widgets/qr_scanner_
 import 'package:master_case/injection_container.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../../../core/constants/constants.dart';
+
 class QRScannerPage extends StatefulWidget {
   const QRScannerPage({super.key});
 
@@ -31,7 +33,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
             style: TextStyle(color: Colors.white)),
         elevation: 1,
         // automaticallyImplyLeading: false,
-        backgroundColor: Color(0xFFD4AD46),
+        backgroundColor: yellow,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -79,53 +81,56 @@ class _QRScannerPageState extends State<QRScannerPage> {
           child: Stack(
             children: [
               Positioned.fill(
-                child: Transform.rotate(
-                  angle: 4.71,
-                  child: MobileScanner(
-                    controller: cameraController,
-                    onDetect: (capture) {
-                      if (isScanEnabled) {
-                        isScanEnabled =
-                            false; // Deshabilita el escaneo al detectar
-                        var qrCaptured = capture.barcodes[0];
-                        if (state is ScannerQrInitial ||
-                            state is ScannerQrError) {
-                          BlocProvider.of<ScannerQrBloc>(context).add(
-                            ValidateQRCodeEvent(
-                                outsideQRCode: qrCaptured.displayValue ?? ''),
-                          );
-                        }
+                child: MobileScanner(
+                  controller: cameraController,
+                  onDetect: (capture) {
+                    if (!isScanEnabled) return;
+                
+                    setState(() {
+                      isScanEnabled = false;
+                    });
+                
+                    try {
+                      var qrCaptured = capture.barcodes[0];
+                      if (state is ScannerQrInitial ||
+                          state is ScannerQrError) {
+                        BlocProvider.of<ScannerQrBloc>(context).add(
+                          ValidateQRCodeEvent(
+                              outsideQRCode: qrCaptured.displayValue ?? ''),
+                        );
                       }
-                    },
-                    overlayBuilder: (context, constraints) {
-                      return Container(
-                        decoration: ShapeDecoration(
-                          shape: QrScannerOverlayShape(
-                              borderColor: Colors.white,
-                              borderRadius: 10,
-                              borderLength: 25,
-                              borderWidth: 7.5,
-                              cutOutSize:
-                                  MediaQuery.of(context).size.width * 0.35),
-                        ),
-                      );
-                    },
-                  ),
+                    } catch (e) {
+                      print('Error al detectar QR: $e');
+                    }
+                  },
+                  overlayBuilder: (context, constraints) {
+                    return Container(
+                      decoration: ShapeDecoration(
+                        shape: QrScannerOverlayShape(
+                            borderColor: Colors.white,
+                            borderRadius: 10,
+                            borderLength: 30,
+                            borderWidth: 8,
+                            cutOutSize:
+                                MediaQuery.of(context).size.width * 0.6),
+                      ),
+                    );
+                  },
                 ),
               ),
-              Positioned(
-                  bottom: 150,
-                  child: Center(
-                      child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 50),
-                    child: SizedBox(
-                        width: MediaQuery.of(context).size.width - 100,
-                        child: const Text(
-                          "Valida tu aplicacion de master case!",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                          textAlign: TextAlign.center,
-                        )),
-                  ))),
+              // Positioned(
+              //     bottom: 150,
+              //     child: Center(
+              //         child: Padding(
+              //       padding: const EdgeInsets.symmetric(horizontal: 50),
+              //       child: SizedBox(
+              //           width: MediaQuery.of(context).size.width - 100,
+              //           child: const Text(
+              //             "Valida tu aplicacion de master case!",
+              //             style: TextStyle(color: Colors.white, fontSize: 20),
+              //             textAlign: TextAlign.center,
+              //           )),
+              //     ))),
               if (state is ScannerQrLoading) ...[
                 // Capa semitransparente para opacar la interfaz
                 const Opacity(

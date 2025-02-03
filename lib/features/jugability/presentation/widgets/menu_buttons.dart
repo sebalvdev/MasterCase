@@ -9,7 +9,7 @@ Widget buttons(BuildContext context) {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 80),
-          child: SizedBox(child: Image.asset('assets/images/reverso.jpg')),
+          child: SizedBox(child: Image.asset('assets/images/reverso.png')),
         ),
         const SizedBox(
           height: 15,

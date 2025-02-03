@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:master_case/core/constants/color_constants.dart';
 
 class UniqueValue extends StatefulWidget {
   const UniqueValue({super.key});
@@ -32,7 +33,7 @@ class _UniqueValueState extends State<UniqueValue> {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           // Muestra un indicador de carga mientras se obtiene el identificador
-          return const CircularProgressIndicator();
+          return const CircularProgressIndicator(color: white,);
         } else if (snapshot.hasError) {
           // Muestra un mensaje de error si ocurre un problema
           return const Text('Error al obtener el identificador');

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:master_case/core/constants/color_constants.dart';
 import 'package:master_case/features/scanner_qr/presentation/bloc/scanner_qr_bloc.dart';
 import 'package:master_case/injection_container.dart';
 
@@ -38,7 +39,7 @@ class QRScannerPageTest extends StatelessWidget {
               return Text(state.message);
             }
 
-            return const CircularProgressIndicator();
+            return const CircularProgressIndicator(color: white,);
           } 
         ),
       ),
