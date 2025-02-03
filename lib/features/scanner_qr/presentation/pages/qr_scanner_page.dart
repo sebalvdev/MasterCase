@@ -81,44 +81,41 @@ class _QRScannerPageState extends State<QRScannerPage> {
           child: Stack(
             children: [
               Positioned.fill(
-                child: Transform.rotate(
-                  angle: 4.71,
-                  child: MobileScanner(
-                    controller: cameraController,
-                    onDetect: (capture) {
-                      if (!isScanEnabled) return;
-
-                      setState(() {
-                        isScanEnabled = false;
-                      });
-
-                      try {
-                        var qrCaptured = capture.barcodes[0];
-                        if (state is ScannerQrInitial ||
-                            state is ScannerQrError) {
-                          BlocProvider.of<ScannerQrBloc>(context).add(
-                            ValidateQRCodeEvent(
-                                outsideQRCode: qrCaptured.displayValue ?? ''),
-                          );
-                        }
-                      } catch (e) {
-                        print('Error al detectar QR: $e');
+                child: MobileScanner(
+                  controller: cameraController,
+                  onDetect: (capture) {
+                    if (!isScanEnabled) return;
+                
+                    setState(() {
+                      isScanEnabled = false;
+                    });
+                
+                    try {
+                      var qrCaptured = capture.barcodes[0];
+                      if (state is ScannerQrInitial ||
+                          state is ScannerQrError) {
+                        BlocProvider.of<ScannerQrBloc>(context).add(
+                          ValidateQRCodeEvent(
+                              outsideQRCode: qrCaptured.displayValue ?? ''),
+                        );
                       }
-                    },
-                    overlayBuilder: (context, constraints) {
-                      return Container(
-                        decoration: ShapeDecoration(
-                          shape: QrScannerOverlayShape(
-                              borderColor: Colors.white,
-                              borderRadius: 10,
-                              borderLength: 25,
-                              borderWidth: 7.5,
-                              cutOutSize:
-                                  MediaQuery.of(context).size.width * 0.35),
-                        ),
-                      );
-                    },
-                  ),
+                    } catch (e) {
+                      print('Error al detectar QR: $e');
+                    }
+                  },
+                  overlayBuilder: (context, constraints) {
+                    return Container(
+                      decoration: ShapeDecoration(
+                        shape: QrScannerOverlayShape(
+                            borderColor: Colors.white,
+                            borderRadius: 10,
+                            borderLength: 25,
+                            borderWidth: 7.5,
+                            cutOutSize:
+                                MediaQuery.of(context).size.width * 0.35),
+                      ),
+                    );
+                  },
                 ),
               ),
               // Positioned(
