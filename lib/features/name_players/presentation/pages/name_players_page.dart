@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:master_case/core/utilities/utilities.dart';
 
 import '../../../../config/routes/app_routes.dart';
 import '../../../../core/constants/constants.dart';
@@ -9,7 +10,10 @@ import '../widgets/widgets.dart';
 
 // ignore: must_be_immutable
 class NamePlayersPage extends StatelessWidget {
+
+  Utilities utilities = Utilities();
   final int numberPlayers;
+
   NamePlayersPage({super.key, required this.numberPlayers});
 
   TextEditingController nameController1 = TextEditingController();
@@ -139,12 +143,16 @@ class NamePlayersPage extends StatelessWidget {
 
     if (numberPlayers != 2) {
       if (name1.isNotEmpty && name2.isNotEmpty && name3.isNotEmpty) {
+        utilities.setNumberOfPlayers(numberPlayers);
+        utilities.setNameOfRestaurants([name1, name2, name3]);
         context.read<NamesBloc>().add(StartGameEvent(players: [name1, name2, name3]));
       } else {
         _showSnackBar(context, "Debe llenar todos los campos.");
       }
     } else {
       if (name1.isNotEmpty && name2.isNotEmpty) {
+        utilities.setNumberOfPlayers(numberPlayers);
+        utilities.setNameOfRestaurants([name1, name2]);
         context.read<NamesBloc>().add(StartGameEvent(players: [name1, name2]));
       } else {
         _showSnackBar(context, "Debe llenar todos los campos.");

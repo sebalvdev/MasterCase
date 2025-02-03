@@ -17,6 +17,22 @@ class Utilities {
   FirebaseFirestore firebaseFirestore = sl<FirebaseFirestore>();
   SharedPreferences sharedPreferences = sl<SharedPreferences>();
 
+  void setNumberOfPlayers(int numberPlayers) {
+    sharedPreferences.setInt(cacheNumberOfPlayers, numberPlayers);
+  }
+
+  int getNumberOfPlayers() {
+    return sharedPreferences.getInt(cacheNumberOfPlayers) ?? 0;
+  }
+
+  void setNameOfRestaurants(List<String> names) {
+    sharedPreferences.setStringList(cacheRestaurantNames, names);
+  }
+
+  List<String> getNamesOfRestaurants() {
+    return sharedPreferences.getStringList(cacheRestaurantNames) ?? [];
+  }
+
   String setLastMonth(String month) {
     sharedPreferences.setString(cacheLastMonth, month);
     return month;

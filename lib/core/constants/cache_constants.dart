@@ -17,3 +17,5 @@ const cacheCurrentCardState = 'CACHE_CURRENT_CARD_STATE';
 
 const cacheCurrentRoundInfo = 'CACHE_CURRENT_ROUND_INFO';
 
+const cacheNumberOfPlayers = 'CACHE_NUMBER_OF_PLAYERS';
+const cacheRestaurantNames = 'CACHE_RESTAURANT_NAMES';
