@@ -109,10 +109,10 @@ class _QRScannerPageState extends State<QRScannerPage> {
                         shape: QrScannerOverlayShape(
                             borderColor: Colors.white,
                             borderRadius: 10,
-                            borderLength: 25,
-                            borderWidth: 7.5,
+                            borderLength: 30,
+                            borderWidth: 8,
                             cutOutSize:
-                                MediaQuery.of(context).size.width * 0.35),
+                                MediaQuery.of(context).size.width * 0.6),
                       ),
                     );
                   },
