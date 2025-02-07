@@ -84,7 +84,7 @@ class NamePlayersPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: CustomeInput(
                 controller: nameController1,
-                hintText: 'Jugador 1',
+                hintText: 'Restaurante 1',
                 fontSize: h2,
               ),
             ),
@@ -92,7 +92,7 @@ class NamePlayersPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: CustomeInput(
                 controller: nameController2,
-                hintText: 'Jugador 2',
+                hintText: 'Restaurante 2',
                 fontSize: h2,
               ),
             ),
@@ -101,7 +101,7 @@ class NamePlayersPage extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 child: CustomeInput(
                   controller: nameController3,
-                  hintText: 'Jugador 3',
+                  hintText: 'Restaurante 3',
                   fontSize: h2,
                 ),
               ),
@@ -144,16 +144,17 @@ class NamePlayersPage extends StatelessWidget {
     if (numberPlayers != 2) {
       if (name1.isNotEmpty && name2.isNotEmpty && name3.isNotEmpty) {
         utilities.setNumberOfPlayers(numberPlayers);
-        utilities.setNameOfRestaurants([name1, name2, name3]);
-        context.read<NamesBloc>().add(StartGameEvent(players: [name1, name2, name3]));
+        // utilities.setNameOfRestaurants([name1, name2, name3]);
+        //todo: cambiar el evento por uno que muestre la pantalla de escoger recetas
+        context.read<NamesBloc>().add(StartGameEvent(playerRestaurantNames: [name1, name2, name3]));
       } else {
         _showSnackBar(context, "Debe llenar todos los campos.");
       }
     } else {
       if (name1.isNotEmpty && name2.isNotEmpty) {
         utilities.setNumberOfPlayers(numberPlayers);
-        utilities.setNameOfRestaurants([name1, name2]);
-        context.read<NamesBloc>().add(StartGameEvent(players: [name1, name2]));
+        // utilities.setNameOfRestaurants([name1, name2]);
+        context.read<NamesBloc>().add(StartGameEvent(playerRestaurantNames: [name1, name2]));
       } else {
         _showSnackBar(context, "Debe llenar todos los campos.");
       }

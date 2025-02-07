@@ -7,7 +7,7 @@ import '../../../../injection_container.dart';
 
 Widget names() {
   SharedPreferences sharedPreferences = sl<SharedPreferences>();
-  final names = sharedPreferences.getStringList(cachePlayers) ?? [];
+  final names = sharedPreferences.getStringList(cacheRestaurantNames) ?? [];
 
   return Stack(
     children: [

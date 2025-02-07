@@ -25,14 +25,6 @@ class Utilities {
     return sharedPreferences.getInt(cacheNumberOfPlayers) ?? 0;
   }
 
-  void setNameOfRestaurants(List<String> names) {
-    sharedPreferences.setStringList(cacheRestaurantNames, names);
-  }
-
-  List<String> getNamesOfRestaurants() {
-    return sharedPreferences.getStringList(cacheRestaurantNames) ?? [];
-  }
-
   String setLastMonth(String month) {
     sharedPreferences.setString(cacheLastMonth, month);
     return month;

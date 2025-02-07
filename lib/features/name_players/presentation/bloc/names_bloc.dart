@@ -25,7 +25,7 @@ class NamesBloc extends Bloc<NamesEvent, NamesState> {
     on<StartGameEvent>((event, emit) async {
       emit(NamesLoading());
       try {
-        await sharedPreferences.setStringList(cachePlayers, event.players);
+        await sharedPreferences.setStringList(cacheRestaurantNames, event.playerRestaurantNames);
         emit(StartGame());
       } catch (e) {
         emit(NamesFailure());

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../../config/routes/app_routes.dart';
 import '../../../../core/constants/constants.dart';
@@ -74,6 +75,10 @@ class FinishPage extends StatelessWidget {
 
   void returnToMenu(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+      ]);
+
       Navigator.pushNamedAndRemoveUntil(
         context,
         AppRoutes.menu,

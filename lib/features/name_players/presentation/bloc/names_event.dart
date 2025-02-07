@@ -10,7 +10,7 @@ sealed class NamesEvent extends Equatable {
 class LoadNamesEvent extends NamesEvent {}
 
 class StartGameEvent extends NamesEvent {
-  final List<String> players;
+  final List<String> playerRestaurantNames;
 
-  const StartGameEvent({required this.players});
+  const StartGameEvent({required this.playerRestaurantNames});
 }

@@ -2,6 +2,7 @@
 
 import 'dart:math';
 
+import 'package:master_case/core/utilities/utilities.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core/constants/constants.dart';
@@ -16,8 +17,10 @@ abstract class JugabilityLocalDataSource {
 
 class JugabilityLocalDataSourceImpl implements JugabilityLocalDataSource {
   SharedPreferences sharedPreferences = sl<SharedPreferences>();
+  Utilities utilities = Utilities();
   @override
   Future<RoundInfo> getInfoRound() async {
+    print('numero de jugadores desde cache: ${utilities.getNumberOfPlayers()}');
     try {
       final int calories = Random().nextInt(6) + 1;
       final int taxes = Random().nextInt(6) + 1;
