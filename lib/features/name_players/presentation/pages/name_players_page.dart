@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:master_case/core/utilities/utilities.dart';
 
 import '../../../../config/routes/app_routes.dart';
 import '../../../../core/constants/constants.dart';
+import '../../../../core/utilities/utilities.dart';
 import '../../../../injection_container.dart';
 import '../bloc/names_bloc.dart';
 import '../widgets/widgets.dart';
@@ -146,7 +146,10 @@ class NamePlayersPage extends StatelessWidget {
         utilities.setNumberOfPlayers(numberPlayers);
         // utilities.setNameOfRestaurants([name1, name2, name3]);
         //todo: cambiar el evento por uno que muestre la pantalla de escoger recetas
-        context.read<NamesBloc>().add(StartGameEvent(playerRestaurantNames: [name1, name2, name3]));
+        // context.read<NamesBloc>().add(StartGameEvent(playerRestaurantNames: [name1, name2, name3]));
+        // BlocProvider.of<RecipesSelectionBloc>(context).add(GetRecipesEvent());
+         Navigator.pushNamed(context, AppRoutes.recipeSelection);
+        
       } else {
         _showSnackBar(context, "Debe llenar todos los campos.");
       }
@@ -154,7 +157,9 @@ class NamePlayersPage extends StatelessWidget {
       if (name1.isNotEmpty && name2.isNotEmpty) {
         utilities.setNumberOfPlayers(numberPlayers);
         // utilities.setNameOfRestaurants([name1, name2]);
-        context.read<NamesBloc>().add(StartGameEvent(playerRestaurantNames: [name1, name2]));
+        // context.read<NamesBloc>().add(StartGameEvent(playerRestaurantNames: [name1, name2]));
+        // BlocProvider.of<RecipesSelectionBloc>(context).add(GetRecipesEvent());
+        Navigator.pushNamed(context, AppRoutes.recipeSelection);
       } else {
         _showSnackBar(context, "Debe llenar todos los campos.");
       }

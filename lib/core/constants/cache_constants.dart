@@ -19,3 +19,5 @@ const cacheCurrentRoundInfo = 'CACHE_CURRENT_ROUND_INFO';
 
 const cacheNumberOfPlayers = 'CACHE_NUMBER_OF_PLAYERS';
 const cacheRestaurantNames = 'CACHE_RESTAURANT_NAMES';
+
+const cacheRecipesList = 'CACHE_RECIPES_LIST';
