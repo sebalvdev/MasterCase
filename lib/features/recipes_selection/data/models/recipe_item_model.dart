@@ -15,22 +15,24 @@ class RecipeItemModel extends RecipeItem {
   const RecipeItemModel({
     required super.mealName, 
     required super.mealImage, 
-    required super.frecuencies
+    required super.frequencies
   });
 
   factory RecipeItemModel.fromSnapshot(DocumentSnapshot snapshot) {
     return RecipeItemModel(
       mealName: snapshot['mealName'],
       mealImage: snapshot['mealImage'],
-      frecuencies: snapshot['frecuencies'],
+      frequencies: snapshot['frequencies'],
     );
   }
 
   factory RecipeItemModel.fromJson(Map<String, dynamic> json) {
+    //todo add frecuencies and debug
     return RecipeItemModel(
-      mealName: json['mealName'],
-      mealImage: json['mealImage'],
-      frecuencies: json['frecuencies'],
+      mealName: json["mealName"],
+      mealImage: json["mealImage"],
+      
+      frequencies: json["frequencies"],
     );
   }
 
@@ -38,7 +40,7 @@ class RecipeItemModel extends RecipeItem {
     return {
       "mealName": mealName,
       "mealImage": mealImage,
-      "frecuencies": frecuencies,
+      "frequencies": frequencies,
     };
   }
 }

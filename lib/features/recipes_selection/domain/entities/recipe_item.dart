@@ -4,14 +4,14 @@ class RecipeItem extends Equatable{
 
   final String mealName;
   final String mealImage;
-  final Map<String, dynamic> frecuencies;
+  final Map<String, dynamic> frequencies;
 
   const RecipeItem({
     required this.mealName, 
     required this.mealImage, 
-    required this.frecuencies
+    required this.frequencies
   });
 
   @override
-  List<Object?> get props => [mealName, mealImage, frecuencies];
+  List<Object?> get props => [mealName, mealImage, frequencies];
 }

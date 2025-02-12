@@ -9,7 +9,12 @@ class RecipesSelectionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return buildBody(context);
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Recipes Selection Page'),
+      ),
+      body: buildBody(context),
+    );
   }
 
   BlocProvider<RecipesSelectionBloc> buildBody(BuildContext context) {
