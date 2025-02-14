@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:master_case/features/recipes_selection/presentation/pages/recipe_selection_info_page.dart';
 import 'package:master_case/features/recipes_selection/presentation/pages/recipes_selection_page.dart';
 
 import '../../features/extra_pages/presentation/pages/credits_page.dart';
@@ -23,6 +24,7 @@ class AppRoutes {
   static const String credits = '/credits';
   static const String gameOver = '/game_over';
   static const String recipeSelection = '/recipe_selection';
+  static const String recipeSelectionInfo = '/recipe_selection_info';
 
   static Route onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
@@ -48,7 +50,10 @@ class AppRoutes {
       case gameOver:
         return _materialRoute(const FinishPage());
       case recipeSelection:
-        return _materialRoute(const RecipesSelectionPage());
+        return _materialRoute(RecipesSelectionPage());
+      case recipeSelectionInfo:
+        return _materialRoute(const RecipeSelectionInfoPage());
+
       // case eventHome:
       //   if (settings.arguments is Map<String, dynamic>) {
       //     final args = settings.arguments as Map<String, dynamic>;

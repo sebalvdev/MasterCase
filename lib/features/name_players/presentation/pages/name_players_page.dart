@@ -144,7 +144,7 @@ class NamePlayersPage extends StatelessWidget {
     if (numberPlayers != 2) {
       if (name1.isNotEmpty && name2.isNotEmpty && name3.isNotEmpty) {
         utilities.setNumberOfPlayers(numberPlayers);
-        // utilities.setNameOfRestaurants([name1, name2, name3]);
+        utilities.setRestaurantNames([name1, name2, name3]);
         //todo: cambiar el evento por uno que muestre la pantalla de escoger recetas
         // context.read<NamesBloc>().add(StartGameEvent(playerRestaurantNames: [name1, name2, name3]));
         // BlocProvider.of<RecipesSelectionBloc>(context).add(GetRecipesEvent());
@@ -156,7 +156,7 @@ class NamePlayersPage extends StatelessWidget {
     } else {
       if (name1.isNotEmpty && name2.isNotEmpty) {
         utilities.setNumberOfPlayers(numberPlayers);
-        // utilities.setNameOfRestaurants([name1, name2]);
+        utilities.setRestaurantNames([name1, name2, name3]);
         // context.read<NamesBloc>().add(StartGameEvent(playerRestaurantNames: [name1, name2]));
         // BlocProvider.of<RecipesSelectionBloc>(context).add(GetRecipesEvent());
         Navigator.pushNamed(context, AppRoutes.recipeSelection);
