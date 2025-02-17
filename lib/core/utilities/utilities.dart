@@ -8,6 +8,7 @@ import 'package:master_case/features/jugability/data/model/meal_model.dart';
 import 'package:master_case/features/jugability/data/model/round_info_model.dart';
 import 'package:master_case/features/jugability/domain/entities/meal.dart';
 import 'package:master_case/features/jugability/domain/entities/round_info.dart';
+import 'package:master_case/features/recipes_selection/data/models/recipe_item_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../injection_container.dart';
@@ -16,6 +17,23 @@ import '../constants/constants.dart';
 class Utilities {
   FirebaseFirestore firebaseFirestore = sl<FirebaseFirestore>();
   SharedPreferences sharedPreferences = sl<SharedPreferences>();
+
+  String getInGameRecipesGroup() {
+    return sharedPreferences.getString(cacheInGameRecipesList) ?? "";
+  }
+
+  void setInGameRecipesGroup(List<RecipeItemModel> inGameRecipesList) {
+    sharedPreferences.setString(cacheInGameRecipesList, recipeItemModelListToString(inGameRecipesList));
+  }
+
+  List<RecipeItemModel> getCacheSavedRecipes() {
+    final cacheRecipes = sharedPreferences.getString(cacheRecipesList);
+    if (cacheRecipes == null) {
+      return [];
+    }
+
+    return recipeItemModelListFromJson(cacheRecipes);
+  }
 
   String getPlayersRestaurantNames() {
     return sharedPreferences.getStringList(cacheRestaurantNames)!.join(", ");

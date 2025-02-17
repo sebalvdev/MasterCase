@@ -17,7 +17,10 @@ const cacheCurrentCardState = 'CACHE_CURRENT_CARD_STATE';
 
 const cacheCurrentRoundInfo = 'CACHE_CURRENT_ROUND_INFO';
 
+//informacion de los jugadores guardada en cache
 const cacheNumberOfPlayers = 'CACHE_NUMBER_OF_PLAYERS';
 const cacheRestaurantNames = 'CACHE_RESTAURANT_NAMES';
 
+//informacion de las recetas guardadas en cache
 const cacheRecipesList = 'CACHE_RECIPES_LIST';
+const cacheInGameRecipesList = 'CACHE_IN_GAME_RECIPES_LIST';

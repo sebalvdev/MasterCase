@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:master_case/features/global_event/presentation/pages/global_event_page.dart';
 import 'package:master_case/features/recipes_selection/presentation/pages/recipe_selection_info_page.dart';
 import 'package:master_case/features/recipes_selection/presentation/pages/recipes_selection_page.dart';
 
@@ -24,6 +25,7 @@ class AppRoutes {
   static const String credits = '/credits';
   static const String gameOver = '/game_over';
   static const String recipeSelection = '/recipe_selection';
+  static const String globalEvent = '/global_event';
   static const String recipeSelectionInfo = '/recipe_selection_info';
 
   static Route onGenerateRoutes(RouteSettings settings) {
@@ -51,6 +53,8 @@ class AppRoutes {
         return _materialRoute(const FinishPage());
       case recipeSelection:
         return _materialRoute(RecipesSelectionPage());
+      case globalEvent:
+        return _materialRoute(GlobalEventPage());
       case recipeSelectionInfo:
         return _materialRoute(const RecipeSelectionInfoPage());
 
