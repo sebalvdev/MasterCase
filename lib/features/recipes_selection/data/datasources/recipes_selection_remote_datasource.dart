@@ -23,7 +23,7 @@ class RecipesSelectionRemoteDatasourceImpl implements RecipesSelectionRemoteData
     final cacheRecipes = prefs.getString(cacheRecipesList);
 
     if(cacheRecipes == null) {
-      print('no se tiene recetas almacenadas en cache');
+      // print('no se tiene recetas almacenadas en cache');
 
       final recipes = await firestore
       .collection('games')
@@ -34,7 +34,7 @@ class RecipesSelectionRemoteDatasourceImpl implements RecipesSelectionRemoteData
       final List<RecipeItemModel> recipeItems = [];
 
       for (final recipe in recipes.docs) {
-        print('receta que esta ingresando: ${recipe.data()}');
+        // print('receta que esta ingresando: ${recipe.data()}');
         RecipeItemModel recipeItem = RecipeItemModel.fromJson(recipe.data());
         recipeItems.add(recipeItem);
       }
@@ -44,7 +44,7 @@ class RecipesSelectionRemoteDatasourceImpl implements RecipesSelectionRemoteData
 
       return recipeItems;
     } else {
-      print('se tiene recetas almacenadas en cache');
+      // print('se tiene recetas almacenadas en cache');
       final recipeList = recipeItemModelListFromJson(cacheRecipes);
       return recipeList;
     }

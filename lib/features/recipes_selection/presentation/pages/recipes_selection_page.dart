@@ -35,8 +35,9 @@ class RecipesSelectionPage extends StatelessWidget {
   }
 
   BlocProvider<RecipesSelectionBloc> buildBody(BuildContext context) {
+    // ignore: unused_local_variable
     List<RecipeItem> recipeItems = [];
-    Utilities utilities = Utilities();
+    // Utilities utilities = Utilities();
 
     return BlocProvider(
       create: (context) => sl<RecipesSelectionBloc>(),
@@ -46,11 +47,11 @@ class RecipesSelectionPage extends StatelessWidget {
           if (state is RecipesSelectionInitial) {
             BlocProvider.of<RecipesSelectionBloc>(context)
                 .add(GetRecipesEvent());
-            print('estado inicial pagina de recetas');
+            // print('estado inicial pagina de recetas');
           }
 
           if (state is RecipesSelectionLoading) {
-            print('estado de carga pagina de recetas');
+            // print('estado de carga pagina de recetas');
           }
 
           if (state is RecipesSelectionLoaded) {
