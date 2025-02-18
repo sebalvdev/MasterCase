@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:master_case/features/global_event/presentation/pages/global_event_page.dart';
+import 'package:master_case/features/ingredient_suppliers/presentation/ingredient_suppliers_page.dart';
 import 'package:master_case/features/recipes_selection/presentation/pages/recipe_selection_info_page.dart';
 import 'package:master_case/features/recipes_selection/presentation/pages/recipes_selection_page.dart';
 
@@ -27,6 +28,7 @@ class AppRoutes {
   static const String recipeSelection = '/recipe_selection';
   static const String globalEvent = '/global_event';
   static const String recipeSelectionInfo = '/recipe_selection_info';
+  static const String ingredientSuppliers = '/ingredient_suppliers';
 
   static Route onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
@@ -57,6 +59,8 @@ class AppRoutes {
         return _materialRoute(GlobalEventPage());
       case recipeSelectionInfo:
         return _materialRoute(const RecipeSelectionInfoPage());
+      case ingredientSuppliers:
+        return _materialRoute(const IngredientSuppliersPage());
 
       // case eventHome:
       //   if (settings.arguments is Map<String, dynamic>) {

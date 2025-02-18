@@ -18,6 +18,68 @@ class Utilities {
   FirebaseFirestore firebaseFirestore = sl<FirebaseFirestore>();
   SharedPreferences sharedPreferences = sl<SharedPreferences>();
 
+  void resetCurrentMonth() {
+    sharedPreferences.setInt(cacheCurrentMonth, 0);
+  }
+
+  String getCurrentMonthText() {
+    int currentMonth = getCurrentMonth();
+    switch (currentMonth) {
+      case 1:
+        return "Enero";
+      case 2:
+        return "Febrero";
+      case 3:
+        return "Marzo";
+      case 4:
+        return "Abril";
+      case 5:
+        return "Mayo";
+      case 6:
+        return "Junio";
+      case 7:
+        return "Julio";
+      case 8:
+        return "Agosto";
+      case 9:
+        return "Septiembre";
+      case 10:
+        return "Octubre";
+      case 11:
+        return "Noviembre";
+      case 12:
+        return "Diciembre";
+      default:
+        return "Error";
+    }
+  }
+
+//setea el mes actual a 1 (enero) si no hay nada registrado en cache y si ya hay un mes registrado, lo incrementa en 1
+  void setCurrentMonth(int month, int gameDuration) {
+    int currentMonth = getCurrentMonth();
+    if (currentMonth == 0) {
+      sharedPreferences.setInt(cacheCurrentMonth, 1);
+    } else {
+      if (currentMonth < gameDuration) {
+        sharedPreferences.setInt(cacheCurrentMonth, currentMonth + 1);
+      } else {
+        sharedPreferences.setInt(cacheCurrentMonth, 1);
+      }
+    }
+  }
+
+  int getCurrentMonth() {
+    return sharedPreferences.getInt(cacheCurrentMonth) ?? 0;
+  }
+
+  void setCacheGameDuration(int months) {
+    sharedPreferences.setInt(cacheGameDuration, months);
+  }
+
+  int getCacheGameDuration() {
+    return sharedPreferences.getInt(cacheGameDuration) ?? 0;
+  }
+
   String getInGameRecipesGroup() {
     return sharedPreferences.getString(cacheInGameRecipesList) ?? "";
   }

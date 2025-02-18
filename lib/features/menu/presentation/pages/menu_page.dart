@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:master_case/core/utilities/utilities.dart';
 // import 'package:master_case/features/extra_pages/presentation/pages/test_page.dart';
 
 import '../../../../config/routes/app_routes.dart';
@@ -12,6 +13,9 @@ import '../widgets/widgets.dart';
 
 // ignore: must_be_immutable
 class MenuPage extends StatelessWidget {
+
+  Utilities utilities = Utilities();
+
   MenuPage({super.key});
   String? durationControler;
   String? playersController;
@@ -207,7 +211,7 @@ class MenuPage extends StatelessWidget {
   void verifyValues(BuildContext context) {
     if (durationControler != null && playersController != null) {
       context.read<MenuBloc>().add(GetNamesEvent(
-          duration: (durationControler == 'Año completo') ? 1 : 0.5,
+          duration: setGameDuration(durationControler!),
           players: int.parse(playersController!)));
     } else {
       _showSnackBar(context, "Debe llenar todos los campos.");
@@ -224,5 +228,15 @@ class MenuPage extends StatelessWidget {
     );
 
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  double setGameDuration(String duration) {
+    if (duration == 'Año completo') {
+      utilities.setCacheGameDuration(12);
+      return 12;
+    } else {
+      utilities.setCacheGameDuration(6);
+      return 6;
+    }
   }
 }

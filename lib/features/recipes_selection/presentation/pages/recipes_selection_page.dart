@@ -132,8 +132,12 @@ class RecipesSelectionPage extends StatelessWidget {
                         WidgetStateProperty.all<Color>(Colors.black),
                   ),
                   onPressed: () {
+                    //Aqui se guardan las recetas que seran usadas dentro del juego en la llave cacheInGameRecipesList
                     List<RecipeItemModel> inGameRecipesList = utilities.getCacheSavedRecipes();
                     utilities.setInGameRecipesGroup(inGameRecipesList);
+                    utilities.resetCurrentMonth();
+                    int gameDuration = utilities.getCacheGameDuration();
+                    utilities.setCurrentMonth(1, gameDuration);
                     Navigator.popAndPushNamed(context, AppRoutes.globalEvent);
                   },
                   child: const Text('Empezar juego'))
