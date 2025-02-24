@@ -30,3 +30,6 @@ const cacheGameDuration = 'CACHE_GAME_DURATION';
 
 //informacion del mes actual en el que esta el juego
 const cacheCurrentMonth = 'CACHE_CURRENT_MONTH';
+
+//lista de los proveedores de productos guardados en cache
+const cacheSuppliersList = 'CACHE_SUPPLIERS_LIST';

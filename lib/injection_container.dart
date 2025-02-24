@@ -2,10 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
-import 'package:master_case/features/recipes_selection/data/datasources/recipes_selection_remote_datasource.dart';
-import 'package:master_case/features/recipes_selection/data/repositories/recipes_selection_repository_impl.dart';
-import 'package:master_case/features/recipes_selection/domain/repositories/recipes_selection_repository.dart';
-import 'package:master_case/features/recipes_selection/domain/usecases/get_recipe_items.dart' as get_recipe_items;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/network/network_info.dart';
@@ -23,17 +19,47 @@ import 'features/login/domain/usecases/verify_box.dart' as verify_box;
 import 'features/login/presentation/bloc/login_bloc.dart';
 import 'features/menu/presentation/bloc/menu_bloc.dart';
 import 'features/name_players/presentation/bloc/names_bloc.dart';
+import 'features/recipes_selection/data/datasources/recipes_selection_remote_datasource.dart';
+import 'features/recipes_selection/data/repositories/recipes_selection_repository_impl.dart';
+import 'features/recipes_selection/domain/repositories/recipes_selection_repository.dart';
+import 'features/recipes_selection/domain/usecases/get_recipe_items.dart' as get_recipe_items;
 import 'features/recipes_selection/presentation/bloc/recipes_selection_bloc.dart';
 import 'features/scanner_qr/data/datasources/scanner_qr_remote_datasource.dart';
 import 'features/scanner_qr/data/repositories/scanner_qr_repository_impl.dart';
 import 'features/scanner_qr/domain/repositories/scanner_qr_repository.dart';
 import 'features/scanner_qr/domain/usecases/validate_qr_code.dart' as validate_qr_code;
 import 'features/scanner_qr/presentation/bloc/scanner_qr_bloc.dart';
+import 'features/suppliers/data/datasources/supplier_remote_datasource.dart';
+import 'features/suppliers/data/repositories/suppliers_repository.dart';
+import 'features/suppliers/domain/repositories/suppliers_repository.dart';
+import 'features/suppliers/domain/usecases/get_supplier_items.dart' as get_supplier_items;
+import 'features/suppliers/presentation/bloc/suppliers_bloc.dart';
 import 'firebase_options.dart';
 
 final sl = GetIt.instance;
 
 Future<void> init() async {
+
+  //! Feature - Suppliers
+  // Bloc
+  sl.registerFactory(() => SuppliersBloc(getSupplierItems: sl()));
+
+  // Use Cases
+  sl.registerLazySingleton(() => get_supplier_items.GetSupplierItems(sl()));
+
+  // Repository
+  sl.registerLazySingleton<SuppliersRepository>(() => SuppliersRepositoryImpl(
+        supplierRemoteDatasource: sl(),
+        networkInfo: sl(),
+      ));
+
+  // Data Sources
+  sl.registerLazySingleton<SupplierRemoteDatasource>(
+      () => SupplierRemoteDatasourceImpl(
+        firestore: sl(),
+         prefs: sl()
+      )
+  );
 
   //! Feature - Recipes Selection
   // Bloc
