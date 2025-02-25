@@ -7,11 +7,11 @@ class CountdownTimer extends StatefulWidget {
   final Color textColor;
 
   const CountdownTimer({
-    Key? key,
+    super.key,
     required this.startSeconds,
     required this.fontSize,
     required this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   State<CountdownTimer> createState() => _CountdownTimerState();

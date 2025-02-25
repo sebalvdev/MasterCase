@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:master_case/features/global_event/presentation/pages/global_event_page.dart';
-import 'package:master_case/features/ingredient_suppliers/presentation/ingredient_suppliers_page.dart';
-import 'package:master_case/features/orders/presentation/pages/orders_page.dart';
-import 'package:master_case/features/recipes_selection/presentation/pages/recipe_selection_info_page.dart';
-import 'package:master_case/features/recipes_selection/presentation/pages/recipes_selection_page.dart';
-import 'package:master_case/features/suppliers/presentation/pages/suppliers_page.dart';
 
 import '../../features/extra_pages/presentation/pages/credits_page.dart';
 import '../../features/extra_pages/presentation/pages/instructions_page.dart';
+import '../../features/global_event/presentation/pages/global_event_page.dart';
 import '../../features/home/presentation/pages/home_page.dart';
 import '../../features/jugability/presentation/pages/finish_page.dart';
 import '../../features/jugability/presentation/pages/jugability_page.dart';
 import '../../features/login/presentation/pages/login_page.dart';
 import '../../features/menu/presentation/pages/menu_page.dart';
 import '../../features/name_players/presentation/pages/name_players_page.dart';
+import '../../features/orders/presentation/pages/orders_page.dart';
+import '../../features/recipes_selection/presentation/pages/recipe_selection_info_page.dart';
+import '../../features/recipes_selection/presentation/pages/recipes_selection_page.dart';
 import '../../features/scanner_qr/presentation/pages/qr_scanner_page.dart';
+import '../../features/suppliers/presentation/pages/suppliers_page.dart';
 
 class AppRoutes {
   static const String home = '/';
@@ -63,9 +62,9 @@ class AppRoutes {
       case recipeSelectionInfo:
         return _materialRoute(const RecipeSelectionInfoPage());
       case ingredientSuppliers:
-        return _materialRoute(SuppliersPage());
+        return _materialRoute(const SuppliersPage());
       case orders:
-        return _materialRoute(OrdersPage());
+        return _materialRoute(const OrdersPage());
 
       // case eventHome:
       //   if (settings.arguments is Map<String, dynamic>) {

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:master_case/features/suppliers/domain/entities/supplier_item.dart';
+
+import '../../domain/entities/supplier_item.dart';
 
 class SupplierButton extends StatelessWidget {
   final SupplierItem item;
 
-  const SupplierButton({Key? key, required this.item}) : super(key: key);
+  const SupplierButton({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +30,12 @@ class SupplierButton extends StatelessWidget {
           ),
           Container(
             width: 100,
-            padding: EdgeInsets.symmetric(vertical: 5),
+            padding: const EdgeInsets.symmetric(vertical: 5),
             alignment: Alignment.center,
             color: Colors.blue, // Fondo para unificar con la imagen
             child: Text(
               item.name,
-              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
           ),
         ],

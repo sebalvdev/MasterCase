@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:master_case/features/suppliers/domain/entities/supplier_item.dart';
-import 'package:master_case/features/suppliers/presentation/bloc/suppliers_bloc.dart';
-import 'package:master_case/features/suppliers/presentation/widgets/supplier_button.dart';
-import 'package:master_case/features/suppliers/presentation/widgets/supplier_target.dart';
-import 'package:master_case/features/suppliers/presentation/widgets/supplier_timer.dart';
-import 'package:master_case/injection_container.dart';
+
+import '../../../../injection_container.dart';
+import '../../domain/entities/supplier_item.dart';
+import '../bloc/suppliers_bloc.dart';
+import '../widgets/supplier_target.dart';
+import '../widgets/supplier_timer.dart';
 
 class SuppliersPage extends StatelessWidget {
   const SuppliersPage({super.key});
@@ -14,7 +14,8 @@ class SuppliersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Proveedores de productos'),
+        title: const Center(child: Text('Proveedores de productos')),
+        automaticallyImplyLeading: false,
       ),
       body: buildBody(context),
     );
@@ -42,7 +43,7 @@ class SuppliersPage extends StatelessWidget {
               return Column(
                 children: [
                   const Text('Tiempo para la proxima fase'),
-                  SupplierTimer(
+                  const SupplierTimer(
                     startSeconds: 10, 
                     fontSize: 40, 
                     textColor: Colors.black
