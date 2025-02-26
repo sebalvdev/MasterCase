@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:master_case/features/management/presentation/management_page.dart';
 
 import '../../features/extra_pages/presentation/pages/credits_page.dart';
 import '../../features/extra_pages/presentation/pages/instructions_page.dart';
@@ -31,6 +32,7 @@ class AppRoutes {
   static const String recipeSelectionInfo = '/recipe_selection_info';
   static const String ingredientSuppliers = '/ingredient_suppliers';
   static const String orders = '/orders';
+  static const String management = '/management';
 
   static Route onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
@@ -65,6 +67,8 @@ class AppRoutes {
         return _materialRoute(const SuppliersPage());
       case orders:
         return _materialRoute(const OrdersPage());
+      case management:
+        return _materialRoute(ManagementPage());
 
       // case eventHome:
       //   if (settings.arguments is Map<String, dynamic>) {

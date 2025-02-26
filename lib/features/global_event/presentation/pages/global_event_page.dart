@@ -10,6 +10,7 @@ class GlobalEventPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // print('Cantidad de meses que se jugara ${utilities.getCacheGameDuration()}');
+    print('Recetas que se tienen ${utilities.getInGameRecipesGroup()}');
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,

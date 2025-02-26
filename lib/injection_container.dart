@@ -19,6 +19,11 @@ import 'features/login/domain/usecases/verify_box.dart' as verify_box;
 import 'features/login/presentation/bloc/login_bloc.dart';
 import 'features/menu/presentation/bloc/menu_bloc.dart';
 import 'features/name_players/presentation/bloc/names_bloc.dart';
+import 'features/order_card/data/datasources/order_card_local_datasource.dart';
+import 'features/order_card/data/repositories/order_card_repository_impl.dart';
+import 'features/order_card/domain/repositories/order_card_repository.dart';
+import 'features/order_card/domain/usecases/get_order_card_info.dart' as get_order_card_info;
+import 'features/order_card/presentation/bloc/order_card_bloc.dart';
 import 'features/recipes_selection/data/datasources/recipes_selection_remote_datasource.dart';
 import 'features/recipes_selection/data/repositories/recipes_selection_repository_impl.dart';
 import 'features/recipes_selection/domain/repositories/recipes_selection_repository.dart';
@@ -30,7 +35,7 @@ import 'features/scanner_qr/domain/repositories/scanner_qr_repository.dart';
 import 'features/scanner_qr/domain/usecases/validate_qr_code.dart' as validate_qr_code;
 import 'features/scanner_qr/presentation/bloc/scanner_qr_bloc.dart';
 import 'features/suppliers/data/datasources/supplier_remote_datasource.dart';
-import 'features/suppliers/data/repositories/suppliers_repository.dart';
+import 'features/suppliers/data/repositories/suppliers_repository_impl.dart';
 import 'features/suppliers/domain/repositories/suppliers_repository.dart';
 import 'features/suppliers/domain/usecases/get_supplier_items.dart' as get_supplier_items;
 import 'features/suppliers/presentation/bloc/suppliers_bloc.dart';
@@ -39,6 +44,23 @@ import 'firebase_options.dart';
 final sl = GetIt.instance;
 
 Future<void> init() async {
+  //! Feature - OrderCard
+  // Bloc
+  sl.registerFactory(() => OrderCardBloc(getOrderCardInfo: sl()));
+
+  //Use Cases
+  sl.registerLazySingleton(() => get_order_card_info.GetOrderCardInfo(repository: sl()));
+
+  // Repository
+  sl.registerLazySingleton<OrderCardRepository>(() => OrderCardRepositoryImpl(
+    orderCardLocalDatasource: sl(), 
+    networkInfo: sl()
+  ));
+
+  //Data Sources
+  sl.registerLazySingleton<OrderCardLocalDatasource>(() => OrderCardLocalDatasourceImpl(
+    prefs: sl()
+  ));
 
   //! Feature - Suppliers
   // Bloc

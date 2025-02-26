@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:master_case/core/constants/color_constants.dart';
+import 'package:master_case/features/global_event/presentation/widgets/countdown_timer.dart';
+import 'package:master_case/features/order_card/presentation/widgets/simple_timer.dart';
+
+import '../../../order_card/presentation/pages/order_card.dart';
 
 class OrdersPage extends StatelessWidget {
   const OrdersPage({super.key});
@@ -49,10 +54,23 @@ class OrdersPage extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Plataforma de Pedidos'),
             automaticallyImplyLeading: true, // Permite que el botón de menú se muestre
+            actions: [
+              const Padding(
+                padding: EdgeInsets.only(right: 20),
+                child: SimpleTimer(startSeconds: 30, fontSize: 25, textColor: black),
+              )
+            ],
           ),
           body: Builder(
             builder: (context) => const Center(
-              child: Text('Contenido de la página de pedidos'),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  OrderCard(),
+                  OrderCard(),
+                  OrderCard(),
+                ],
+              ),
             ),
           ),
         ),
