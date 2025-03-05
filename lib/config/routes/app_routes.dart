@@ -68,7 +68,7 @@ class AppRoutes {
       case orders:
         return _materialRoute(const OrdersPage());
       case management:
-        return _materialRoute(ManagementPage());
+        return _materialRoute(const ManagementPage());
 
       // case eventHome:
       //   if (settings.arguments is Map<String, dynamic>) {

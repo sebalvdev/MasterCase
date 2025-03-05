@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../../core/constants/color_constants.dart';
 import '../../../order_card/presentation/pages/order_card.dart';
-import '../../../order_card/presentation/widgets/simple_timer.dart';
 
 class OrdersPage extends StatelessWidget {
   const OrdersPage({super.key});
@@ -18,7 +16,7 @@ class OrdersPage extends StatelessWidget {
     return PopScope(
       canPop: false,
       onPopInvoked: (result) {
-        print('PopScope result: $result');
+        // print('PopScope result: $result');
       },
       child: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
@@ -53,11 +51,11 @@ class OrdersPage extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Plataforma de Pedidos'),
             automaticallyImplyLeading: true, // Permite que el botón de menú se muestre
-            actions: [
-              const Padding(
+            actions: const [
+              Padding(
                 padding: EdgeInsets.only(right: 20),
-                child: SimpleTimer(startSeconds: 20, fontSize: 25, textColor: black),
-                // child: Text('Timer'),
+                // child: SimpleTimer(startSeconds: 20, fontSize: 25, textColor: black),
+                child: Text('Timer'),
               )
             ],
           ),
