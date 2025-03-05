@@ -1,8 +1,8 @@
- import 'dart:async';
+import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:master_case/config/routes/app_routes.dart';
+
+import '../../../../config/routes/app_routes.dart';
 
 class SimpleTimer extends StatefulWidget {
   final int startSeconds;

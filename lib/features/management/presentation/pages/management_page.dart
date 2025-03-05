@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:master_case/config/routes/app_routes.dart';
 import 'package:master_case/core/utilities/utilities.dart';
 
 class ManagementPage extends StatefulWidget {
-  ManagementPage({super.key});
+  const ManagementPage({super.key});
 
   @override
   State<ManagementPage> createState() => _ManagementPageState();
@@ -38,6 +39,7 @@ class _ManagementPageState extends State<ManagementPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Management Page'),
       ),
       body: Column(
@@ -53,12 +55,17 @@ class _ManagementPageState extends State<ManagementPage> {
                   title: const Text('Preparate para comenzar el siguiente mes'),
                   actions: [
                     TextButton(
-                      onPressed: () {}, 
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      }, 
                       child: const Text('Cancelar')
                     ),
                     TextButton(
                       onPressed: () {
-                        print('el siguiente mes comenzo');
+                        final int gameDuration = utilities.getCacheGameDuration();
+                        final int currentMonth = utilities.getCurrentMonth();
+                        utilities.setCurrentMonth(currentMonth, gameDuration);
+                        Navigator.popAndPushNamed(context, AppRoutes.globalEvent);
                       }, 
                       child: const Text('Comenzar')
                     )

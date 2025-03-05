@@ -45,6 +45,7 @@ class OrderCardLocalDatasourceImpl implements OrderCardLocalDatasource {
     for (var recipe in inGameRecipeItems) {
       if (recipe.frequencies.containsKey(month)) {
         int frequency = recipe.frequencies[month]!;
+        print('receta: ${recipe.mealName} - frecuencia: $frequency');
         for (int i = 0; i < frequency; i++) {
           mealChoices.add(recipe);
         }

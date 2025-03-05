@@ -97,8 +97,8 @@ class Utilities {
     return recipeItemModelListFromJson(cacheRecipes);
   }
 
-  String getPlayersRestaurantNames() {
-    return sharedPreferences.getStringList(cacheRestaurantNames)!.join(", ");
+  List<String> getPlayersRestaurantNames() {
+    return sharedPreferences.getStringList(cacheRestaurantNames)!;
   }
 
   void setRestaurantNames(List<String> restaurantNames) {

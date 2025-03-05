@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:master_case/features/management/presentation/management_page.dart';
+import 'package:master_case/features/management/presentation/pages/management_page.dart';
 
 import '../../features/extra_pages/presentation/pages/credits_page.dart';
 import '../../features/extra_pages/presentation/pages/instructions_page.dart';
