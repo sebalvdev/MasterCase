@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:master_case/core/constants/color_constants.dart';
+import 'package:master_case/features/order_card/presentation/widgets/simple_timer.dart';
 
 import '../../../order_card/presentation/pages/order_card.dart';
 
@@ -54,8 +56,8 @@ class OrdersPage extends StatelessWidget {
             actions: const [
               Padding(
                 padding: EdgeInsets.only(right: 20),
-                // child: SimpleTimer(startSeconds: 20, fontSize: 25, textColor: black),
-                child: Text('Timer'),
+                child: SimpleTimer(startSeconds: 20, fontSize: 25, textColor: black),
+                // child: Text('Timer'),
               )
             ],
           ),

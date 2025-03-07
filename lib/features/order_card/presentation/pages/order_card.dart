@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:master_case/core/utilities/utilities.dart';
 
 import '../../../../injection_container.dart';
 import '../bloc/order_card_bloc.dart';
@@ -18,10 +19,10 @@ class OrderCard extends StatelessWidget {
   BlocProvider<OrderCardBloc> cardBody(BuildContext context) {
     const int countdownTime = 30;
     return BlocProvider(
-      create: (BuildContext context) => sl<OrderCardBloc>(),
+      create: (_) => sl<OrderCardBloc>(),
       child: Center(
         child: BlocBuilder<OrderCardBloc, OrderCardState>(
-          builder: (BuildContext context, OrderCardState state) {
+          builder: (context, state) {
             if (state is OrderCardInitial) {
               BlocProvider.of<OrderCardBloc>(context)
                   .add(const GetOrderCardInfoEvent());
@@ -32,9 +33,33 @@ class OrderCard extends StatelessWidget {
             }
 
             if (state is OrderCardLoaded) {
-              // Utilities utilities = Utilities();
-              // List<String> restaurants = utilities.getPlayersRestaurantNames();
+              Utilities utilities = Utilities();
+              List<String> restaurants = utilities.getPlayersRestaurantNames();
               return GestureDetector(
+                onTap: () {
+                  showDialog(context: context, 
+                  builder: (BuildContext dialogContext) {
+                    return AlertDialog(
+                      title: const Text('Selecciona un restaurante'),
+                      content: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: restaurants.map((String restaurant) {
+                          return ListTile(
+                            title: Text(restaurant),
+                            onTap: () {
+                              print('Restaurante seleccionado: $restaurant');
+                              print('Receta seleccionada: ${state.orderCardInfo.recipeName}');
+                              BlocProvider.of<OrderCardBloc>(context)
+                                .add(const GetOrderCardInfoEvent());
+                              Navigator.pop(context);
+                            },
+                          );
+                        }).toList(),
+                      ),
+                    );
+                  }
+                );                  
+                },
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 20), // Espaciado extra en la parte inferior
                   child: Card(
